@@ -1,5 +1,27 @@
 [
   {
+    "objectID": "math/math1.html",
+    "href": "math/math1.html",
+    "title": "Math 1",
+    "section": "",
+    "text": "Сэдэв\n\n\n\nЖишээ\n\n\n\nБодлогонууд\n\n\n\nБодолтууд",
+    "crumbs": [
+      "Математик",
+      "Math 1"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html",
+    "href": "cp/cp1.html",
+    "title": "CP 1",
+    "section": "",
+    "text": "Сэдэв\n\n\n\nЖишээ\n\n\n\nБодлогонууд\n\n\n\nБодолтууд",
+    "crumbs": [
+      "Програмчлал",
+      "CP 1"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -26,27 +48,5 @@
     "title": "Math & CP Class",
     "section": "",
     "text": "Хичээл бүр дараах хэсгүүдээс бүрдэнэ:\n\nСэдэв болон онолын тодорхойлолтууд\nЖишээ болон тайлбарууд\nХөнгөн дасгалууд болон бодлогонууд\nЗөвлөмжүүд болон бодолтууд\n\n\nЗүүн талын цэсийг ашиглан хичээлээ сонгоно уу."
-  },
-  {
-    "objectID": "math/math1.html",
-    "href": "math/math1.html",
-    "title": "Math 1",
-    "section": "",
-    "text": "Сэдэв\n\n\n\nЖишээ\n\n\n\nБодлогонууд\n\n\n\nБодолтууд",
-    "crumbs": [
-      "Математик",
-      "Math 1"
-    ]
-  },
-  {
-    "objectID": "cp/cp1.html",
-    "href": "cp/cp1.html",
-    "title": "CP 1",
-    "section": "",
-    "text": "Сэдэв\n\n\n\nЖишээ\n\n\n\nБодлогонууд\n\n\n\nБодолтууд",
-    "crumbs": [
-      "Програмчлал",
-      "CP 1"
-    ]
   }
 ]
