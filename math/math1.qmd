@@ -1,0 +1,6 @@
+---
+title: "math1"
+format: html
+---
+
+Эхний хичээл
