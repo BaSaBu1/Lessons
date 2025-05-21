@@ -8,8 +8,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: math/math1.qmd
-        text: Хичээл №1
+      - text: Math
+        menu:
+          - href: math/math1.qmd
+            text: Lesson №1
+      - text: CP
+        menu:
+          - href: cp/cp1.qmd
+            text: Lesson №1
       - about.qmd
 
 format:
