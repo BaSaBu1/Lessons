@@ -1,6 +1,6 @@
 ---
-title: "math1"
+title: "Math 1"
 format: html
+lang: mn
 ---
 
-Эхний хичээл
