@@ -4,21 +4,18 @@ format: html
 lang: mn
 ---
 
-# Сэдэв
+# Topic
 
 ---
 
-# Жишээ
+# Examples
 
 ---
 
-# Бодлогонууд
+# Problems
 
 ---
 
-# Бодолтууд
+# Solutions
 
 ---
-
-
-

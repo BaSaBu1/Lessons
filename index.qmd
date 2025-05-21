@@ -4,12 +4,11 @@ format: html
 lang: mn
 ---
 
-
 # Welcome
 
-This site contains materials for Olympiad Mathematics and Competitive Programming lessons for secondary school students. It was created during my internship at **Delgermurun School** in Khuvsgul Province, Mongolia, funded by **Macalester College**'s Summer Internship Grant.  
+This site contains materials for Olympiad Mathematics and Competitive Programming lessons for secondary school students. It was created during my internship at **Delgermurun School** in Khuvsgul Province, Mongolia, funded by the **Macalester College** Summer Internship Grant.
 
-<p align="right">Batsambuu Batbold</p>
+<p align="right"><strong>Batsambuu Batbold</strong></p>
 
 ---
 

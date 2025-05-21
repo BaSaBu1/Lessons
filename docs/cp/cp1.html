@@ -149,10 +149,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#сэдэв" id="toc-сэдэв" class="nav-link active" data-scroll-target="#сэдэв">Сэдэв</a></li>
-  <li><a href="#жишээ" id="toc-жишээ" class="nav-link" data-scroll-target="#жишээ">Жишээ</a></li>
-  <li><a href="#бодлогонууд" id="toc-бодлогонууд" class="nav-link" data-scroll-target="#бодлогонууд">Бодлогонууд</a></li>
-  <li><a href="#бодолтууд" id="toc-бодолтууд" class="nav-link" data-scroll-target="#бодолтууд">Бодолтууд</a></li>
+  <li><a href="#topic" id="toc-topic" class="nav-link active" data-scroll-target="#topic">Topic</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
 </nav>
     </div>
@@ -178,20 +178,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="сэдэв" class="level1">
-<h1>Сэдэв</h1>
+<section id="topic" class="level1">
+<h1>Topic</h1>
 <hr>
 </section>
-<section id="жишээ" class="level1">
-<h1>Жишээ</h1>
+<section id="examples" class="level1">
+<h1>Examples</h1>
 <hr>
 </section>
-<section id="бодлогонууд" class="level1">
-<h1>Бодлогонууд</h1>
+<section id="problems" class="level1">
+<h1>Problems</h1>
 <hr>
 </section>
-<section id="бодолтууд" class="level1">
-<h1>Бодолтууд</h1>
+<section id="solutions" class="level1">
+<h1>Solutions</h1>
 <hr>
 
 
@@ -270,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/BaSaBu1\.github\.io\/Lessons\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
