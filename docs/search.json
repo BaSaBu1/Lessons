@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Lessons",
+    "title": "Math & CP Class",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "This site contains materials for Olympiad Mathematics and Competitive Programming lessons for secondary school students. It was created during my internship at Delgermurun School in Khuvsgul Province, Mongolia, funded by Macalester College’s Summer Internship Grant.\n\nBatsambuu Batbold\n\n\n\n\nЭнэхүү вэбсайт нь олимпиадын математик болон програмчлалын хичээлүүдийг агуулсан болно. Шинэ хичээлүүд үе шаттайгаар нэмэгдэх бөгөөд сурагчид хүссэн үедээ тавигдсан хичээлүүдээс сонгон суралцах боломжтой.\n\n\n\n\nХичээл бүр дараах хэсгүүдээс бүрдэнэ:\n\nСэдэв болон онолын тодорхойлолтууд\nЖишээ болон тайлбарууд\nХөнгөн дасгалууд болон бодлогонууд\nЗөвлөмжүүд болон бодолтууд\n\n\nХажуу талын цэсийг ашиглан хичээлээ сонгоно уу."
   },
   {
     "objectID": "about.html",
@@ -18,6 +18,24 @@
     "href": "math/math1.html",
     "title": "math1",
     "section": "",
-    "text": "Эхний хичээл"
+    "text": "Эхний хичээл",
+    "crumbs": [
+      "Математик",
+      "math1"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Math & CP Class",
+    "section": "",
+    "text": "Энэхүү вэбсайт нь олимпиадын математик болон програмчлалын хичээлүүдийг агуулсан болно. Шинэ хичээлүүд үе шаттайгаар нэмэгдэх бөгөөд сурагчид хүссэн үедээ тавигдсан хичээлүүдээс сонгон суралцах боломжтой."
+  },
+  {
+    "objectID": "index.html#structure",
+    "href": "index.html#structure",
+    "title": "Math & CP Class",
+    "section": "",
+    "text": "Хичээл бүр дараах хэсгүүдээс бүрдэнэ:\n\nСэдэв болон онолын тодорхойлолтууд\nЖишээ болон тайлбарууд\nХөнгөн дасгалууд болон бодлогонууд\nЗөвлөмжүүд болон бодолтууд\n\n\nХажуу талын цэсийг ашиглан хичээлээ сонгоно уу."
   }
 ]

@@ -1,11 +1,33 @@
 ---
-title: "Lessons"
+title: "Math & CP Class"
+format: html
+lang: mn
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Welcome
 
-```{r}
-1 + 1
-```
+This site contains materials for Olympiad Mathematics and Competitive Programming lessons for secondary school students. It was created during my internship at **Delgermurun School** in Khuvsgul Province, Mongolia, funded by **Macalester College**'s Summer Internship Grant.  
+
+<p align="right">Batsambuu Batbold</p>
+
+---
+
+## Introduction
+
+Энэхүү вэбсайт нь олимпиадын **математик** болон **програмчлалын** хичээлүүдийг агуулсан болно. Шинэ хичээлүүд үе шаттайгаар нэмэгдэх бөгөөд сурагчид хүссэн үедээ тавигдсан хичээлүүдээс сонгон суралцах боломжтой.
+
+---
+
+## Structure
+
+Хичээл бүр дараах хэсгүүдээс бүрдэнэ:
+
+- **Сэдэв болон онолын тодорхойлолтууд**
+- **Жишээ болон тайлбарууд**
+- **Хөнгөн дасгалууд болон бодлогонууд**
+- **Зөвлөмжүүд болон бодолтууд**
+
+---
+
+_Хажуу талын цэсийг ашиглан хичээлээ сонгоно уу._

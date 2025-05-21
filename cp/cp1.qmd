@@ -1,5 +1,6 @@
 ---
-title: "cp1"
+title: "CP 1"
 format: html
+lang: mn
 ---
 
