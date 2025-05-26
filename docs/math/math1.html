@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 1 – Math &amp; CP Class</title>
+<title>Янз бүрийн бодлогууд – Math &amp; CP Class</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -80,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../math/math1.html">Математик</a></li><li class="breadcrumb-item"><a href="../math/math1.html">Math 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../math/math1.html">Математик</a></li><li class="breadcrumb-item"><a href="../math/math1.html">Янз бүрийн бодлогууд</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../math/math1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Math 1</span></a>
+ <span class="menu-text">Янз бүрийн бодлогууд</span></a>
   </div>
 </li>
       </ul>
@@ -149,19 +178,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#topic" id="toc-topic" class="nav-link active" data-scroll-target="#topic">Topic</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
+  <li><a href="#бодлого-1" id="toc-бодлого-1" class="nav-link active" data-scroll-target="#бодлого-1">Бодлого <span class="math inline">\(1\)</span></a></li>
+  <li><a href="#бодлого-2" id="toc-бодлого-2" class="nav-link" data-scroll-target="#бодлого-2">Бодлого <span class="math inline">\(2\)</span></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../math/math1.html">Математик</a></li><li class="breadcrumb-item"><a href="../math/math1.html">Math 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../math/math1.html">Математик</a></li><li class="breadcrumb-item"><a href="../math/math1.html">Янз бүрийн бодлогууд</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Math 1</h1>
+<h1 class="title">Янз бүрийн бодлогууд</h1>
 </div>
 
 
@@ -178,20 +205,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="topic" class="level1">
-<h1>Topic</h1>
-<hr>
+<section id="бодлого-1" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-1">Бодлого <span class="math inline">\(1\)</span></h2>
+<p>Бүхэл тоонуудын хоосон биш <span class="math inline">\(S\)</span> олонлогийг авч үзье. Хэрвээ ямар ч бүхэл <span class="math inline">\(n\)</span> тооны хувьд дараах гурван тооны аль нэг нь <span class="math inline">\(S\)</span>-д багтдаг бол бүгд <span class="math inline">\(S\)</span>-д багтдаг:</p>
+<ul>
+<li><span class="math inline">\(n\)</span></li>
+<li><span class="math inline">\(2n + 9\)</span></li>
+<li><span class="math inline">\(2n + 25\)</span></li>
+</ul>
+<p>Тэгвэл <span class="math inline">\(S\)</span> нь бүх бүхэл тоонуудын олонлог мөн үү?</p>
 </section>
-<section id="examples" class="level1">
-<h1>Examples</h1>
-<hr>
-</section>
-<section id="problems" class="level1">
-<h1>Problems</h1>
-<hr>
-</section>
-<section id="solutions" class="level1">
-<h1>Solutions</h1>
+<section id="бодлого-2" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-2">Бодлого <span class="math inline">\(2\)</span></h2>
+<p>Тэгш өнцөгт координатын хавтгайд өгөгдсөн <span class="math inline">\(A = (4, 0), B = (0, 3), C = (0, 0)\)</span> цэгүүдийг холбосон <span class="math inline">\(\triangle ABC\)</span>-г авч үзье. <span class="math inline">\(P,Q\)</span> цэгүүд нь <span class="math inline">\(\triangle ABC\)</span>-ний тал дээр оршдог ба <span class="math inline">\(PQ\)</span> шулуун уг гурвалжны талбай болон периметрийг хагасаар нь хуваадаг. Тийм <span class="math inline">\(P,Q\)</span> цэгүүдийн бүх боломжит хосыг ол.</p>
 <hr>
 
 
