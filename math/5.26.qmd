@@ -1,5 +1,5 @@
 ---
-title: "Янз бүрийн бодлогууд"
+title: "Янз бүр (5/26)"
 format: html
 lang: mn
 ---

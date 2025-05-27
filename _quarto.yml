@@ -11,7 +11,7 @@ website:
       - section: "Математик"
         contents:
           - math/5.26.qmd
-          # - math/math2.qmd
+          - math/5.27.qmd
       - section: "Програмчлал"
         contents:
           - cp/cp1.qmd
