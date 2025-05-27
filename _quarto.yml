@@ -10,7 +10,7 @@ website:
     contents:
       - section: "Математик"
         contents:
-          - math/math1.qmd
+          - math/5.26.qmd
           # - math/math2.qmd
       - section: "Програмчлал"
         contents:
