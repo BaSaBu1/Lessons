@@ -12,6 +12,7 @@ website:
         contents:
           - math/5.26.qmd
           - math/5.27.qmd
+          - math/5.29.qmd
       - section: "Програмчлал"
         contents:
           - cp/cp1.qmd
