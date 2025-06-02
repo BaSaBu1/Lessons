@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="mn" xml:lang="mn"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Геометрийн бусад леммүүд (6/01) – Math &amp; CP Class</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f9e6e4d29af3f5f6ee06eaf03ed5edd8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math &amp; CP Class
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Math &amp; CP Class</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Математик</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/5.26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Янз бүр (5/26)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/5.27.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Өнцөг хөөлт (5/27)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/5.29.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Тойрог (5/29)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/6.02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Урт ба Харьцаа (5/31)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Програмчлал</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cp/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CP 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#симсоны-шулуун-simson-lines" id="toc-симсоны-шулуун-simson-lines" class="nav-link active" data-scroll-target="#симсоны-шулуун-simson-lines">Симсоны Шулуун (Simson Lines)</a>
+  <ul class="collapse">
+  <li><a href="#дасгал-1" id="toc-дасгал-1" class="nav-link" data-scroll-target="#дасгал-1">Дасгал 1</a></li>
+  <li><a href="#дасгал-2" id="toc-дасгал-2" class="nav-link" data-scroll-target="#дасгал-2">Дасгал 2</a></li>
+  <li><a href="#дасгал-3" id="toc-дасгал-3" class="nav-link" data-scroll-target="#дасгал-3">Дасгал 3</a></li>
+  <li><a href="#лемма-1-simson-line-bisection" id="toc-лемма-1-simson-line-bisection" class="nav-link" data-scroll-target="#лемма-1-simson-line-bisection">Лемма 1 (Simson Line Bisection)</a></li>
+  </ul></li>
+  <li><a href="#дотоод-болон-гадаад-багтсан-тойргууд" id="toc-дотоод-болон-гадаад-багтсан-тойргууд" class="nav-link" data-scroll-target="#дотоод-болон-гадаад-багтсан-тойргууд">Дотоод болон Гадаад багтсан тойргууд</a>
+  <ul class="collapse">
+  <li><a href="#лемма-1-the-diameter-of-the-incircle" id="toc-лемма-1-the-diameter-of-the-incircle" class="nav-link" data-scroll-target="#лемма-1-the-diameter-of-the-incircle">Лемма 1 (The Diameter of the Incircle)</a></li>
+  <li><a href="#лемма-2-diameter-of-the-excircle" id="toc-лемма-2-diameter-of-the-excircle" class="nav-link" data-scroll-target="#лемма-2-diameter-of-the-excircle">Лемма 2 (Diameter of the Excircle)</a></li>
+  <li><a href="#лемма-3-an-incircle-concurrency" id="toc-лемма-3-an-incircle-concurrency" class="nav-link" data-scroll-target="#лемма-3-an-incircle-concurrency">Лемма 3 (An Incircle Concurrency)</a></li>
+  </ul></li>
+  <li><a href="#өндөрүүдийн-дундаж-цэгүүд" id="toc-өндөрүүдийн-дундаж-цэгүүд" class="nav-link" data-scroll-target="#өндөрүүдийн-дундаж-цэгүүд">Өндөрүүдийн дундаж цэгүүд</a>
+  <ul class="collapse">
+  <li><a href="#лемма-1-midpoint-of-altitudes" id="toc-лемма-1-midpoint-of-altitudes" class="nav-link" data-scroll-target="#лемма-1-midpoint-of-altitudes">Лемма 1 (Midpoint of Altitudes)</a></li>
+  </ul></li>
+  <li><a href="#изогонал-ба-изотомик-хосмогууд" id="toc-изогонал-ба-изотомик-хосмогууд" class="nav-link" data-scroll-target="#изогонал-ба-изотомик-хосмогууд">Изогонал ба изотомик хосмогууд</a>
+  <ul class="collapse">
+  <li><a href="#лемма-1-isogonal-conjugates" id="toc-лемма-1-isogonal-conjugates" class="nav-link" data-scroll-target="#лемма-1-isogonal-conjugates">Лемма 1 (Isogonal Conjugates)</a></li>
+  <li><a href="#лемма-2-isotomic-conjugates" id="toc-лемма-2-isotomic-conjugates" class="nav-link" data-scroll-target="#лемма-2-isotomic-conjugates">Лемма 2 (Isotomic Conjugates)</a></li>
+  <li><a href="#теорем-1-isogonal-ratios" id="toc-теорем-1-isogonal-ratios" class="nav-link" data-scroll-target="#теорем-1-isogonal-ratios">Теорем 1 (Isogonal Ratios)</a></li>
+  </ul></li>
+  <li><a href="#симмедиан" id="toc-симмедиан" class="nav-link" data-scroll-target="#симмедиан">Симмедиан</a>
+  <ul class="collapse">
+  <li><a href="#лемма-1-constructing-the-symmedian" id="toc-лемма-1-constructing-the-symmedian" class="nav-link" data-scroll-target="#лемма-1-constructing-the-symmedian">Лемма 1 (Constructing the Symmedian)</a></li>
+  <li><a href="#лемма-2-properties-of-the-symmedian" id="toc-лемма-2-properties-of-the-symmedian" class="nav-link" data-scroll-target="#лемма-2-properties-of-the-symmedian">Лемма 2 (Properties of the Symmedian)</a></li>
+  <li><a href="#лемма-3-symmedians-in-cyclic-quadrilaterals" id="toc-лемма-3-symmedians-in-cyclic-quadrilaterals" class="nav-link" data-scroll-target="#лемма-3-symmedians-in-cyclic-quadrilaterals">Лемма 3 (Symmedians in Cyclic Quadrilaterals)</a></li>
+  </ul></li>
+  <li><a href="#сегментэд-багтсан-тойргууд" id="toc-сегментэд-багтсан-тойргууд" class="nav-link" data-scroll-target="#сегментэд-багтсан-тойргууд">Сегментэд багтсан тойргууд</a>
+  <ul class="collapse">
+  <li><a href="#лемма-1-circles-inscribed-in-segments" id="toc-лемма-1-circles-inscribed-in-segments" class="nav-link" data-scroll-target="#лемма-1-circles-inscribed-in-segments">Лемма 1 (Circles Inscribed in Segments)</a></li>
+  <li><a href="#лемма-2-curvilinear-incircle-chords" id="toc-лемма-2-curvilinear-incircle-chords" class="nav-link" data-scroll-target="#лемма-2-curvilinear-incircle-chords">Лемма 2 (Curvilinear Incircle Chords)</a></li>
+  </ul></li>
+  <li><a href="#микстилинеар-mixtilinear-багтсан-тойргууд" id="toc-микстилинеар-mixtilinear-багтсан-тойргууд" class="nav-link" data-scroll-target="#микстилинеар-mixtilinear-багтсан-тойргууд">Микстилинеар (mixtilinear) багтсан тойргууд</a>
+  <ul class="collapse">
+  <li><a href="#лемма-1-mixtilinear-incircles" id="toc-лемма-1-mixtilinear-incircles" class="nav-link" data-scroll-target="#лемма-1-mixtilinear-incircles">Лемма 1 (Mixtilinear Incircles)</a></li>
+  </ul></li>
+  <li><a href="#бодлогууд" id="toc-бодлогууд" class="nav-link" data-scroll-target="#бодлогууд">Бодлогууд</a>
+  <ul class="collapse">
+  <li><a href="#бодлого-1-hong-kong-1998" id="toc-бодлого-1-hong-kong-1998" class="nav-link" data-scroll-target="#бодлого-1-hong-kong-1998">Бодлого 1 (Hong Kong 1998)</a></li>
+  <li><a href="#бодлого-2-usamo-19884" id="toc-бодлого-2-usamo-19884" class="nav-link" data-scroll-target="#бодлого-2-usamo-19884">Бодлого 2 (USAMO 1988/4)</a></li>
+  <li><a href="#бодлого-3-usamo-19953" id="toc-бодлого-3-usamo-19953" class="nav-link" data-scroll-target="#бодлого-3-usamo-19953">Бодлого 3 (USAMO 1995/3)</a></li>
+  <li><a href="#бодлого-4-usa-tst-2014" id="toc-бодлого-4-usa-tst-2014" class="nav-link" data-scroll-target="#бодлого-4-usa-tst-2014">Бодлого 4 (USA TST 2014)</a></li>
+  <li><a href="#бодлого-5-usa-tst-20111" id="toc-бодлого-5-usa-tst-20111" class="nav-link" data-scroll-target="#бодлого-5-usa-tst-20111">Бодлого 5 (USA TST 2011/1)</a></li>
+  <li><a href="#бодлого-6-elmo-shortlist-2012" id="toc-бодлого-6-elmo-shortlist-2012" class="nav-link" data-scroll-target="#бодлого-6-elmo-shortlist-2012">Бодлого 6 (ELMO Shortlist 2012)</a></li>
+  <li><a href="#бодлого-7-usamo-20115" id="toc-бодлого-7-usamo-20115" class="nav-link" data-scroll-target="#бодлого-7-usamo-20115">Бодлого 7 (USAMO 2011/5)</a></li>
+  <li><a href="#бодлого-8-japanese-olympiad-2009" id="toc-бодлого-8-japanese-olympiad-2009" class="nav-link" data-scroll-target="#бодлого-8-japanese-olympiad-2009">Бодлого 8 (Japanese Olympiad 2009)</a></li>
+  <li><a href="#бодлого-9" id="toc-бодлого-9" class="nav-link" data-scroll-target="#бодлого-9">Бодлого 9</a></li>
+  <li><a href="#бодлого-10-vietnam-tst-20032" id="toc-бодлого-10-vietnam-tst-20032" class="nav-link" data-scroll-target="#бодлого-10-vietnam-tst-20032">Бодлого 10 (Vietnam TST 2003/2)</a></li>
+  <li><a href="#бодлого-11-sharygin-2013" id="toc-бодлого-11-sharygin-2013" class="nav-link" data-scroll-target="#бодлого-11-sharygin-2013">Бодлого 11 (Sharygin 2013)</a></li>
+  <li><a href="#бодлого-12-apmo-20124" id="toc-бодлого-12-apmo-20124" class="nav-link" data-scroll-target="#бодлого-12-apmo-20124">Бодлого 12 (APMO 2012/4)</a></li>
+  <li><a href="#бодлого-13-shortlist-2002g7" id="toc-бодлого-13-shortlist-2002g7" class="nav-link" data-scroll-target="#бодлого-13-shortlist-2002g7">Бодлого 13 (Shortlist 2002/G7)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Геометрийн бусад леммүүд (6/01)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="симсоны-шулуун-simson-lines" class="level1">
+<h1>Симсоны Шулуун (Simson Lines)</h1>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжин ба дурын <span class="math inline">\(P\)</span> цэгийг авч үзье. <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> цэгүүд нь <span class="math inline">\(P\)</span>-ээс <span class="math inline">\(BC\)</span>, <span class="math inline">\(CA\)</span>, <span class="math inline">\(AB\)</span> шулуунуудад буулгасан перпендикуляруудын сууриад байг. Өмнө нь үзсэнчлэн <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> цэгүүд нь нэг шулуун дээр орших гарцаагүй бөгөөд хүрэлцээтэй нөхцөл нь <span class="math inline">\(P\)</span> цэг <span class="math inline">\((ABC)\)</span> багтаасан тойрог дээр орших юм. Хэрэв <span class="math inline">\(P\)</span> нь <span class="math inline">\((ABC)\)</span> тойрог дээр оршиж байвал, энэ шулууныг <span class="math inline">\(P\)</span> цэгийн <span class="math inline">\(\triangle ABC\)</span>-тэй харгалзах Симсоны шулуун гэнэ.</p>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжны ортотөвийг <span class="math inline">\(H\)</span> гэж тэмдэглэе. <span class="math inline">\(PX\)</span> шулуун <span class="math inline">\((ABC)\)</span> тойргийг дахин <span class="math inline">\(K\)</span> цэгт огтолно гэж үзье. Мөн <span class="math inline">\(AH\)</span> шулуун нь Симсоны шулуутай <span class="math inline">\(L\)</span> цэгт огтлолцоно гэж тэмдэглэе.</p>
+<section id="дасгал-1" class="level2">
+<h2 class="anchored" data-anchor-id="дасгал-1">Дасгал 1</h2>
+<p>Симсоны шулуун нь <span class="math inline">\(AK\)</span> шулуунтай параллель байгааг батал.</p>
+</section>
+<section id="дасгал-2" class="level2">
+<h2 class="anchored" data-anchor-id="дасгал-2">Дасгал 2</h2>
+<p><span class="math inline">\(K\)</span>-г <span class="math inline">\(BC\)</span> шулуунд тэгш хэмтэй хувиргасан цэгийг <span class="math inline">\(K'\)</span> гэж тэмдэглэе. Тэгвэл <span class="math inline">\(K'\)</span> нь <span class="math inline">\(\triangle PBC\)</span> гурвалжны ортотөв болохыг батал.</p>
+</section>
+<section id="дасгал-3" class="level2">
+<h2 class="anchored" data-anchor-id="дасгал-3">Дасгал 3</h2>
+<p><span class="math inline">\(LHXP\)</span> нь параллелограмм болохыг харуул.</p>
+</section>
+<section id="лемма-1-simson-line-bisection" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-1-simson-line-bisection">Лемма 1 (Simson Line Bisection)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжны ортотөвийг <span class="math inline">\(H\)</span> гэж тэмдэглэе. Хэрэв <span class="math inline">\(P\)</span> нь <span class="math inline">\((ABC)\)</span> багтаасан тойргийн цэг байвал, <span class="math inline">\(P\)</span> цэгийн Симсоны шулуун нь <span class="math inline">\(PH\)</span> хэрчмийг тэнцүү хуваана.</p>
+</section>
+</section>
+<section id="дотоод-болон-гадаад-багтсан-тойргууд" class="level1">
+<h1>Дотоод болон Гадаад багтсан тойргууд</h1>
+<section id="лемма-1-the-diameter-of-the-incircle" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-1-the-diameter-of-the-incircle">Лемма 1 (The Diameter of the Incircle)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжинд багтсан тойрог нь <span class="math inline">\(BC\)</span> талд <span class="math inline">\(D\)</span> цэгт шүргэж байг. <span class="math inline">\(DE\)</span> нь багтсан тойргийн диаметр бөгөөд <span class="math inline">\(AE\)</span> цацраг <span class="math inline">\(BC\)</span> талыг <span class="math inline">\(X\)</span> цэгт огтолно. Тэгвэл <span class="math inline">\(BD = CX\)</span> бөгөөд <span class="math inline">\(X\)</span> нь <span class="math inline">\(A\)</span>-оройтой гадаад багтсан тойргийн <span class="math inline">\(BC\)</span> талтай шүргэлцэх цэг байна.</p>
+</section>
+<section id="лемма-2-diameter-of-the-excircle" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-2-diameter-of-the-excircle">Лемма 2 (Diameter of the Excircle)</h2>
+<p>Өмнөх дасгалын тэмдэглэгээний дагуу <span class="math inline">\(XY\)</span> нь <span class="math inline">\(A\)</span>-оройтой гадаад багтсан тойргийн диаметр гэж үзье. Тэгвэл <span class="math inline">\(D\)</span> цэг нь <span class="math inline">\(AY\)</span> шулуун дээр оршихыг харуул.</p>
+</section>
+<section id="лемма-3-an-incircle-concurrency" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-3-an-incircle-concurrency">Лемма 3 (An Incircle Concurrency)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжинд багтсан тойргийн төвийг <span class="math inline">\(I\)</span>, контакт гурвалжны оройнуудыг <span class="math inline">\(D\)</span>, <span class="math inline">\(E\)</span>, <span class="math inline">\(F\)</span> гэж тэмдэглэе. Хэрэв <span class="math inline">\(M\)</span> нь <span class="math inline">\(BC\)</span> талын дундаж цэг байвал <span class="math inline">\(EF\)</span>, <span class="math inline">\(AM\)</span> шулуун болон <span class="math inline">\(DI\)</span> цацраг нь нэг цэгт огтлолцоно.</p>
+</section>
+</section>
+<section id="өндөрүүдийн-дундаж-цэгүүд" class="level1">
+<h1>Өндөрүүдийн дундаж цэгүүд</h1>
+<section id="лемма-1-midpoint-of-altitudes" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-1-midpoint-of-altitudes">Лемма 1 (Midpoint of Altitudes)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжинд багтсан тойргийн төвийг <span class="math inline">\(I\)</span>, <span class="math inline">\(A\)</span>-оройтой гадаад багтсан тойргийн төвийг <span class="math inline">\(I_A\)</span> гэж тэмдэглэе. Мөн <span class="math inline">\(D\)</span>, <span class="math inline">\(X\)</span> нь тус тус багтсан болон гадаад багтсан тойргийн <span class="math inline">\(BC\)</span> талтай шүргэлцэх цэгүүд байг. Тэгвэл <span class="math inline">\(DI_A\)</span> ба <span class="math inline">\(XI\)</span> шулуунууд нь <span class="math inline">\(A\)</span> оройгоос <span class="math inline">\(BC\)</span> талд буулгасан өндрийн дундаж цэгт огтлолцоно.</p>
+</section>
+</section>
+<section id="изогонал-ба-изотомик-хосмогууд" class="level1">
+<h1>Изогонал ба изотомик хосмогууд</h1>
+<section id="лемма-1-isogonal-conjugates" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-1-isogonal-conjugates">Лемма 1 (Isogonal Conjugates)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжинд дурын <span class="math inline">\(P\)</span> цэг нь гурвалжны аль ч талтай нэг шулуун дээр байхгүй гэж үзье. Тэгвэл дараах нөхцлүүдийг хангах цорын ганц <span class="math inline">\(P^*\)</span> цэг оршин байна:</p>
+<p><span class="math display">\[
+\angle BAP = \angle P^*AC, \quad \angle CBP = \angle P^*BA, \quad \angle ACP = \angle P^*CB.
+\]</span></p>
+<p>Энэхүү <span class="math inline">\(P^*\)</span> цэгийг <span class="math inline">\(P\)</span>-ийн <strong>изогонал хосмог</strong> гэнэ.</p>
+</section>
+<section id="лемма-2-isotomic-conjugates" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-2-isotomic-conjugates">Лемма 2 (Isotomic Conjugates)</h2>
+<p><span class="math inline">\(P\)</span> цэг болон <span class="math inline">\(\triangle ABC\)</span> гурвалжин өгөгдсөн байг. <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> нь <span class="math inline">\(P\)</span>-с <span class="math inline">\(BC\)</span>, <span class="math inline">\(CA\)</span>, <span class="math inline">\(AB\)</span> талууд руу татсан чевиануудын суурь байг. <span class="math inline">\(X'\)</span>-г <span class="math inline">\(BC\)</span> талын дундаж цэгт тэгш хэмтэй хувиргасан <span class="math inline">\(X\)</span>-ийн дүр гэж авч үзье, мөн <span class="math inline">\(Y'\)</span>, <span class="math inline">\(Z'\)</span>-г <span class="math inline">\(CA\)</span>, <span class="math inline">\(AB\)</span> талуудын дундаж цэгт тэгш хэмтэй хувиргасан <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> цэгүүдийн дүрүүд гэж тодорхойлъё. Тэгвэл <span class="math inline">\(AX'\)</span>, <span class="math inline">\(BY'\)</span>, <span class="math inline">\(CZ'\)</span> шулуунууд нэг цэгт огтлолцоно. Тэр цэгийг <span class="math inline">\(P\)</span>-ийн <strong>изотомик хосмог</strong> <span class="math inline">\(P^t\)</span> гэж нэрлэнэ.</p>
+</section>
+<section id="теорем-1-isogonal-ratios" class="level2">
+<h2 class="anchored" data-anchor-id="теорем-1-isogonal-ratios">Теорем 1 (Isogonal Ratios)</h2>
+<p><span class="math inline">\(D\)</span>, <span class="math inline">\(E\)</span> нь <span class="math inline">\(BC\)</span> тал дээр орших цэгүүд бөгөөд <span class="math inline">\(AD\)</span>, <span class="math inline">\(AE\)</span> нь изогонал чевианууд гэж үзье. Тэгвэл дараах харьцаа биелнэ:</p>
+<p><span class="math display">\[
+\frac{BD}{DC} \cdot \frac{BE}{EC} = \left( \frac{AB}{AC} \right)^2.
+\]</span></p>
+</section>
+</section>
+<section id="симмедиан" class="level1">
+<h1>Симмедиан</h1>
+<p>Гурвалжны медианы изогоналыг <strong>симмедиан</strong> гэдэг. Гурвалжны гурван симмедиан шулуунуудын огтлолцлын цэгийг <strong>симмедиан цэг</strong> гэж нэрлэнэ.</p>
+<section id="лемма-1-constructing-the-symmedian" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-1-constructing-the-symmedian">Лемма 1 (Constructing the Symmedian)</h2>
+<p><span class="math inline">\(X\)</span>-г <span class="math inline">\((ABC)\)</span> тойргийн <span class="math inline">\(B\)</span> ба <span class="math inline">\(C\)</span> цэгүүдэд шүргэх шулуунуудын огтлолцлын цэг гэж авъя. Тэгвэл <span class="math inline">\(AX\)</span> шулуун нь симмедиан байна.</p>
+</section>
+<section id="лемма-2-properties-of-the-symmedian" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-2-properties-of-the-symmedian">Лемма 2 (Properties of the Symmedian)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжийг авч үзье. <span class="math inline">\(B\)</span> ба <span class="math inline">\(C\)</span> цэгүүдэд <span class="math inline">\((ABC)\)</span> тойргийг шүргэх шулуунууд нь <span class="math inline">\(X\)</span> цэгт огтлолцоно. <span class="math inline">\(AX\)</span> шулуун <span class="math inline">\((ABC)\)</span>-г дахин <span class="math inline">\(K\)</span> цэгт огтолно, мөн <span class="math inline">\(AX\)</span> нь <span class="math inline">\(BC\)</span> талыг <span class="math inline">\(D\)</span> цэгт огтолно. Тэгвэл <span class="math inline">\(AD\)</span> нь <span class="math inline">\(A\)</span>-оройн симмедиан бөгөөд дараах шинжүүд биелнэ:</p>
+<ol type="a">
+<li><p><span class="math inline">\(KA\)</span> нь <span class="math inline">\(\triangle KBC\)</span> гурвалжны <span class="math inline">\(K\)</span>-оройн симмедиан.</p></li>
+<li><p><span class="math inline">\(\triangle ABK\)</span> ба <span class="math inline">\(\triangle AMC\)</span> нь төсөөтэй гурвалжнууд.</p></li>
+<li><p>Дараах харьцаа биелнэ:<br>
+<span class="math display">\[
+\frac{BD}{DC} = \left( \frac{AB}{AC} \right)^2.
+\]</span></p></li>
+<li><p>Дараах харьцаа мөн биелнэ:<br>
+<span class="math display">\[
+\frac{AB}{BK} = \frac{AC}{CK}.
+\]</span></p></li>
+<li><p><span class="math inline">\((BCX)\)</span> тойрог нь <span class="math inline">\(AK\)</span> хэрчмийн дундаж цэгээр дайрч өнгөрнө.</p></li>
+<li><p><span class="math inline">\(BC\)</span> шулуун нь <span class="math inline">\(\triangle BAK\)</span> гурвалжны <span class="math inline">\(B\)</span>-оройн симмедиан бөгөөд мөн <span class="math inline">\(\triangle CAK\)</span>-ийн <span class="math inline">\(C\)</span>-оройн симмедиан.</p></li>
+<li><p><span class="math inline">\(BC\)</span> нь <span class="math inline">\(\angle AMK\)</span> өнцгийн дотоод биссектрис, <span class="math inline">\(MX\)</span> нь гадаад биссектрис.</p></li>
+</ol>
+</section>
+<section id="лемма-3-symmedians-in-cyclic-quadrilaterals" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-3-symmedians-in-cyclic-quadrilaterals">Лемма 3 (Symmedians in Cyclic Quadrilaterals)</h2>
+<p><span class="math inline">\(ABCD\)</span> нь тойрогт багтсан дөрвөн өнцөгт байг. Дараах нөхцлүүд нь хоорондоо эквивалент байна:</p>
+<ol type="a">
+<li><p><span class="math inline">\(AB \cdot CD = BC \cdot DA\)</span>.</p></li>
+<li><p><span class="math inline">\(AC\)</span> нь <span class="math inline">\(\triangle DAB\)</span> гурвалжны <span class="math inline">\(A\)</span>-оройн симмедиан.</p></li>
+<li><p><span class="math inline">\(AC\)</span> нь <span class="math inline">\(\triangle BCD\)</span> гурвалжны <span class="math inline">\(C\)</span>-оройн симмедиан.</p></li>
+<li><p><span class="math inline">\(BD\)</span> нь <span class="math inline">\(\triangle ABC\)</span> гурвалжны <span class="math inline">\(B\)</span>-оройн симмедиан.</p></li>
+<li><p><span class="math inline">\(BD\)</span> нь <span class="math inline">\(\triangle CDA\)</span> гурвалжны <span class="math inline">\(D\)</span>-оройн симмедиан.</p></li>
+</ol>
+</section>
+</section>
+<section id="сегментэд-багтсан-тойргууд" class="level1">
+<h1>Сегментэд багтсан тойргууд</h1>
+<section id="лемма-1-circles-inscribed-in-segments" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-1-circles-inscribed-in-segments">Лемма 1 (Circles Inscribed in Segments)</h2>
+<p><span class="math inline">\(AB\)</span> нь <span class="math inline">\(\Omega\)</span> тойргийн нэг хөвч байг. <span class="math inline">\(\omega\)</span> нь <span class="math inline">\(AB\)</span> хөвчийг <span class="math inline">\(K\)</span> цэгт шүргэх бөгөөд <span class="math inline">\(\Omega\)</span> тойргийг <span class="math inline">\(T\)</span> цэгт дотоод байдлаар шүргэнэ. Тэгвэл <span class="math inline">\(TK\)</span> цацраг нь <span class="math inline">\(AB\)</span> нумын <span class="math inline">\(T\)</span>-г агуулаагүй хэсгийн дундаж цэг болох <span class="math inline">\(M\)</span> цэгээр дайрна. Мөн <span class="math inline">\(MA^2 = MB^2\)</span> бөгөөд энэ нь <span class="math inline">\(\omega\)</span> тойргийн хувьд <span class="math inline">\(M\)</span> цэгийн зэрэгтэй тэнцүү байна.</p>
+</section>
+<section id="лемма-2-curvilinear-incircle-chords" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-2-curvilinear-incircle-chords">Лемма 2 (Curvilinear Incircle Chords)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжинг авъя, <span class="math inline">\(D\)</span> нь <span class="math inline">\(AB\)</span> тал дээр орших цэг байг. <span class="math inline">\(\omega\)</span> тойрог нь <span class="math inline">\(CD\)</span>-г <span class="math inline">\(L\)</span> цэгт, <span class="math inline">\(AB\)</span>-г <span class="math inline">\(K\)</span> цэгт, мөн <span class="math inline">\((ABC)\)</span> тойргийг шүргэнэ гэж үзье. Тэгвэл <span class="math inline">\(\triangle ABC\)</span>-ийн багтсан тойргийн төв <span class="math inline">\(I\)</span> нь <span class="math inline">\(LK\)</span> шулуун дээр оршино.</p>
+</section>
+</section>
+<section id="микстилинеар-mixtilinear-багтсан-тойргууд" class="level1">
+<h1>Микстилинеар (mixtilinear) багтсан тойргууд</h1>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжны <span class="math inline">\(A\)</span>-микстилинеар багтсан тойрог нь <span class="math inline">\((ABC)\)</span> багтаасан тойргийг дотроос шүргэх, мөн <span class="math inline">\(AB\)</span>, <span class="math inline">\(AC\)</span> талуудад шүргэх тойрог юм.</p>
+<section id="лемма-1-mixtilinear-incircles" class="level2">
+<h2 class="anchored" data-anchor-id="лемма-1-mixtilinear-incircles">Лемма 1 (Mixtilinear Incircles)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжинг авъя. Түүний <span class="math inline">\(A\)</span>-микстилинеар тойрог нь <span class="math inline">\(AB\)</span>, <span class="math inline">\(AC\)</span> талуудыг болон <span class="math inline">\((ABC)\)</span> багтаасан тойргийг шүргэх ба шүргэлцэх цэгүүдийг <span class="math inline">\(K\)</span>, <span class="math inline">\(L\)</span>, <span class="math inline">\(T\)</span> гэж тэмдэглэе. Мөн дотоод багтсан тойргийн <span class="math inline">\(BC\)</span> талтай шүргэлцэх цэгийг <span class="math inline">\(D\)</span>, <span class="math inline">\(A\)</span>-оройн гадаад багтсан тойргийн <span class="math inline">\(BC\)</span>-тэй шүргэлцэх цэгийг <span class="math inline">\(E\)</span> гэе. Дараах шинжүүд биелнэ:</p>
+<ol type="a">
+<li><p><span class="math inline">\(KL\)</span> хэрчмийн дундаж цэг <span class="math inline">\(I\)</span> нь <span class="math inline">\(\triangle ABC\)</span>-ийн дотоод багтсан тойргийн төв.</p></li>
+<li><p><span class="math inline">\(TK\)</span>, <span class="math inline">\(TL\)</span> шулуунууд нь <span class="math inline">\(T\)</span>-г агуулаагүй <span class="math inline">\(AB\)</span>, <span class="math inline">\(AC\)</span> нумуудын дундаж цэгүүдээр дайрдаг.</p></li>
+<li><p><span class="math inline">\(TI\)</span> шулуун нь <span class="math inline">\(A\)</span>-г агуулагч <span class="math inline">\(BC\)</span> нумын дундаж цэгээр дайрдаг.</p></li>
+<li><p><span class="math inline">\(\angle BAT = \angle CAE\)</span>.</p></li>
+<li><p><span class="math inline">\(\angle BTA = \angle CTD\)</span>.</p></li>
+<li><p><span class="math inline">\(BKIT\)</span> болон <span class="math inline">\(CLIT\)</span> дөрвөн өнцөгтүүд нь тойрогт багтдаг.</p></li>
+</ol>
+</section>
+</section>
+<section id="бодлогууд" class="level1">
+<h1>Бодлогууд</h1>
+<section id="бодлого-1-hong-kong-1998" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-1-hong-kong-1998">Бодлого 1 (Hong Kong 1998)</h2>
+<p><span class="math inline">\(\angle PSR = 90^\circ\)</span> бүхий <span class="math inline">\(PQRS\)</span> нь тойрогт багтсан дөрвөн өнцөгт байг. <span class="math inline">\(H\)</span> болон <span class="math inline">\(K\)</span> нь <span class="math inline">\(Q\)</span>-оос <span class="math inline">\(PR\)</span> болон <span class="math inline">\(PS\)</span> шулуунуудад буулгасан перпендикуляруудын сууриуд гэж үзье. Тэгвэл <span class="math inline">\(HK\)</span> шулуун нь <span class="math inline">\(QS\)</span> хэрчмийг тэнцүү хуваана гэж батал.</p>
+</section>
+<section id="бодлого-2-usamo-19884" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-2-usamo-19884">Бодлого 2 (USAMO 1988/4)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжинд <span class="math inline">\(I\)</span> нь багтсан тойргийн төв байг. <span class="math inline">\(IAB\)</span>, <span class="math inline">\(IBC\)</span>, <span class="math inline">\(ICA\)</span> гурвалжнуудын багтаасан тойргийн төвүүдийг авч үзье. Тэгвэл эдгээр гурван цэг нь нэг тойрог дээр орших бөгөөд уг тойргийн төв нь <span class="math inline">\(\triangle ABC\)</span>-ийн багтаасан тойргийн төв гэж батал.</p>
+</section>
+<section id="бодлого-3-usamo-19953" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-3-usamo-19953">Бодлого 3 (USAMO 1995/3)</h2>
+<p>Адил хажуут биш, мөн тэгш өнцөгт биш <span class="math inline">\(\triangle ABC\)</span> гурвалжны багтаасан тойргийн төвийг <span class="math inline">\(O\)</span> гэж тэмдэглэе. <span class="math inline">\(A_1\)</span>, <span class="math inline">\(B_1\)</span>, <span class="math inline">\(C_1\)</span> нь <span class="math inline">\(BC\)</span>, <span class="math inline">\(CA\)</span>, <span class="math inline">\(AB\)</span> талуудын дундаж цэгүүд байг. <span class="math inline">\(A_2\)</span> нь <span class="math inline">\(OA_1\)</span> цацраг дээр орших цэг бөгөөд <span class="math inline">\(OAA_1 \sim OA_2A\)</span> гэсэн төсөөтэй гурвалжууд үүсэхээр байрласан байг. <span class="math inline">\(B_2\)</span>, <span class="math inline">\(C_2\)</span> цэгүүдийг <span class="math inline">\(OB_1\)</span>, <span class="math inline">\(OC_1\)</span> цацрагууд дээр адил аргаар тодорхойлъё. Тэгвэл <span class="math inline">\(AA_2\)</span>, <span class="math inline">\(BB_2\)</span>, <span class="math inline">\(CC_2\)</span> шулуунууд нэг цэгт огтлолцоно.</p>
+</section>
+<section id="бодлого-4-usa-tst-2014" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-4-usa-tst-2014">Бодлого 4 (USA TST 2014)</h2>
+<p>Хурц өнцөгт <span class="math inline">\(\triangle ABC\)</span> гурвалжинг авъя. <span class="math inline">\(X\)</span> нь <span class="math inline">\((ABC)\)</span> тойргийн <span class="math inline">\(BC\)</span> богино нум дээр орших хувьсах цэг байг. <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span> нь <span class="math inline">\(X\)</span>-ээс <span class="math inline">\(CA\)</span>, <span class="math inline">\(CB\)</span> шулуунуудад буулгасан перпендикуляруудын сууриуд байг. <span class="math inline">\(PQ\)</span> шулуун ба <span class="math inline">\(B\)</span>-ээс <span class="math inline">\(AC\)</span> шулуунд буулгасан перпендикулярын огтлолцлын цэгийг <span class="math inline">\(R\)</span> гэж тэмдэглэе. <span class="math inline">\(P\)</span> цэгээр дайрч <span class="math inline">\(XR\)</span> шулуунтай параллель шулууныг <span class="math inline">\(\ell\)</span> гэж нэрлэе. Тэгвэл <span class="math inline">\(X\)</span> цэг <span class="math inline">\(BC\)</span> богино нумын дагуу өөрчлөгдөхөд <span class="math inline">\(\ell\)</span> шулуун нь тогтмол нэг цэгээр дайрч өнгөрнө гэж батал.</p>
+</section>
+<section id="бодлого-5-usa-tst-20111" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-5-usa-tst-20111">Бодлого 5 (USA TST 2011/1)</h2>
+<p>Хурц өнцөгт, адил хажуут биш <span class="math inline">\(\triangle ABC\)</span> гурвалжинд <span class="math inline">\(D\)</span>, <span class="math inline">\(E\)</span>, <span class="math inline">\(F\)</span> цэгүүд нь <span class="math inline">\(AD \perp BC\)</span>, <span class="math inline">\(BE \perp CA\)</span>, <span class="math inline">\(CF \perp AB\)</span> байх нөхцлөөр <span class="math inline">\(BC\)</span>, <span class="math inline">\(CA\)</span>, <span class="math inline">\(AB\)</span> талууд дээр оршиж байг. Эдгээр өндөрүүд <span class="math inline">\(H\)</span> ортотөвд огтлолцоно. <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span> цэгүүд нь <span class="math inline">\(EF\)</span> хэрчмийн дээр орших ба <span class="math inline">\(AP \perp EF\)</span>, <span class="math inline">\(HQ \perp EF\)</span> байна. <span class="math inline">\(DP\)</span> ба <span class="math inline">\(QH\)</span> шулуунууд <span class="math inline">\(R\)</span> цэгт огтлолцоно. Тэгвэл <span class="math inline">\(\frac{HQ}{HR}\)</span> харьцааг ол.</p>
+</section>
+<section id="бодлого-6-elmo-shortlist-2012" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-6-elmo-shortlist-2012">Бодлого 6 (ELMO Shortlist 2012)</h2>
+<p>Тойргууд <span class="math inline">\(\Omega\)</span> ба <span class="math inline">\(\omega\)</span> нь <span class="math inline">\(C\)</span> цэгт дотоод байдлаар шүргэлцдэг байг. <span class="math inline">\(\Omega\)</span> тойргийн <span class="math inline">\(AB\)</span> хөвч нь <span class="math inline">\(\omega\)</span> тойрогт <span class="math inline">\(E\)</span> цэгт шүргэх ба <span class="math inline">\(E\)</span> нь <span class="math inline">\(AB\)</span> хөвчийн дундаж цэг. <span class="math inline">\(\omega_1\)</span> нь <span class="math inline">\(\Omega\)</span>, <span class="math inline">\(\omega\)</span>, мөн <span class="math inline">\(AB\)</span> хөвчтэй тус тус <span class="math inline">\(D\)</span>, <span class="math inline">\(Z\)</span>, <span class="math inline">\(F\)</span> цэгүүдэд шүргэх тойрог байг. <span class="math inline">\(CD\)</span> цацраг ба <span class="math inline">\(AB\)</span> цацраг <span class="math inline">\(P\)</span> цэгт огтолно. $M C $ нь <span class="math inline">\(AB\)</span> урт нумын дундаж цэг байг. Тэгвэл дараах тэнцэтгэл биелнэ:</p>
+<p><span class="math display">\[
+\tan \angle ZEP = \frac{PE}{CM}.
+\]</span></p>
+</section>
+<section id="бодлого-7-usamo-20115" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-7-usamo-20115">Бодлого 7 (USAMO 2011/5)</h2>
+<p><span class="math inline">\(P\)</span> нь гүдгэр дөрвөн өнцөгт <span class="math inline">\(ABCD\)</span>-ийн дотор орших цэг байг. <span class="math inline">\(ABCD\)</span>-ийн дотор орших <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> цэгүүд дараах өнцгийн нөхцлүүдийг хангана:</p>
+<ul>
+<li><span class="math inline">\(\angle Q_1BC = \angle ABP\)</span>,<br>
+</li>
+<li><span class="math inline">\(\angle Q_1CB = \angle DCP\)</span>,<br>
+</li>
+<li><span class="math inline">\(\angle Q_2AD = \angle BAP\)</span>,<br>
+</li>
+<li><span class="math inline">\(\angle Q_2DA = \angle CDP\)</span>.</li>
+</ul>
+<p>Тэгвэл <span class="math inline">\(Q_1Q_2 \parallel AB\)</span> байх гарцаагүй бөгөөд хүрэлцээтэй нөхцөл нь <span class="math inline">\(Q_1Q_2 \parallel CD\)</span> гэж батал.</p>
+</section>
+<section id="бодлого-8-japanese-olympiad-2009" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-8-japanese-olympiad-2009">Бодлого 8 (Japanese Olympiad 2009)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> нь <span class="math inline">\((\Omega)\)</span> тойрогт багтсан байг. <span class="math inline">\(O\)</span> төвтэй тойрог нь <span class="math inline">\(BC\)</span> талд <span class="math inline">\(P\)</span> цэгт шүргэж, <span class="math inline">\(A\)</span>-г агуулаагүй <span class="math inline">\(BC\)</span> нумд дотоод байдлаар <span class="math inline">\(Q\)</span> цэгт шүргэнэ. Хэрэв <span class="math inline">\(\angle BAO = \angle CAO\)</span> бол <span class="math inline">\(\angle PAO = \angle QAO\)</span> байхыг харуул.</p>
+</section>
+<section id="бодлого-9" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-9">Бодлого 9</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжинд багтсан тойрог нь <span class="math inline">\(BC\)</span> талд <span class="math inline">\(D\)</span> цэгт шүргэж байг. <span class="math inline">\(T\)</span> нь <span class="math inline">\((ABC)\)</span> багтаасан тойрогт <span class="math inline">\(A\)</span>-микстилинеар багтаасан тойрог шүргэж буй цэг байг. Тэгвэл <span class="math inline">\(\angle BTA = \angle CTD\)</span> гэдгийг харуул.</p>
+</section>
+<section id="бодлого-10-vietnam-tst-20032" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-10-vietnam-tst-20032">Бодлого 10 (Vietnam TST 2003/2)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> нь адил хажуут биш гурвалжин байг. Багтаасан тойргийн төвийг <span class="math inline">\(O\)</span>, багтсан тойргийн төвийг <span class="math inline">\(I\)</span> гэж тэмдэглэе. <span class="math inline">\(H\)</span>, <span class="math inline">\(K\)</span>, <span class="math inline">\(L\)</span> нь тус тус <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> оройгоос буулгасан өндөрүүдийн сууриуд байг. <span class="math inline">\(A_0\)</span>, <span class="math inline">\(B_0\)</span>, <span class="math inline">\(C_0\)</span> нь <span class="math inline">\(AH\)</span>, <span class="math inline">\(BK\)</span>, <span class="math inline">\(CL\)</span> хэрчмүүдийн дундаж цэгүүд байна. Багтсан тойрог нь <span class="math inline">\(BC\)</span>, <span class="math inline">\(CA\)</span>, <span class="math inline">\(AB\)</span> талуудыг <span class="math inline">\(D\)</span>, <span class="math inline">\(E\)</span>, <span class="math inline">\(F\)</span> цэгүүдэд шүргэнэ. Тэгвэл <span class="math inline">\(A_0D\)</span>, <span class="math inline">\(B_0E\)</span>, <span class="math inline">\(C_0F\)</span>, <span class="math inline">\(OI\)</span> шулуунууд нэг цэгт огтлолцоно гэж батал.</p>
+</section>
+<section id="бодлого-11-sharygin-2013" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-11-sharygin-2013">Бодлого 11 (Sharygin 2013)</h2>
+<p><span class="math inline">\(\triangle ABC\)</span> гурвалжны багтсан тойрог нь <span class="math inline">\(BC\)</span>, <span class="math inline">\(CA\)</span>, <span class="math inline">\(AB\)</span> талуудыг тус тус <span class="math inline">\(A'\)</span>, <span class="math inline">\(B'\)</span>, <span class="math inline">\(C'\)</span> цэгүүдэд шүргэнэ. Багтсан тойргийн төв <span class="math inline">\(I\)</span>-ээс <span class="math inline">\(C\)</span> оройн медианд буулгасан перпендикуляр <span class="math inline">\(A'B'\)</span> шулуутай <span class="math inline">\(K\)</span> цэгт огтолно. Тэгвэл <span class="math inline">\(CK \parallel AB\)</span> гэдгийг харуул.</p>
+</section>
+<section id="бодлого-12-apmo-20124" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-12-apmo-20124">Бодлого 12 (APMO 2012/4)</h2>
+<p>Хурц өнцөгт <span class="math inline">\(\triangle ABC\)</span> гурвалжинг авъя. <span class="math inline">\(D\)</span> нь <span class="math inline">\(A\)</span> оройгоос <span class="math inline">\(BC\)</span> талд буулгасан перпендикулярын суурь, <span class="math inline">\(M\)</span> нь <span class="math inline">\(BC\)</span> талын дундаж цэг, <span class="math inline">\(H\)</span> нь <span class="math inline">\(\triangle ABC\)</span>-ийн ортотөв байг. <span class="math inline">\(E\)</span> нь <span class="math inline">\(\triangle ABC\)</span>-ийн багтаасан тойрог <span class="math inline">\((\Omega)\)</span> болон <span class="math inline">\(MH\)</span> цацрагийн огтлолцлын цэг, <span class="math inline">\(F\)</span> нь <span class="math inline">\(ED\)</span> шулуун ба <span class="math inline">\((\Omega)\)</span> тойргийн хоёр дахь огтлолцлын цэг байг (<span class="math inline">\(F \ne E\)</span>). Тэгвэл дараах харьцаа биелнэ гэж батал:</p>
+<p><span class="math display">\[
+\frac{BF}{CF} = \frac{AB}{AC}.
+\]</span></p>
+</section>
+<section id="бодлого-13-shortlist-2002g7" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-13-shortlist-2002g7">Бодлого 13 (Shortlist 2002/G7)</h2>
+<p>Хурц өнцөгт <span class="math inline">\(\triangle ABC\)</span> гурвалжны багтсан тойрог <span class="math inline">\(\omega\)</span> нь <span class="math inline">\(BC\)</span> талд <span class="math inline">\(K\)</span> цэгт шүргэж байг. <span class="math inline">\(AD\)</span> нь өндөр ба <span class="math inline">\(M\)</span> нь <span class="math inline">\(AD\)</span> хэрчмийн дундаж цэг байна. <span class="math inline">\(KM\)</span> шулуун нь <span class="math inline">\(\omega\)</span> тойргийг <span class="math inline">\(K\)</span>-оос өөр <span class="math inline">\(N\)</span> цэгт огтолно. Тэгвэл <span class="math inline">\(\omega\)</span> болон <span class="math inline">\(\triangle BCN\)</span> гурвалжны багтаасан тойрог нь <span class="math inline">\(N\)</span> цэгт хоорондоо шүргэлцэнэ гэж батал.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 Batsambuu Batbold</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
