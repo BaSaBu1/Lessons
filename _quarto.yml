@@ -21,6 +21,10 @@ website:
         contents:
           - cp/cp1.qmd
           # - cp/cp2.qmd
+      - section: "Сорил"
+        contents: 
+          - challenges/1.1.qmd
+          - challenges/1.2.qmd
   page-footer: "© 2025 Batsambuu Batbold"
 
 format:
