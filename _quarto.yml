@@ -19,16 +19,19 @@ website:
           - math/6.11.qmd
       - section: "Програмчлал"
         contents:
-          - cp/cp1.qmd
+          - cp/6.17.qmd
           # - cp/cp2.qmd
       - section: "Сорил"
         contents: 
           - challenges/1.1.qmd
           - challenges/1.2.qmd
+      - section: "Англи хэл"
+        contents:
+          - english/6.17.qmd
   page-footer: "© 2025 Batsambuu Batbold"
 
 format:
   html:
-    theme: litera
+    theme: flatly
     toc: true
 lang: mn

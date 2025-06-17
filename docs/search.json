@@ -13,12 +13,12 @@
   {
     "objectID": "cp/cp1.html",
     "href": "cp/cp1.html",
-    "title": "CP 1",
+    "title": "C++ хэлний суурь",
     "section": "",
-    "text": "Topic\n\n\n\nExamples\n\n\n\nProblems\n\n\n\nSolutions",
+    "text": "C++ хэлний энэхүү хичээлээр дараах ойлголтуудыг үзнэ:\n\nInput ба Output\nData Types болон Variables\nConditional Statements (if-else)\nLoops (for, while, do-while)\n\nЭнэ хичээлийн төгсгөлд та энгийн C++ код бичиж, кодын ажиллах дараалал болон тооцоолол хийх чадвартай болно.",
     "crumbs": [
       "Програмчлал",
-      "CP 1"
+      "C++ хэлний суурь"
     ]
   },
   {
@@ -3101,6 +3101,413 @@
     "crumbs": [
       "Сорил",
       "Зуны бага сорилго №1.2"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#structure-of-a-c-program",
+    "href": "cp/cp1.html#structure-of-a-c-program",
+    "title": "C++ хэлний суурь",
+    "section": "",
+    "text": "C++ программ нь functions дээр суурилдаг бөгөөд main() function-аас эхэлдэг. Программ ихэвчлэн #include preprocessor directive-ээр эхэлж, namespace ашиглан кодыг товчлох боломжтой байдаг.\n#include &lt;iostream&gt;\nusing namespace std;\n\nint main() {\n    cout &lt;&lt; \"Hello, World!\" &lt;&lt; endl;\n    return 0;\n}\nТайлбар:\n\n#include: Input/Output stream ашиглах буюу гараас өгөгдөл авах болон хэвлэх боломжийг олгоно.\nusing namespace std;: std::cout биш шууд cout гэж бичих боломжийг олгоно (товчоор).\nint main(): Программ эндээс гүйцэтгэгдэж эхэлнэ.\ncout &lt;&lt; ...: Дэлгэц рүү хэвлэнэ.\nreturn 0;: Программ амжилттай дууссаныг заана.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#input-and-output",
+    "href": "cp/cp1.html#input-and-output",
+    "title": "C++ хэлний суурь",
+    "section": "",
+    "text": "C++ хэлэнд хэрэглэгчээс өгөгдөл авахадcin, дэлгэц рүү хэвлэхэд cout ашигладаг.\n\n\ncout &lt;&lt; \"Enter your name: \";\n\n&lt;&lt; нь insertion operator бөгөөд мэдээллийг output stream рүү өгнө.\n\n\n\n\nstring name;\ncin &gt;&gt; name;\ncout &lt;&lt; \"Hello, \" &lt;&lt; name &lt;&lt; \"!\" &lt;&lt; endl;\n\n&gt;&gt; нь extraction operator бөгөөд input stream-с мэдээлэл авна.\nendl шинэ мөрөнд шилжихэд хэрэглэнэ (\\n гэж бас болно).",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#variables-and-data-types",
+    "href": "cp/cp1.html#variables-and-data-types",
+    "title": "C++ хэлний суурь",
+    "section": "",
+    "text": "Variable гэдэг нь тодорхой нэртэй, мэдээлэл хадгалах сав юм. Ашиглахаасаа өмнө заавал data type тодорхойлно.\nint age = 16;\ndouble pi = 3.14;\nchar grade = 'A';\nstring name = \"Alice\";\nbool isStudent = true;\n\ncout &lt;&lt; \"Age: \" &lt;&lt; age &lt;&lt; endl;\ncout &lt;&lt; \"Pi: \" &lt;&lt; pi &lt;&lt; endl;\ncout &lt;&lt; \"Grade: \" &lt;&lt; grade &lt;&lt; endl;\ncout &lt;&lt; \"Name: \" &lt;&lt; name &lt;&lt; endl;\ncout &lt;&lt; \"Is Student? \" &lt;&lt; isStudent &lt;&lt; endl;\n\n\n\nint: Бүхэл тоо\ndouble: Бутархай тоо\nchar: Нэг тэмдэгт (дан хашилт ашиглана)\nstring: Дараалсан олон тэмдэгтүүд (давхар хашилт ашиглана)\nbool: true эсвэл false гэсэн хоёр утга авна",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#conditional-statements-if-else",
+    "href": "cp/cp1.html#conditional-statements-if-else",
+    "title": "C++ хэлний суурь",
+    "section": "",
+    "text": "Программ ямар нөхцөлд ямар шийдвэр гаргах нөхцөлүүдийг тодорхойлно. Зөвхөн () хаалт доторх нөхцөл биелж байвал {} хаалт доторх үйлдэл хийгдэнэ.\nint number;\ncin &gt;&gt; number;\n\nif (number &gt; 0) {\n    cout &lt;&lt; \"Positive\" &lt;&lt; endl;\n} else if (number == 0) {\n    cout &lt;&lt; \"Zero\" &lt;&lt; endl;\n} else {\n    cout &lt;&lt; \"Negative\" &lt;&lt; endl;\n}\n\n\n\n== тэнцүү\n!= тэнцүү биш\n&lt;, &lt;=, &gt;, &gt;=\n\nНөхцөлүүдийг холбох:\n\n&& (AND буюу “ба”)\n|| (OR буюу “эсвэл”)\n! (NOT буюу “үгүйсгэл”)",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#loops",
+    "href": "cp/cp1.html#loops",
+    "title": "C++ хэлний суурь",
+    "section": "",
+    "text": "Loop нь кодыг дахин дахин давтан гүйцэтгэх боломж олгоно.\n\n\nДавталт хэдэн удаа гүйцэтгэх нь мэдэгдэж байвал ашиглана:\nfor (int i = 0; i &lt; 5; i++) {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n}\nExplanation:\n\nint i = 0: эхлэх утга\ni &lt; 5: шалгах нөхцөл - энэ нөхцөл биелэхээ боливол давталт зогсоно\ni++: алхам тутам өсгөх - амжилттай алхам бүрийн дараа энэ үйлдлийг хийнэ\n\n\n\n\nХэдэн удаа гүйцэтгэх нь тодорхойгүй үед ашиглана:\nint i = 0;\nwhile (i &lt; 5) {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n    i++;\n}\n\n\n\nДавталт хамгийн багадаа нэг удаа ажиллана:\nint i = 0;\ndo {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n    i++;\n} while (i &lt; 5);\n\n\n\n\nbreak loop-г шууд зогсооно\ncontinue тухайн алхмыг алгасах\n\nfor (int i = 0; i &lt; 5; i++) {\n    if (i == 2) continue; // i == 2 үед алгасна\n    if (i == 4) break;    // i == 4 үед loop дуусна\n    cout &lt;&lt; i &lt;&lt; \" \";\n}",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#practice-example-programs",
+    "href": "cp/cp1.html#practice-example-programs",
+    "title": "C++ хэлний суурь",
+    "section": "",
+    "text": "int a, b, c;\ncin &gt;&gt; a &gt;&gt; b &gt;&gt; c;\nint maxVal = a;\nif (b &gt; maxVal) maxVal = b;\nif (c &gt; maxVal) maxVal = c;\ncout &lt;&lt; \"Maximum: \" &lt;&lt; maxVal &lt;&lt; endl;\n3 тооноос хамгийн ихийг олох.\n\n\n\n\nint n;\ncin &gt;&gt; n;\nfor (int i = 1; i &lt;= 10; i++) {\n    cout &lt;&lt; n &lt;&lt; \" x \" &lt;&lt; i &lt;&lt; \" = \" &lt;&lt; n * i &lt;&lt; endl;\n}\nӨгсөн тооны үржвэрийн хүрд хэвлэх.\n\n\n\n\nint n;\ncin &gt;&gt; n;\nbool isPrime = true;\nif (n &lt;= 1) isPrime = false;\nfor (int i = 2; i * i &lt;= n; i++) {\n    if (n % i == 0) {\n        isPrime = false;\n        break;\n    }\n}\ncout &lt;&lt; (isPrime ? \"Prime\" : \"Not Prime\") &lt;&lt; endl;\nӨгсөн тоо анхны эсэхийг шалгах.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#final-practice-problems",
+    "href": "cp/cp1.html#final-practice-problems",
+    "title": "C++ хэлний суурь",
+    "section": "",
+    "text": "Дараах дасгалуудыг cin, cout, if, loop ашиглан бодоорой:\n\nOdd or Even Checker\nТоо оруулж even эсвэл odd болохыг шалгах.\nSum of Odd Numbers from 1 to n\nn хүртэлх сондгой тоонуудын нийлбэр олох.\nMultiple of 3 and 5\nТоо 3 ба 5-д зэрэг хуваагдаж байгаа эсэхийг шалгах.\nCount Digits of a Number\nТооны оронгийн тоо гаргах.\nReverse the Digits\nТооны цифрүүдийг урвуу дарааллаар хэвлэх.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#input",
+    "href": "cp/cp1.html#input",
+    "title": "C++ хэлний суурь",
+    "section": "3.1 Input",
+    "text": "3.1 Input\nstring name;\ncin &gt;&gt; name;\ncout &lt;&lt; \"Hello, \" &lt;&lt; name &lt;&lt; \"!\" &lt;&lt; endl;\n\n&gt;&gt; нь extraction operator бөгөөд input stream-с мэдээлэл авна.\nendl шинэ мөрөнд шилжихэд хэрэглэнэ (\\n гэж бас болно).",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#common-data-types",
+    "href": "cp/cp1.html#common-data-types",
+    "title": "C++ хэлний суурь",
+    "section": "4.1 Common Data Types:",
+    "text": "4.1 Common Data Types:\n\nint: Бүхэл тоо\ndouble: Бутархай тоо\nchar: Нэг тэмдэгт (дан хашилт ашиглана)\nstring: Дараалсан олон тэмдэгтүүд (давхар хашилт ашиглана)\nbool: true эсвэл false гэсэн хоёр утга авна",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#comparison-operators",
+    "href": "cp/cp1.html#comparison-operators",
+    "title": "C++ хэлний суурь",
+    "section": "5.1 Comparison Operators:",
+    "text": "5.1 Comparison Operators:\n\n== тэнцүү\n!= тэнцүү биш\n&lt;, &lt;=, &gt;, &gt;=\n\nНөхцөлүүдийг холбох:\n\n&& (AND буюу “ба”)\n|| (OR буюу “эсвэл”)\n! (NOT буюу “үгүйсгэл”)",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#for-loop",
+    "href": "cp/cp1.html#for-loop",
+    "title": "C++ хэлний суурь",
+    "section": "6.1 For Loop",
+    "text": "6.1 For Loop\nДавталт хэдэн удаа гүйцэтгэх нь мэдэгдэж байвал ашиглана:\nfor (int i = 0; i &lt; 5; i++) {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n}\nExplanation:\n\nint i = 0: эхлэх утга\ni &lt; 5: шалгах нөхцөл - энэ нөхцөл биелэхээ боливол давталт зогсоно\ni++: алхам тутам өсгөх - амжилттай алхам бүрийн дараа энэ үйлдлийг хийнэ",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#while-loop",
+    "href": "cp/cp1.html#while-loop",
+    "title": "C++ хэлний суурь",
+    "section": "6.2 While Loop",
+    "text": "6.2 While Loop\nХэдэн удаа гүйцэтгэх нь тодорхойгүй үед ашиглана:\nint i = 0;\nwhile (i &lt; 5) {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n    i++;\n}",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#do-while-loop",
+    "href": "cp/cp1.html#do-while-loop",
+    "title": "C++ хэлний суурь",
+    "section": "6.3 Do-While Loop",
+    "text": "6.3 Do-While Loop\nДавталт хамгийн багадаа нэг удаа ажиллана:\nint i = 0;\ndo {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n    i++;\n} while (i &lt; 5);",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#break-and-continue",
+    "href": "cp/cp1.html#break-and-continue",
+    "title": "C++ хэлний суурь",
+    "section": "6.4 Break and Continue",
+    "text": "6.4 Break and Continue\n\nbreak loop-г шууд зогсооно\ncontinue тухайн алхмыг алгасах\n\nfor (int i = 0; i &lt; 5; i++) {\n    if (i == 2) continue; // i == 2 үед алгасна\n    if (i == 4) break;    // i == 4 үед loop дуусна\n    cout &lt;&lt; i &lt;&lt; \" \";\n}",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#example-1-maximum-of-3-numbers",
+    "href": "cp/cp1.html#example-1-maximum-of-3-numbers",
+    "title": "C++ хэлний суурь",
+    "section": "7.1 Example 1: Maximum of 3 Numbers",
+    "text": "7.1 Example 1: Maximum of 3 Numbers\nint a, b, c;\ncin &gt;&gt; a &gt;&gt; b &gt;&gt; c;\nint maxVal = a;\nif (b &gt; maxVal) maxVal = b;\nif (c &gt; maxVal) maxVal = c;\ncout &lt;&lt; \"Maximum: \" &lt;&lt; maxVal &lt;&lt; endl;\n3 тооноос хамгийн ихийг олох.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#example-2-multiplication-table",
+    "href": "cp/cp1.html#example-2-multiplication-table",
+    "title": "C++ хэлний суурь",
+    "section": "7.2 Example 2: Multiplication Table",
+    "text": "7.2 Example 2: Multiplication Table\nint n;\ncin &gt;&gt; n;\nfor (int i = 1; i &lt;= 10; i++) {\n    cout &lt;&lt; n &lt;&lt; \" x \" &lt;&lt; i &lt;&lt; \" = \" &lt;&lt; n * i &lt;&lt; endl;\n}\nӨгсөн тооны үржвэрийн хүрд хэвлэх.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/cp1.html#example-3-prime-check",
+    "href": "cp/cp1.html#example-3-prime-check",
+    "title": "C++ хэлний суурь",
+    "section": "7.3 Example 3: Prime Check",
+    "text": "7.3 Example 3: Prime Check\nint n;\ncin &gt;&gt; n;\nbool isPrime = true;\nif (n &lt;= 1) isPrime = false;\nfor (int i = 2; i * i &lt;= n; i++) {\n    if (n % i == 0) {\n        isPrime = false;\n        break;\n    }\n}\ncout &lt;&lt; (isPrime ? \"Prime\" : \"Not Prime\") &lt;&lt; endl;\nӨгсөн тоо анхны эсэхийг шалгах.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html",
+    "href": "cp/6.17.html",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "",
+    "text": "C++ хэлний энэхүү хичээлээр дараах ойлголтуудыг үзнэ:\n\nInput ба Output\nData Types болон Variables\nConditional Statements (if-else)\nLoops (for, while, do-while)\n\nЭнэ хичээлийн төгсгөлд та энгийн C++ код бичиж, кодын ажиллах дараалал болон тооцоолол хийх чадвартай болно.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#output",
+    "href": "cp/6.17.html#output",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "3.1 Output",
+    "text": "3.1 Output\ncout &lt;&lt; \"Enter your name: \";\n\n&lt;&lt; нь insertion operator бөгөөд мэдээллийг output stream рүү өгнө.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#input",
+    "href": "cp/6.17.html#input",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "3.2 Input",
+    "text": "3.2 Input\nstring name;\ncin &gt;&gt; name;\ncout &lt;&lt; \"Hello, \" &lt;&lt; name &lt;&lt; \"!\" &lt;&lt; endl;\n\n&gt;&gt; нь extraction operator бөгөөд input stream-с мэдээлэл авна.\nendl шинэ мөрөнд шилжихэд хэрэглэнэ (\\n гэж бас болно).",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#common-data-types",
+    "href": "cp/6.17.html#common-data-types",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "4.1 Common Data Types:",
+    "text": "4.1 Common Data Types:\n\nint: Бүхэл тоо\ndouble: Бутархай тоо\nchar: Нэг тэмдэгт (дан хашилт ашиглана)\nstring: Дараалсан олон тэмдэгтүүд (давхар хашилт ашиглана)\nbool: true эсвэл false гэсэн хоёр утга авна",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#comparison-operators",
+    "href": "cp/6.17.html#comparison-operators",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "5.1 Comparison Operators:",
+    "text": "5.1 Comparison Operators:\n\n== тэнцүү\n!= тэнцүү биш\n&lt;, &lt;=, &gt;, &gt;=\n\nНөхцөлүүдийг холбох:\n\n&& (AND буюу “ба”)\n|| (OR буюу “эсвэл”)\n! (NOT буюу “үгүйсгэл”)",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#for-loop",
+    "href": "cp/6.17.html#for-loop",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "6.1 For Loop",
+    "text": "6.1 For Loop\nДавталт хэдэн удаа гүйцэтгэх нь мэдэгдэж байвал ашиглана:\nfor (int i = 0; i &lt; 5; i++) {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n}\nExplanation:\n\nint i = 0: эхлэх утга\ni &lt; 5: шалгах нөхцөл - энэ нөхцөл биелэхээ боливол давталт зогсоно\ni++: алхам тутам өсгөх - амжилттай алхам бүрийн дараа энэ үйлдлийг хийнэ",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#while-loop",
+    "href": "cp/6.17.html#while-loop",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "6.2 While Loop",
+    "text": "6.2 While Loop\nХэдэн удаа гүйцэтгэх нь тодорхойгүй үед ашиглана:\nint i = 0;\nwhile (i &lt; 5) {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n    i++;\n}",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#do-while-loop",
+    "href": "cp/6.17.html#do-while-loop",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "6.3 Do-While Loop",
+    "text": "6.3 Do-While Loop\nДавталт хамгийн багадаа нэг удаа ажиллана:\nint i = 0;\ndo {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n    i++;\n} while (i &lt; 5);",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#break-and-continue",
+    "href": "cp/6.17.html#break-and-continue",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "6.4 Break and Continue",
+    "text": "6.4 Break and Continue\n\nbreak loop-г шууд зогсооно\ncontinue тухайн алхмыг алгасах\n\nfor (int i = 0; i &lt; 5; i++) {\n    if (i == 2) continue; // i == 2 үед алгасна\n    if (i == 4) break;    // i == 4 үед loop дуусна\n    cout &lt;&lt; i &lt;&lt; \" \";\n}",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#example-1-maximum-of-3-numbers",
+    "href": "cp/6.17.html#example-1-maximum-of-3-numbers",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "7.1 Example 1: Maximum of 3 Numbers",
+    "text": "7.1 Example 1: Maximum of 3 Numbers\nint a, b, c;\ncin &gt;&gt; a &gt;&gt; b &gt;&gt; c;\nint maxVal = a;\nif (b &gt; maxVal) maxVal = b;\nif (c &gt; maxVal) maxVal = c;\ncout &lt;&lt; \"Maximum: \" &lt;&lt; maxVal &lt;&lt; endl;\n3 тооноос хамгийн ихийг олох.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#example-2-multiplication-table",
+    "href": "cp/6.17.html#example-2-multiplication-table",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "7.2 Example 2: Multiplication Table",
+    "text": "7.2 Example 2: Multiplication Table\nint n;\ncin &gt;&gt; n;\nfor (int i = 1; i &lt;= 10; i++) {\n    cout &lt;&lt; n &lt;&lt; \" x \" &lt;&lt; i &lt;&lt; \" = \" &lt;&lt; n * i &lt;&lt; endl;\n}\nӨгсөн тооны үржвэрийн хүрд хэвлэх.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "cp/6.17.html#example-3-prime-check",
+    "href": "cp/6.17.html#example-3-prime-check",
+    "title": "C++ хэлний суурь (6/17)",
+    "section": "7.3 Example 3: Prime Check",
+    "text": "7.3 Example 3: Prime Check\nint n;\ncin &gt;&gt; n;\nbool isPrime = true;\nif (n &lt;= 1) isPrime = false;\nfor (int i = 2; i * i &lt;= n; i++) {\n    if (n % i == 0) {\n        isPrime = false;\n        break;\n    }\n}\ncout &lt;&lt; (isPrime ? \"Prime\" : \"Not Prime\") &lt;&lt; endl;\nӨгсөн тоо анхны эсэхийг шалгах.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь (6/17)"
+    ]
+  },
+  {
+    "objectID": "english/6.17.html",
+    "href": "english/6.17.html",
+    "title": "Class 1 – Daily Life in the International Space Station (6/17)",
+    "section": "",
+    "text": "Be verb (am / is / are)\n\nPresent Simple (habits, facts, routines)\n\nPresent Continuous (actions happening now, temporary situations)",
+    "crumbs": [
+      "Англи хэл",
+      "Class 1 – Daily Life in the International Space Station (6/17)"
+    ]
+  },
+  {
+    "objectID": "english/6.17.html#grammar-focus",
+    "href": "english/6.17.html#grammar-focus",
+    "title": "Class 1 – Daily Life in the International Space Station (6/17)",
+    "section": "",
+    "text": "Be verb (am / is / are)\n\nPresent Simple (habits, facts, routines)\n\nPresent Continuous (actions happening now, temporary situations)",
+    "crumbs": [
+      "Англи хэл",
+      "Class 1 – Daily Life in the International Space Station (6/17)"
+    ]
+  },
+  {
+    "objectID": "english/6.17.html#reading-text",
+    "href": "english/6.17.html#reading-text",
+    "title": "Class 1 – Daily Life in the International Space Station (6/17)",
+    "section": "Reading Text",
+    "text": "Reading Text\nTitle: Daily Life in the International Space Station\nThe International Space Station, or ISS, is a large science laboratory that orbits Earth. It is about 400 kilometers above the ground and travels at 28,000 kilometers per hour. The station is a joint project between several countries, including the United States, Russia, Japan, and members of the European Space Agency.\nThere are usually six astronauts living and working on the ISS. They are from different countries, and they all speak English on the station. The ISS is not very big, but it has everything they need: computers, tools, food, and even exercise machines.\nA normal day on the ISS starts at 6:00 a.m. The astronauts wake up, brush their teeth, and check the station’s systems. After that, they eat breakfast and begin their work. Some astronauts run experiments to learn how space affects the human body. Others are taking photographs of the Earth or are fixing equipment.\nExercise is an important part of daily life in space. Astronauts exercise for two hours each day to keep their muscles strong. Right now, one astronaut is using a treadmill while another is cycling on a special space bike. Without gravity, muscles and bones can become weak very quickly.\nIn the afternoon, astronauts attend meetings, write reports, and talk to scientists on Earth. Sometimes they speak with students or journalists using video calls. These activities help people on Earth understand more about life in space.\nAt the end of the day, the astronauts relax by watching movies, reading books, or writing emails to their families. Their sleeping bags are attached to the walls so they don’t float away while sleeping.\nLife on the ISS is very different from life on Earth, but the astronauts are working hard every day. They are helping us learn how humans can live in space for long periods. Their work is important for the future of science and space exploration.",
+    "crumbs": [
+      "Англи хэл",
+      "Class 1 – Daily Life in the International Space Station (6/17)"
+    ]
+  },
+  {
+    "objectID": "english/6.17.html#grammar",
+    "href": "english/6.17.html#grammar",
+    "title": "Class 1 – Daily Life in the International Space Station",
+    "section": "Grammar",
+    "text": "Grammar",
+    "crumbs": [
+      "Англи хэл",
+      "Class 1 – Daily Life in the International Space Station"
+    ]
+  },
+  {
+    "objectID": "english/6.17.html#practice-exercises",
+    "href": "english/6.17.html#practice-exercises",
+    "title": "Class 1 – Daily Life in the International Space Station",
+    "section": "Practice Exercises",
+    "text": "Practice Exercises",
+    "crumbs": [
+      "Англи хэл",
+      "Class 1 – Daily Life in the International Space Station"
+    ]
+  },
+  {
+    "objectID": "english/6.17.html#grammar-explanation",
+    "href": "english/6.17.html#grammar-explanation",
+    "title": "Class 1 – Daily Life in the International Space Station (6/17)",
+    "section": "Grammar Explanation",
+    "text": "Grammar Explanation\n\n1. Be Verb (am / is / are)\nThe verb “be” is one of the most common verbs in English. It shows a state, condition, identity, location, or quality.\n\nForms of “be”\n\n\n\nSubject\nBe Verb\n\n\n\n\nI\nam\n\n\nYou\nare\n\n\nHe/She/It\nis\n\n\nWe/They\nare\n\n\n\n\n\nUses of “be”\n\nTo describe people, things, or places\n\nShe is a scientist.\n\nThe ISS is in space.\n\nTo say how someone feels\n\nI am tired.\n\nThey are excited.\n\nTo describe locations\n\nHe is in the lab.\n\nThe astronauts are on the station.\n\nTo form the present continuous\n\nShe is working now.\n\nWe are studying English.\n\n\n\n\n\n\n2. Present Simple\nThe present simple tense describes regular actions, habits, general truths, and facts.\n\nSentence structure\n\nPositive:\n\nI/You/We/They work\n\nHe/She/It works (add -s or -es)\n\nNegative:\n\nI/You/We/They do not (don’t) work\n\nHe/She/It does not (doesn’t) work\n\nQuestions:\n\nDo I/you/we/they work?\n\nDoes he/she/it work?\n\n\n\n\nCommon uses\n\nHabitual actions\n\nI wake up at 7:00 every day.\n\nShe brushes her teeth after meals.\n\nGeneral truths or facts\n\nWater boils at 100°C.\n\nThe Earth orbits the sun.\n\nScheduled events (e.g., timetables)\n\nThe train leaves at 6:00.\n\nOur class starts at 2 p.m.\n\nStative verbs (like know, want, like, need)\n\nI know the answer.\n\nHe wants some coffee.\n\n\n\n\nExamples\n\nAstronauts live on the ISS for months.\n\nThe station travels around Earth at 28,000 km/h.\n\nDo you exercise every day?\n\nHe doesn’t eat a big breakfast.\n\n\n\n\n\n3. Present Continuous\nThe present continuous describes actions happening now, or around the current time period.\n\nSentence structure\n\nPositive:\n\nI am working\n\nHe/She/It is working\n\nWe/You/They are working\n\nNegative:\n\nI am not working\n\nShe is not (isn’t) working\n\nThey are not (aren’t) working\n\nQuestions:\n\nAm I working?\n\nIs she working?\n\nAre they working?\n\n\n\n\nCommon uses\n\nActions happening at the moment of speaking\n\nShe is eating lunch now.\n\nThey are speaking with scientists.\n\nTemporary situations\n\nI am staying with my cousin this week.\n\nHe is working on a special project today.\n\nTrends or changes in progress\n\nThe world’s population is increasing.\n\nHis English is getting better.\n\nFuture plans (with a time reference)\n\nI am meeting my friend tomorrow.\n\nWe are leaving at 6 p.m.\n\n\n\n\nExamples\n\nThe astronauts are fixing the equipment.\n\nOne of them is exercising right now.\n\nAre you watching the video stream?\n\nWe aren’t using the computer at the moment.\n\n\n\n\n\nSummary Chart\n\n\n\n\n\n\n\n\nTense\nUse Case\nExample\n\n\n\n\nBe Verb\nState, identity, condition\nShe is an astronaut.\n\n\nPresent Simple\nHabit, fact, regular action\nThey exercise every day.\n\n\nPresent Continuous\nAction happening now / temporary\nHe is reading a book.",
+    "crumbs": [
+      "Англи хэл",
+      "Class 1 – Daily Life in the International Space Station (6/17)"
+    ]
+  },
+  {
+    "objectID": "english/6.17.html#vocabulary-to-memorize",
+    "href": "english/6.17.html#vocabulary-to-memorize",
+    "title": "Class 1 – Daily Life in the International Space Station (6/17)",
+    "section": "Vocabulary to Memorize",
+    "text": "Vocabulary to Memorize\n\nInternational\n\nSpace station\n\nOrbit\n\nLaboratory\n\nAstronaut\n\nEquipment\n\nExperiment\n\nExercise\n\nMuscle\n\nGravity\n\nPhotograph\n\nReport\n\nScientist\n\nCommunication\n\nRelax\n\nSleeping bag\n\nExplore\n\nProject\n\nParticipate\n\nEnvironment",
+    "crumbs": [
+      "Англи хэл",
+      "Class 1 – Daily Life in the International Space Station (6/17)"
+    ]
+  },
+  {
+    "objectID": "english/6.17.html#vocabulary",
+    "href": "english/6.17.html#vocabulary",
+    "title": "Class 1 – Daily Life in the International Space Station (6/17)",
+    "section": "Vocabulary",
+    "text": "Vocabulary\n\nInternational\n\nSpace station\n\nOrbit\n\nLaboratory\n\nAstronaut\n\nEquipment\n\nExperiment\n\nExercise\n\nMuscle\n\nGravity\n\nPhotograph\n\nReport\n\nScientist\n\nCommunication\n\nRelax\n\nSleeping bag\n\nExplore\n\nProject\n\nParticipate\n\nEnvironment",
+    "crumbs": [
+      "Англи хэл",
+      "Class 1 – Daily Life in the International Space Station (6/17)"
     ]
   }
 ]

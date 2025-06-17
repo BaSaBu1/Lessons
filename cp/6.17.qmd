@@ -1,0 +1,260 @@
+---
+title: "C++ хэлний суурь (6/17)"
+author: "Batsambuu Batbold"
+format: html
+lang: mn
+number-sections: true
+toc: true
+---
+
+# Introduction
+
+C++ хэлний энэхүү хичээлээр дараах ойлголтуудыг үзнэ:
+
+- Input ба Output
+- Data Types болон Variables
+- Conditional Statements (if-else)
+- Loops (for, while, do-while)
+
+Энэ хичээлийн төгсгөлд та энгийн C++ код бичиж, кодын ажиллах дараалал болон тооцоолол хийх чадвартай болно.
+
+---
+
+# Structure of a C++ Program
+
+C++ программ нь functions дээр суурилдаг бөгөөд `main()` function-аас эхэлдэг. Программ ихэвчлэн `#include` preprocessor directive-ээр эхэлж, namespace ашиглан кодыг товчлох боломжтой байдаг.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!" << endl;
+    return 0;
+}
+```
+
+Тайлбар:
+
+- `#include`: Input/Output stream ашиглах буюу гараас өгөгдөл авах болон хэвлэх боломжийг олгоно.
+- `using namespace std;`: `std::cout` биш шууд `cout` гэж бичих боломжийг олгоно (товчоор).
+- `int main()`: Программ эндээс гүйцэтгэгдэж эхэлнэ.
+- `cout << ...`: Дэлгэц рүү хэвлэнэ.
+- `return 0;`: Программ амжилттай дууссаныг заана.
+
+---
+
+# Input and Output
+
+C++ хэлэнд хэрэглэгчээс өгөгдөл авахад`cin`, дэлгэц рүү хэвлэхэд `cout` ашигладаг.
+
+## Output
+
+```cpp
+cout << "Enter your name: ";
+```
+
+- `<<` нь insertion operator бөгөөд мэдээллийг output stream рүү өгнө.
+
+## Input
+
+```cpp
+string name;
+cin >> name;
+cout << "Hello, " << name << "!" << endl;
+```
+
+- `>>` нь extraction operator бөгөөд input stream-с мэдээлэл авна.
+- `endl` шинэ мөрөнд шилжихэд хэрэглэнэ (`\n` гэж бас болно).
+
+---
+
+# Variables and Data Types
+
+Variable гэдэг нь тодорхой нэртэй, мэдээлэл хадгалах **сав** юм. Ашиглахаасаа өмнө заавал **data type** тодорхойлно.
+
+```cpp
+int age = 16;
+double pi = 3.14;
+char grade = 'A';
+string name = "Alice";
+bool isStudent = true;
+
+cout << "Age: " << age << endl;
+cout << "Pi: " << pi << endl;
+cout << "Grade: " << grade << endl;
+cout << "Name: " << name << endl;
+cout << "Is Student? " << isStudent << endl;
+```
+
+## Common Data Types:
+
+- `int`: Бүхэл тоо
+- `double`: Бутархай тоо
+- `char`: Нэг тэмдэгт (дан хашилт ашиглана)
+- `string`: Дараалсан олон тэмдэгтүүд (давхар хашилт ашиглана)
+- `bool`: `true` эсвэл `false` гэсэн хоёр утга авна
+
+---
+
+# Conditional Statements (if-else)
+
+Программ ямар нөхцөлд ямар шийдвэр гаргах нөхцөлүүдийг тодорхойлно. Зөвхөн `()` хаалт доторх нөхцөл биелж байвал `{}` хаалт доторх үйлдэл хийгдэнэ.
+
+```cpp
+int number;
+cin >> number;
+
+if (number > 0) {
+    cout << "Positive" << endl;
+} else if (number == 0) {
+    cout << "Zero" << endl;
+} else {
+    cout << "Negative" << endl;
+}
+```
+
+## Comparison Operators:
+
+- `==` тэнцүү
+- `!=` тэнцүү биш
+- `<`, `<=`, `>`, `>=`
+
+Нөхцөлүүдийг холбох:
+
+- `&&` (AND буюу "ба")
+- `||` (OR буюу "эсвэл")
+- `!` (NOT буюу "үгүйсгэл")
+
+---
+
+# Loops
+
+Loop нь кодыг дахин дахин давтан гүйцэтгэх боломж олгоно.
+
+## For Loop
+
+Давталт хэдэн удаа гүйцэтгэх нь мэдэгдэж байвал ашиглана:
+
+```cpp
+for (int i = 0; i < 5; i++) {
+    cout << "i = " << i << endl;
+}
+```
+
+Explanation:
+
+- `int i = 0`: эхлэх утга
+- `i < 5`: шалгах нөхцөл - энэ нөхцөл биелэхээ боливол давталт зогсоно
+- `i++`: алхам тутам өсгөх - амжилттай алхам бүрийн дараа энэ үйлдлийг хийнэ
+
+## While Loop
+
+Хэдэн удаа гүйцэтгэх нь тодорхойгүй үед ашиглана:
+
+```cpp
+int i = 0;
+while (i < 5) {
+    cout << "i = " << i << endl;
+    i++;
+}
+```
+
+## Do-While Loop
+
+Давталт хамгийн багадаа нэг удаа ажиллана:
+
+```cpp
+int i = 0;
+do {
+    cout << "i = " << i << endl;
+    i++;
+} while (i < 5);
+```
+
+## Break and Continue
+
+- `break` loop-г шууд зогсооно
+- `continue` тухайн алхмыг алгасах
+
+```cpp
+for (int i = 0; i < 5; i++) {
+    if (i == 2) continue; // i == 2 үед алгасна
+    if (i == 4) break;    // i == 4 үед loop дуусна
+    cout << i << " ";
+}
+```
+
+---
+
+# Practice Example Programs
+
+## Example 1: Maximum of 3 Numbers
+
+```cpp
+int a, b, c;
+cin >> a >> b >> c;
+int maxVal = a;
+if (b > maxVal) maxVal = b;
+if (c > maxVal) maxVal = c;
+cout << "Maximum: " << maxVal << endl;
+```
+
+3 тооноос хамгийн ихийг олох.
+
+---
+
+## Example 2: Multiplication Table
+
+```cpp
+int n;
+cin >> n;
+for (int i = 1; i <= 10; i++) {
+    cout << n << " x " << i << " = " << n * i << endl;
+}
+```
+
+Өгсөн тооны үржвэрийн хүрд хэвлэх.
+
+---
+
+## Example 3: Prime Check
+
+```cpp
+int n;
+cin >> n;
+bool isPrime = true;
+if (n <= 1) isPrime = false;
+for (int i = 2; i * i <= n; i++) {
+    if (n % i == 0) {
+        isPrime = false;
+        break;
+    }
+}
+cout << (isPrime ? "Prime" : "Not Prime") << endl;
+```
+
+Өгсөн тоо анхны эсэхийг шалгах.
+
+---
+
+# Final Practice Problems
+
+Дараах дасгалуудыг `cin`, `cout`, `if`, loop ашиглан бодоорой:
+
+1. **Odd or Even Checker**  
+   Тоо оруулж even эсвэл odd болохыг шалгах.
+
+2. **Sum of Odd Numbers from 1 to n**  
+   n хүртэлх сондгой тоонуудын нийлбэр олох.
+
+3. **Multiple of 3 and 5**  
+   Тоо 3 ба 5-д зэрэг хуваагдаж байгаа эсэхийг шалгах.
+
+4. **Count Digits of a Number**  
+   Тооны оронгийн тоо гаргах.
+
+5. **Reverse the Digits**  
+   Тооны цифрүүдийг урвуу дарааллаар хэвлэх.
+
+---
