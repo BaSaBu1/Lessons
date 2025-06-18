@@ -1,5 +1,5 @@
 ---
-title: "C++ хэлний суурь (6/17)"
+title: "C++ хэлний суурь №1 (6/17)"
 author: "Batsambuu Batbold"
 format: html
 lang: mn

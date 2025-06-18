@@ -3293,133 +3293,133 @@
   {
     "objectID": "cp/6.17.html",
     "href": "cp/6.17.html",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "",
     "text": "C++ хэлний энэхүү хичээлээр дараах ойлголтуудыг үзнэ:\n\nInput ба Output\nData Types болон Variables\nConditional Statements (if-else)\nLoops (for, while, do-while)\n\nЭнэ хичээлийн төгсгөлд та энгийн C++ код бичиж, кодын ажиллах дараалал болон тооцоолол хийх чадвартай болно.",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#output",
     "href": "cp/6.17.html#output",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "3.1 Output",
     "text": "3.1 Output\ncout &lt;&lt; \"Enter your name: \";\n\n&lt;&lt; нь insertion operator бөгөөд мэдээллийг output stream рүү өгнө.",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#input",
     "href": "cp/6.17.html#input",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "3.2 Input",
     "text": "3.2 Input\nstring name;\ncin &gt;&gt; name;\ncout &lt;&lt; \"Hello, \" &lt;&lt; name &lt;&lt; \"!\" &lt;&lt; endl;\n\n&gt;&gt; нь extraction operator бөгөөд input stream-с мэдээлэл авна.\nendl шинэ мөрөнд шилжихэд хэрэглэнэ (\\n гэж бас болно).",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#common-data-types",
     "href": "cp/6.17.html#common-data-types",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "4.1 Common Data Types:",
     "text": "4.1 Common Data Types:\n\nint: Бүхэл тоо\ndouble: Бутархай тоо\nchar: Нэг тэмдэгт (дан хашилт ашиглана)\nstring: Дараалсан олон тэмдэгтүүд (давхар хашилт ашиглана)\nbool: true эсвэл false гэсэн хоёр утга авна",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#comparison-operators",
     "href": "cp/6.17.html#comparison-operators",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "5.1 Comparison Operators:",
     "text": "5.1 Comparison Operators:\n\n== тэнцүү\n!= тэнцүү биш\n&lt;, &lt;=, &gt;, &gt;=\n\nНөхцөлүүдийг холбох:\n\n&& (AND буюу “ба”)\n|| (OR буюу “эсвэл”)\n! (NOT буюу “үгүйсгэл”)",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#for-loop",
     "href": "cp/6.17.html#for-loop",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "6.1 For Loop",
     "text": "6.1 For Loop\nДавталт хэдэн удаа гүйцэтгэх нь мэдэгдэж байвал ашиглана:\nfor (int i = 0; i &lt; 5; i++) {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n}\nExplanation:\n\nint i = 0: эхлэх утга\ni &lt; 5: шалгах нөхцөл - энэ нөхцөл биелэхээ боливол давталт зогсоно\ni++: алхам тутам өсгөх - амжилттай алхам бүрийн дараа энэ үйлдлийг хийнэ",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#while-loop",
     "href": "cp/6.17.html#while-loop",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "6.2 While Loop",
     "text": "6.2 While Loop\nХэдэн удаа гүйцэтгэх нь тодорхойгүй үед ашиглана:\nint i = 0;\nwhile (i &lt; 5) {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n    i++;\n}",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#do-while-loop",
     "href": "cp/6.17.html#do-while-loop",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "6.3 Do-While Loop",
     "text": "6.3 Do-While Loop\nДавталт хамгийн багадаа нэг удаа ажиллана:\nint i = 0;\ndo {\n    cout &lt;&lt; \"i = \" &lt;&lt; i &lt;&lt; endl;\n    i++;\n} while (i &lt; 5);",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#break-and-continue",
     "href": "cp/6.17.html#break-and-continue",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "6.4 Break and Continue",
     "text": "6.4 Break and Continue\n\nbreak loop-г шууд зогсооно\ncontinue тухайн алхмыг алгасах\n\nfor (int i = 0; i &lt; 5; i++) {\n    if (i == 2) continue; // i == 2 үед алгасна\n    if (i == 4) break;    // i == 4 үед loop дуусна\n    cout &lt;&lt; i &lt;&lt; \" \";\n}",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#example-1-maximum-of-3-numbers",
     "href": "cp/6.17.html#example-1-maximum-of-3-numbers",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "7.1 Example 1: Maximum of 3 Numbers",
     "text": "7.1 Example 1: Maximum of 3 Numbers\nint a, b, c;\ncin &gt;&gt; a &gt;&gt; b &gt;&gt; c;\nint maxVal = a;\nif (b &gt; maxVal) maxVal = b;\nif (c &gt; maxVal) maxVal = c;\ncout &lt;&lt; \"Maximum: \" &lt;&lt; maxVal &lt;&lt; endl;\n3 тооноос хамгийн ихийг олох.",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#example-2-multiplication-table",
     "href": "cp/6.17.html#example-2-multiplication-table",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "7.2 Example 2: Multiplication Table",
     "text": "7.2 Example 2: Multiplication Table\nint n;\ncin &gt;&gt; n;\nfor (int i = 1; i &lt;= 10; i++) {\n    cout &lt;&lt; n &lt;&lt; \" x \" &lt;&lt; i &lt;&lt; \" = \" &lt;&lt; n * i &lt;&lt; endl;\n}\nӨгсөн тооны үржвэрийн хүрд хэвлэх.",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
     "objectID": "cp/6.17.html#example-3-prime-check",
     "href": "cp/6.17.html#example-3-prime-check",
-    "title": "C++ хэлний суурь (6/17)",
+    "title": "C++ хэлний суурь №1 (6/17)",
     "section": "7.3 Example 3: Prime Check",
     "text": "7.3 Example 3: Prime Check\nint n;\ncin &gt;&gt; n;\nbool isPrime = true;\nif (n &lt;= 1) isPrime = false;\nfor (int i = 2; i * i &lt;= n; i++) {\n    if (n % i == 0) {\n        isPrime = false;\n        break;\n    }\n}\ncout &lt;&lt; (isPrime ? \"Prime\" : \"Not Prime\") &lt;&lt; endl;\nӨгсөн тоо анхны эсэхийг шалгах.",
     "crumbs": [
       "Програмчлал",
-      "C++ хэлний суурь (6/17)"
+      "C++ хэлний суурь №1 (6/17)"
     ]
   },
   {
@@ -3508,6 +3508,138 @@
     "crumbs": [
       "Англи хэл",
       "Class 1 – Daily Life in the International Space Station (6/17)"
+    ]
+  },
+  {
+    "objectID": "english/6.18.html",
+    "href": "english/6.18.html",
+    "title": "Class 2 – Invention of the Telegraph (6/18)",
+    "section": "",
+    "text": "Past Simple – regular and irregular verbs\n\nPast Continuous – interrupted/ongoing past actions",
+    "crumbs": [
+      "Англи хэл",
+      "Class 2 – Invention of the Telegraph (6/18)"
+    ]
+  },
+  {
+    "objectID": "english/6.18.html#grammar-focus",
+    "href": "english/6.18.html#grammar-focus",
+    "title": "Class 2 – Invention of the Telegraph (6/18)",
+    "section": "",
+    "text": "Past Simple – regular and irregular verbs\n\nPast Continuous – interrupted/ongoing past actions",
+    "crumbs": [
+      "Англи хэл",
+      "Class 2 – Invention of the Telegraph (6/18)"
+    ]
+  },
+  {
+    "objectID": "english/6.18.html#reading-text",
+    "href": "english/6.18.html#reading-text",
+    "title": "Class 2 – Invention of the Telegraph (6/18)",
+    "section": "Reading Text",
+    "text": "Reading Text\nTitle: The Invention of the Telegraph\nBefore the internet and mobile phones, people had very few ways to send messages quickly. One of the most important inventions in the 19th century was the telegraph, which allowed people to communicate across long distances in minutes, not days. The telegraph completely changed communication and helped modernize the world.\nIn the early 1800s, several inventors worked on electric communication devices. However, it was Samuel Morse, an American artist and inventor, who finally succeeded. In 1837, he developed the Morse code system. This system used dots and dashes to represent letters of the alphabet. With this code, operators could send messages by tapping signals over a wire.\nIn 1844, Morse sent the first long-distance telegraph message from Washington, D.C. to Baltimore. While he was waiting for a reply, people in the room were watching the machine carefully. The message, “What hath God wrought?”, was received clearly. This moment marked the beginning of a new era in communication.\nAfter that, telegraph lines spread rapidly across the United States and Europe. By the 1860s, workers were building the first transatlantic cable to connect North America and Europe. It was completed in 1866. During this time, many people were learning to operate telegraphs and were working in telegraph offices.\nThe telegraph played a key role in many events. During wars, generals used it to send important orders. Businesses depended on it to share prices and news quickly. For the first time, information could travel faster than a person on horseback or a ship at sea.\nAlthough the telephone and internet later replaced the telegraph, its invention was a turning point in human history. While Morse was creating the telegraph, he had no idea how much it would change the world. Today, we often forget the importance of this early technology, but without it, modern communication would have developed much more slowly.",
+    "crumbs": [
+      "Англи хэл",
+      "Class 2 – Invention of the Telegraph (6/18)"
+    ]
+  },
+  {
+    "objectID": "english/6.18.html#grammar-explanation",
+    "href": "english/6.18.html#grammar-explanation",
+    "title": "Class 2 – Invention of the Telegraph (6/18)",
+    "section": "Grammar Explanation",
+    "text": "Grammar Explanation\n\n1. Past Simple\nThe past simple is used to describe actions that started and ended in the past.\n\nRegular verbs\n\nAdd -ed to the base form\n\nwork → worked\n\nplay → played\n\n\n\n\nIrregular verbs\n\nHave special forms\n\ngo → went\n\nhave → had\n\nsend → sent\n\n\n\n\nSentence structure\n\nPositive:\n\nShe invented the machine.\n\nHe went to school.\n\nNegative:\n\nShe did not (didn’t) invent the machine.\n\nHe didn’t go to school.\n\nQuestions:\n\nDid she invent the machine?\n\nDid he go to school?\n\n\n\n\n\n\n2. Past Continuous\nThe past continuous describes actions that were happening at a certain time in the past. It’s often used with the past simple to show interrupted actions.\n\nSentence structure\n\nPositive:\n\nI was working\n\nThey were playing\n\nNegative:\n\nI was not (wasn’t) working\n\nThey were not (weren’t) playing\n\nQuestions:\n\nWas he working?\n\nWere they playing?\n\n\n\n\nCommon uses\n\nOngoing past actions\n\nI was reading at 9 p.m.\n\nThey were traveling all night.\n\nInterrupted actions\n\nI was writing when the power went out.\n\nHe was cooking when she arrived.\n\nTwo simultaneous past actions\n\nWhile I was studying, my brother was sleeping.\n\n\n\n\n\n\nSummary Chart\n\n\n\n\n\n\n\n\nTense\nUse Case\nExample\n\n\n\n\nPast Simple\nCompleted action in the past\nHe invented the telegraph.\n\n\nPast Continuous\nOngoing or interrupted past action\nShe was writing when it rained.",
+    "crumbs": [
+      "Англи хэл",
+      "Class 2 – Invention of the Telegraph (6/18)"
+    ]
+  },
+  {
+    "objectID": "english/6.18.html#vocabulary",
+    "href": "english/6.18.html#vocabulary",
+    "title": "Class 2 – Invention of the Telegraph (6/18)",
+    "section": "Vocabulary",
+    "text": "Vocabulary\n\nTelegraph\n\nMorse code\n\nOperator\n\nTransatlantic\n\nCommunication\n\nSignal\n\nDevice\n\nInvention\n\nMessage\n\nDistance\n\nRapidly\n\nRepresent\n\nTapping\n\nTechnology\n\nGeneral\n\nCable\n\nOffice\n\nEra\n\nDevelop\n\nReplace",
+    "crumbs": [
+      "Англи хэл",
+      "Class 2 – Invention of the Telegraph (6/18)"
+    ]
+  },
+  {
+    "objectID": "cp/6.18.html",
+    "href": "cp/6.18.html",
+    "title": "C++ хэлний суурь №2 (6/18)",
+    "section": "",
+    "text": "Энэ хичээлээр бид дараах гурван чухал сэдвийг судална:\n\nString (тэмдэгт мөр)\nArray (массив)\nFunction (функц)\n\nЭдгээр ойлголтууд нь илүү том, олон үйлдэл бүхий программ бичихэд зайлшгүй шаардлагатай. Хичээлийн төгсгөлд та массив ашиглан мэдээлэл хадгалах, функц зохион бүтээж кодын бүтцийг сайжруулах чадвартай болно.",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь №2 (6/18)"
+    ]
+  },
+  {
+    "objectID": "cp/6.18.html#түгээмэл-string-үйлдлүүд",
+    "href": "cp/6.18.html#түгээмэл-string-үйлдлүүд",
+    "title": "C++ хэлний суурь №2 (6/18)",
+    "section": "2.1 Түгээмэл string үйлдлүүд",
+    "text": "2.1 Түгээмэл string үйлдлүүд\nstring s = \"Hello\";\ncout &lt;&lt; s.length() &lt;&lt; endl;       // Урт\ncout &lt;&lt; s[0] &lt;&lt; endl;             // Эхний тэмдэгт\ns += \" World\";                    // Нэмж залгах\ncout &lt;&lt; s &lt;&lt; endl;\n\ns.length(): string-ийн уртыг олно\ns[i]: i-р тэмдэгтийг авна\n+=: тэмдэгт мөрийг нэмж залгах",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь №2 (6/18)"
+    ]
+  },
+  {
+    "objectID": "cp/6.18.html#жишээ",
+    "href": "cp/6.18.html#жишээ",
+    "title": "C++ хэлний суурь №2 (6/18)",
+    "section": "3.1 Жишээ:",
+    "text": "3.1 Жишээ:\nint arr[5];\nfor (int i = 0; i &lt; 5; i++) {\n    cin &gt;&gt; arr[i];\n}\n\nfor (int i = 0; i &lt; 5; i++) {\n    cout &lt;&lt; arr[i] &lt;&lt; \" \";\n}\n\nint arr[5]: 5 ширхэг int хадгалах массив\narr[i]: i-р элемент",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь №2 (6/18)"
+    ]
+  },
+  {
+    "objectID": "cp/6.18.html#void-function-юу-ч-буцаахгүй",
+    "href": "cp/6.18.html#void-function-юу-ч-буцаахгүй",
+    "title": "C++ хэлний суурь №2 (6/18)",
+    "section": "4.1 Void function (юу ч буцаахгүй)",
+    "text": "4.1 Void function (юу ч буцаахгүй)\nvoid greet(string name) {\n    cout &lt;&lt; \"Hello, \" &lt;&lt; name &lt;&lt; \"!\" &lt;&lt; endl;\n}",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь №2 (6/18)"
+    ]
+  },
+  {
+    "objectID": "cp/6.18.html#example-1-нэрийг-урвуугаар-хэвлэх",
+    "href": "cp/6.18.html#example-1-нэрийг-урвуугаар-хэвлэх",
+    "title": "C++ хэлний суурь №2 (6/18)",
+    "section": "5.1 Example 1: Нэрийг урвуугаар хэвлэх",
+    "text": "5.1 Example 1: Нэрийг урвуугаар хэвлэх\nstring name;\ncin &gt;&gt; name;\nfor (int i = name.length() - 1; i &gt;= 0; i--) {\n    cout &lt;&lt; name[i];\n}\ncout &lt;&lt; endl;",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь №2 (6/18)"
+    ]
+  },
+  {
+    "objectID": "cp/6.18.html#example-2-array-дахь-хамгийн-их-утгыг-олох",
+    "href": "cp/6.18.html#example-2-array-дахь-хамгийн-их-утгыг-олох",
+    "title": "C++ хэлний суурь №2 (6/18)",
+    "section": "5.2 Example 2: Array дахь хамгийн их утгыг олох",
+    "text": "5.2 Example 2: Array дахь хамгийн их утгыг олох\nint arr[5];\nfor (int i = 0; i &lt; 5; i++) cin &gt;&gt; arr[i];\n\nint maxVal = arr[0];\nfor (int i = 1; i &lt; 5; i++) {\n    if (arr[i] &gt; maxVal) maxVal = arr[i];\n}\ncout &lt;&lt; \"Max = \" &lt;&lt; maxVal &lt;&lt; endl;",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь №2 (6/18)"
+    ]
+  },
+  {
+    "objectID": "cp/6.18.html#example-3-function-ашиглан-тоо-тэгш-эсэхийг-шалгах",
+    "href": "cp/6.18.html#example-3-function-ашиглан-тоо-тэгш-эсэхийг-шалгах",
+    "title": "C++ хэлний суурь №2 (6/18)",
+    "section": "5.3 Example 3: Function ашиглан тоо тэгш эсэхийг шалгах",
+    "text": "5.3 Example 3: Function ашиглан тоо тэгш эсэхийг шалгах\nbool isEven(int n) {\n    return n % 2 == 0;\n}\n\nint main() {\n    int x;\n    cin &gt;&gt; x;\n    if (isEven(x)) cout &lt;&lt; \"Even\" &lt;&lt; endl;\n    else cout &lt;&lt; \"Odd\" &lt;&lt; endl;\n    return 0;\n}",
+    "crumbs": [
+      "Програмчлал",
+      "C++ хэлний суурь №2 (6/18)"
     ]
   }
 ]

@@ -1,0 +1,126 @@
+---
+title: "Class 2 – Invention of the Telegraph (6/18)"
+format: html
+---
+
+## Grammar Focus
+
+- Past Simple – regular and irregular verbs  
+- Past Continuous – interrupted/ongoing past actions  
+
+---
+
+## Reading Text
+
+**Title**: *The Invention of the Telegraph*
+
+Before the internet and mobile phones, people had very few ways to send messages quickly. One of the most important inventions in the 19th century was the **telegraph**, which allowed people to communicate across long distances in minutes, not days. The telegraph completely changed communication and helped modernize the world.
+
+In the early 1800s, several inventors worked on electric communication devices. However, it was **Samuel Morse**, an American artist and inventor, who finally succeeded. In 1837, he **developed** the Morse code system. This system **used** dots and dashes to represent letters of the alphabet. With this code, operators could **send** messages by tapping signals over a wire.
+
+In 1844, Morse **sent** the first long-distance telegraph message from Washington, D.C. to Baltimore. While he **was waiting** for a reply, people in the room **were watching** the machine carefully. The message, “What hath God wrought?”, **was received** clearly. This moment **marked** the beginning of a new era in communication.
+
+After that, telegraph lines **spread** rapidly across the United States and Europe. By the 1860s, workers **were building** the first transatlantic cable to connect North America and Europe. It **was completed** in 1866. During this time, many people **were learning** to operate telegraphs and **were working** in telegraph offices.
+
+The telegraph **played** a key role in many events. During wars, generals **used** it to send important orders. Businesses **depended** on it to share prices and news quickly. For the first time, information **could travel** faster than a person on horseback or a ship at sea.
+
+Although the telephone and internet later **replaced** the telegraph, its invention **was** a turning point in human history. While Morse **was creating** the telegraph, he **had no idea** how much it would change the world. Today, we often forget the importance of this early technology, but without it, modern communication would have developed much more slowly.
+
+---
+
+## Grammar Explanation
+
+### 1. **Past Simple**
+
+The **past simple** is used to describe actions that started and ended in the past.
+
+#### Regular verbs
+- Add **-ed** to the base form  
+  - work → worked  
+  - play → played
+
+#### Irregular verbs
+- Have special forms  
+  - go → went  
+  - have → had  
+  - send → sent
+
+#### Sentence structure
+- Positive:  
+  - She **invented** the machine.  
+  - He **went** to school.
+
+- Negative:  
+  - She **did not (didn’t) invent** the machine.  
+  - He **didn’t go** to school.
+
+- Questions:  
+  - **Did** she **invent** the machine?  
+  - **Did** he **go** to school?
+
+---
+
+### 2. **Past Continuous**
+
+The **past continuous** describes actions that were happening at a certain time in the past. It’s often used with the **past simple** to show interrupted actions.
+
+#### Sentence structure
+- Positive:  
+  - I **was working**  
+  - They **were playing**
+
+- Negative:  
+  - I **was not (wasn’t) working**  
+  - They **were not (weren’t) playing**
+
+- Questions:  
+  - **Was** he **working**?  
+  - **Were** they **playing**?
+
+#### Common uses
+1. **Ongoing past actions**
+   - I **was reading** at 9 p.m.  
+   - They **were traveling** all night.
+
+2. **Interrupted actions**
+   - I **was writing** when the power **went** out.  
+   - He **was cooking** when she **arrived**.
+
+3. **Two simultaneous past actions**
+   - While I **was studying**, my brother **was sleeping**.
+
+---
+
+### Summary Chart
+
+| Tense             | Use Case                             | Example                             |
+|------------------|--------------------------------------|-------------------------------------|
+| Past Simple       | Completed action in the past         | He **invented** the telegraph.      |
+| Past Continuous   | Ongoing or interrupted past action   | She **was writing** when it **rained**. |
+
+---
+
+## Vocabulary
+
+1. Telegraph  
+2. Morse code  
+3. Operator  
+4. Transatlantic  
+5. Communication  
+6. Signal  
+7. Device  
+8. Invention  
+9. Message  
+10. Distance  
+11. Rapidly  
+12. Represent  
+13. Tapping  
+14. Technology  
+15. General  
+16. Cable  
+17. Office  
+18. Era  
+19. Develop  
+20. Replace
+
+---

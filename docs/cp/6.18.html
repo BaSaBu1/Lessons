@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Batsambuu Batbold">
 
-<title>Зуны бага сорилго №1.1 – Math &amp; CP Class</title>
+<title>C++ хэлний суурь №2 (6/18) – Math &amp; CP Class</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,35 +104,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -109,7 +116,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/1.1.html">Сорил</a></li><li class="breadcrumb-item"><a href="../challenges/1.1.html">Зуны бага сорилго №1.1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../cp/6.17.html">Програмчлал</a></li><li class="breadcrumb-item"><a href="../cp/6.18.html">C++ хэлний суурь №2 (6/18)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -204,7 +211,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../cp/6.18.html" class="sidebar-item-text sidebar-link">
+  <a href="../cp/6.18.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">C++ хэлний суурь №2 (6/18)</span></a>
   </div>
 </li>
@@ -244,7 +251,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/1.1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../challenges/1.1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Зуны бага сорилго №1.1</span></a>
   </div>
 </li>
@@ -266,37 +273,47 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#бодлого-1" id="toc-бодлого-1" class="nav-link active" data-scroll-target="#бодлого-1">Бодлого 1</a></li>
-  <li><a href="#бодлого-2" id="toc-бодлого-2" class="nav-link" data-scroll-target="#бодлого-2">Бодлого 2</a></li>
-  <li><a href="#бодлого-3" id="toc-бодлого-3" class="nav-link" data-scroll-target="#бодлого-3">Бодлого 3</a></li>
-  <li><a href="#бодлого-4" id="toc-бодлого-4" class="nav-link" data-scroll-target="#бодлого-4">Бодлого 4</a></li>
-  <li><a href="#бодлого-5" id="toc-бодлого-5" class="nav-link" data-scroll-target="#бодлого-5">Бодлого 5</a></li>
-  <li><a href="#бодлого-6" id="toc-бодлого-6" class="nav-link" data-scroll-target="#бодлого-6">Бодлого 6</a></li>
-  <li><a href="#бодлого-7" id="toc-бодлого-7" class="nav-link" data-scroll-target="#бодлого-7">Бодлого 7</a></li>
-  <li><a href="#бодлого-8" id="toc-бодлого-8" class="nav-link" data-scroll-target="#бодлого-8">Бодлого 8</a></li>
-  <li><a href="#бодлого-9" id="toc-бодлого-9" class="nav-link" data-scroll-target="#бодлого-9">Бодлого 9</a></li>
-  <li><a href="#бодлого-10" id="toc-бодлого-10" class="nav-link" data-scroll-target="#бодлого-10">Бодлого 10</a></li>
-  <li><a href="#бодлого-11" id="toc-бодлого-11" class="nav-link" data-scroll-target="#бодлого-11">Бодлого 11</a></li>
-  <li><a href="#бодлого-12" id="toc-бодлого-12" class="nav-link" data-scroll-target="#бодлого-12">Бодлого 12</a></li>
-  <li><a href="#бодлого-13" id="toc-бодлого-13" class="nav-link" data-scroll-target="#бодлого-13">Бодлого 13</a></li>
-  <li><a href="#бодлого-14" id="toc-бодлого-14" class="nav-link" data-scroll-target="#бодлого-14">Бодлого 14</a></li>
-  <li><a href="#бодлого-15" id="toc-бодлого-15" class="nav-link" data-scroll-target="#бодлого-15">Бодлого 15</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#string" id="toc-string" class="nav-link" data-scroll-target="#string"><span class="header-section-number">2</span> String</a>
+  <ul class="collapse">
+  <li><a href="#түгээмэл-string-үйлдлүүд" id="toc-түгээмэл-string-үйлдлүүд" class="nav-link" data-scroll-target="#түгээмэл-string-үйлдлүүд"><span class="header-section-number">2.1</span> Түгээмэл string үйлдлүүд</a></li>
+  </ul></li>
+  <li><a href="#array" id="toc-array" class="nav-link" data-scroll-target="#array"><span class="header-section-number">3</span> Array</a>
+  <ul class="collapse">
+  <li><a href="#жишээ" id="toc-жишээ" class="nav-link" data-scroll-target="#жишээ"><span class="header-section-number">3.1</span> Жишээ:</a></li>
+  </ul></li>
+  <li><a href="#function" id="toc-function" class="nav-link" data-scroll-target="#function"><span class="header-section-number">4</span> Function</a>
+  <ul class="collapse">
+  <li><a href="#void-function-юу-ч-буцаахгүй" id="toc-void-function-юу-ч-буцаахгүй" class="nav-link" data-scroll-target="#void-function-юу-ч-буцаахгүй"><span class="header-section-number">4.1</span> Void function (юу ч буцаахгүй)</a></li>
+  </ul></li>
+  <li><a href="#example-programs" id="toc-example-programs" class="nav-link" data-scroll-target="#example-programs"><span class="header-section-number">5</span> Example Programs</a>
+  <ul class="collapse">
+  <li><a href="#example-1-нэрийг-урвуугаар-хэвлэх" id="toc-example-1-нэрийг-урвуугаар-хэвлэх" class="nav-link" data-scroll-target="#example-1-нэрийг-урвуугаар-хэвлэх"><span class="header-section-number">5.1</span> Example 1: Нэрийг урвуугаар хэвлэх</a></li>
+  <li><a href="#example-2-array-дахь-хамгийн-их-утгыг-олох" id="toc-example-2-array-дахь-хамгийн-их-утгыг-олох" class="nav-link" data-scroll-target="#example-2-array-дахь-хамгийн-их-утгыг-олох"><span class="header-section-number">5.2</span> Example 2: Array дахь хамгийн их утгыг олох</a></li>
+  <li><a href="#example-3-function-ашиглан-тоо-тэгш-эсэхийг-шалгах" id="toc-example-3-function-ашиглан-тоо-тэгш-эсэхийг-шалгах" class="nav-link" data-scroll-target="#example-3-function-ашиглан-тоо-тэгш-эсэхийг-шалгах"><span class="header-section-number">5.3</span> Example 3: Function ашиглан тоо тэгш эсэхийг шалгах</a></li>
+  </ul></li>
+  <li><a href="#final-practice-problems" id="toc-final-practice-problems" class="nav-link" data-scroll-target="#final-practice-problems"><span class="header-section-number">6</span> Final Practice Problems</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/1.1.html">Сорил</a></li><li class="breadcrumb-item"><a href="../challenges/1.1.html">Зуны бага сорилго №1.1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../cp/6.17.html">Програмчлал</a></li><li class="breadcrumb-item"><a href="../cp/6.18.html">C++ хэлний суурь №2 (6/18)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Зуны бага сорилго №1.1</h1>
-<p class="subtitle lead">І сорил: 2025 оны 6 сарын 13</p>
+<h1 class="title">C++ хэлний суурь №2 (6/18)</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Batsambuu Batbold </p>
+          </div>
+  </div>
     
   
     
@@ -307,198 +324,145 @@ window.Quarto = {
 </header>
 
 
-<blockquote class="blockquote">
-<p>Энэ сорилгыг <strong>AIME I 2000</strong> тэмцээний бодлогуудыг ашиглан зохиосон болно.</p>
-</blockquote>
-<p><em>Бодох хугацаа 3 цаг.</em><br>
-<em>Бүх хариу нь 0-ээс 999 хүртэлх бүхэл тоо байна.</em><br>
-<em>Бодлого бүр 1 оноотой.</em></p>
-<hr>
-<section id="бодлого-1" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-1">Бодлого 1</h3>
-<p>Ямар ч байдлаар <span class="math inline">\(10^{n}\)</span>-г хоёр эерэг бүхэл тооны үржвэр болгон задлахад, уг хоёр тооны ядаж нэг нь <span class="math inline">\(0\)</span> цифрийг агуулсан байх хамгийн бага эерэг бүхэл тоо <span class="math inline">\(n\)</span>-ийг ол.</p>
-<hr>
-</section>
-<section id="бодлого-2" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-2">Бодлого 2</h3>
-<p><span class="math inline">\(u\)</span> ба <span class="math inline">\(v\)</span> нь бүхэл тоонууд ба <span class="math inline">\(0 &lt; v &lt; u\)</span> нөхцөлийг хангана. <span class="math inline">\(A = (u,v)\)</span> ба <span class="math inline">\(B\)</span> нь <span class="math inline">\(A\)</span> цэгийг <span class="math inline">\(y = x\)</span> шулууны хувьд тэгш хэмтэй хувиргасан, <span class="math inline">\(C\)</span> нь <span class="math inline">\(B\)</span> цэгийг <span class="math inline">\(y\)</span> тэнхлэгийн хувьд тэгш хэмтэй хувиргасан, <span class="math inline">\(D\)</span> нь <span class="math inline">\(C\)</span> цэгийг <span class="math inline">\(x\)</span> тэнхлэгийн хувьд тэгш хэмтэй хувиргасан, харин <span class="math inline">\(E\)</span> нь <span class="math inline">\(D\)</span> цэгийг <span class="math inline">\(y\)</span> тэнхлэгийн хувьд тэгш хэмтэй хувиргасан цэгүүд байв. Хэрвээ таван өнцөгт <span class="math inline">\(ABCDE\)</span>-ийн талбай нь <span class="math inline">\(451\)</span> бол <span class="math inline">\(u + v\)</span>-г ол.</p>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Энэ хичээлээр бид дараах гурван чухал сэдвийг судална:</p>
+<ul>
+<li>String (тэмдэгт мөр)</li>
+<li>Array (массив)</li>
+<li>Function (функц)</li>
+</ul>
+<p>Эдгээр ойлголтууд нь илүү том, олон үйлдэл бүхий программ бичихэд зайлшгүй шаардлагатай. Хичээлийн төгсгөлд та массив ашиглан мэдээлэл хадгалах, функц зохион бүтээж кодын бүтцийг сайжруулах чадвартай болно.</p>
 <hr>
 </section>
-<section id="бодлого-3" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-3">Бодлого 3</h3>
-<p><span class="math inline">\(a\)</span> ба <span class="math inline">\(b\)</span> нь харилцан анхны эерэг бүхэл тоонууд бөгөөд <span class="math inline">\((ax + b)^{2000}\)</span>-г задлах үед <span class="math inline">\(x^{2}\)</span> ба <span class="math inline">\(x^{3}\)</span>-н коэффициентууд тэнцүү байв. <span class="math inline">\(a + b\)</span>-г ол.</p>
+<section id="string" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> String</h1>
+<p>C++ хэлэнд string гэдэг нь тэмдэгтүүдийн дараалал юм. Энэ нь <code>string</code> төрлөөр хадгалагддаг ба олон төрлийн үйлдэл хийж болдог.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    string name <span class="op">=</span> <span class="st">"Alice"</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"Hello, "</span> <span class="op">&lt;&lt;</span> name <span class="op">&lt;&lt;</span> <span class="st">"!"</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="түгээмэл-string-үйлдлүүд" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="түгээмэл-string-үйлдлүүд"><span class="header-section-number">2.1</span> Түгээмэл string үйлдлүүд</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>string s <span class="op">=</span> <span class="st">"Hello"</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> s<span class="op">.</span>length<span class="op">()</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span>       <span class="co">// Урт</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> s<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span>             <span class="co">// Эхний тэмдэгт</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>s <span class="op">+=</span> <span class="st">" World"</span><span class="op">;</span>                    <span class="co">// Нэмж залгах</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> s <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>s.length()</code>: string-ийн уртыг олно</li>
+<li><code>s[i]</code>: i-р тэмдэгтийг авна</li>
+<li><code>+=</code>: тэмдэгт мөрийг нэмж залгах</li>
+</ul>
 <hr>
 </section>
-<section id="бодлого-4" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-4">Бодлого 4</h3>
-<p>Доорх тэгш өнцөгт нь есөн үл огтлолцох квадратуудад дараах байдлаар хуваагдсан байв. Хэрвээ тэгш өнцөгтийн өргөн ба өндөр нь харилцан анхны эерэг бүхэл тоонууд бол тэгш өнцөгтийн хүрээний уртыг ол.</p>
-<p align="center">
-<img src="fig1.png" width="300">
-</p>
+</section>
+<section id="array" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Array</h1>
+<p>Array буюу массив гэдэг нь ижил төрлийн олон утгыг хадгалах дараалсан сав юм.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> numbers<span class="op">[</span><span class="dv">5</span><span class="op">]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Массивын элементүүдэд индексээр нь ханддаг ба эхний индекс нь 0.</p>
+<section id="жишээ" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="жишээ"><span class="header-section-number">3.1</span> Жишээ:</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> arr<span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    cin <span class="op">&gt;&gt;</span> arr<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> arr<span class="op">[</span>i<span class="op">]</span> <span class="op">&lt;&lt;</span> <span class="st">" "</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>int arr[5]</code>: 5 ширхэг int хадгалах массив</li>
+<li><code>arr[i]</code>: i-р элемент</li>
+</ul>
+</section>
+</section>
+<section id="function" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Function</h1>
+<p>Function буюу функц нь зарим кодын хэсгийг дахин ашиглах боломж олгодог. Гол санаа нь: нэг тодорхой үйлдлийг тусгаарлан бичих.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> add<span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> sum <span class="op">=</span> add<span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">);</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"Sum = "</span> <span class="op">&lt;&lt;</span> sum <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>int add(int a, int b)</code>: 2 <code>int</code> утга авч, <code>int</code> буцаадаг функц</li>
+<li><code>return</code>: үр дүнг буцаана</li>
+<li><code>add(3, 4)</code>: функц дуудах</li>
+</ul>
+<section id="void-function-юу-ч-буцаахгүй" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="void-function-юу-ч-буцаахгүй"><span class="header-section-number">4.1</span> Void function (юу ч буцаахгүй)</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> greet<span class="op">(</span>string name<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"Hello, "</span> <span class="op">&lt;&lt;</span> name <span class="op">&lt;&lt;</span> <span class="st">"!"</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
-<section id="бодлого-5" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-5">Бодлого 5</h3>
-<p>Хоёр хайрцаг тус бүрд хар ба цагаан бөмбөлгүүд байсан ба хоёр хайрцагт байгаа бөмбөлгүүдийн нийт тоо нь <span class="math inline">\(25\)</span>. Тус бүрээс нэг бөмбөлгийг санамсаргүйгээр авав. Авсан хоёр бөмбөлөг хоёулаа хар байх магадлал нь <span class="math inline">\(\frac{27}{50}\)</span> бөгөөд хоёр бөмбөлөг хоёулаа цагаан байх магадлал нь <span class="math inline">\(\frac{m}{n}\)</span> байсан бол <span class="math inline">\(m + n\)</span>-г ол. Энд <span class="math inline">\(m\)</span> ба <span class="math inline">\(n\)</span> нь харилцан анхны эерэг бүхэл тоонууд.</p>
+</section>
+<section id="example-programs" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Example Programs</h1>
+<section id="example-1-нэрийг-урвуугаар-хэвлэх" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="example-1-нэрийг-урвуугаар-хэвлэх"><span class="header-section-number">5.1</span> Example 1: Нэрийг урвуугаар хэвлэх</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>string name<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cin <span class="op">&gt;&gt;</span> name<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> name<span class="op">.</span>length<span class="op">()</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">--)</span> <span class="op">{</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> name<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
-<section id="бодлого-6" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-6">Бодлого 6</h3>
-<p>Хэдэн эрэмбэлэгдсэн хос <span class="math inline">\((x,y)\)</span> <span class="math inline">\((0 &lt; x &lt; y &lt; 10^{6})\)</span> бүхэл тоонуудын хувьд <span class="math inline">\(x\)</span> ба <span class="math inline">\(y\)</span>-ийн арифметик дундаж нь геометр дунджаасаа яг <span class="math inline">\(2\)</span>-оор их байх вэ?</p>
+<section id="example-2-array-дахь-хамгийн-их-утгыг-олох" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="example-2-array-дахь-хамгийн-их-утгыг-олох"><span class="header-section-number">5.2</span> Example 2: Array дахь хамгийн их утгыг олох</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> arr<span class="op">[</span><span class="dv">5</span><span class="op">];</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++)</span> cin <span class="op">&gt;&gt;</span> arr<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> maxVal <span class="op">=</span> arr<span class="op">[</span><span class="dv">0</span><span class="op">];</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>arr<span class="op">[</span>i<span class="op">]</span> <span class="op">&gt;</span> maxVal<span class="op">)</span> maxVal <span class="op">=</span> arr<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"Max = "</span> <span class="op">&lt;&lt;</span> maxVal <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
-<section id="бодлого-7" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-7">Бодлого 7</h3>
-<p><span class="math inline">\(x,\)</span> <span class="math inline">\(y,\)</span> <span class="math inline">\(z\)</span> нь гурван эерэг тоо бөгөөд дараах тэгшитгэлүүдийг хангана: <span class="math inline">\(xyz = 1,\)</span> <span class="math inline">\(x + \frac{1}{z} = 5,\)</span> болон <span class="math inline">\(y + \frac{1}{x} = 29.\)</span> Тэгвэл <span class="math inline">\(z + \frac{1}{y} = \frac{m}{n}\)</span> бол <span class="math inline">\(m + n\)</span>-г ол. Энд <span class="math inline">\(m\)</span> ба <span class="math inline">\(n\)</span> нь харилцан анхны эерэг бүхэл тоонууд.</p>
+<section id="example-3-function-ашиглан-тоо-тэгш-эсэхийг-шалгах" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="example-3-function-ашиглан-тоо-тэгш-эсэхийг-шалгах"><span class="header-section-number">5.3</span> Example 3: Function ашиглан тоо тэгш эсэхийг шалгах</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> isEven<span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    cin <span class="op">&gt;&gt;</span> x<span class="op">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>isEven<span class="op">(</span>x<span class="op">))</span> cout <span class="op">&lt;&lt;</span> <span class="st">"Even"</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> cout <span class="op">&lt;&lt;</span> <span class="st">"Odd"</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
-<section id="бодлого-8" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-8">Бодлого 8</h3>
-<p>Конус хэлбэртэй савны өндөр нь <span class="math inline">\(12\)</span> см, суурийн радиус нь <span class="math inline">\(5\)</span> см байв. Савны хошуу нь доош харсан, суурь нь хэвтээ байрлалтай үед дотор нь байх усны гүн <span class="math inline">\(9\)</span> см. Харин хошуу нь дээш харсан үед усны гүн нь <span class="math inline">\(m - n\sqrt[3]{p}\)</span> байсан бол <span class="math inline">\(m + n + p\)</span>-г ол. Энд <span class="math inline">\(m\)</span>, <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span> нь эерэг бүхэл тоонууд бөгөөд <span class="math inline">\(p\)</span> нь ямар ч анхны тооны кубд хуваагддаггүй.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Бодолт харах">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Бодолт харах
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p align="center">
-<img src="fig2.png" width="300">
-</p>
-<p>Конусын эзлэхүүнийг <span class="math inline">\(V = \frac{\pi}{3}r^2h\)</span> томьёогоор олдог. Хоёр дахь тохиолдол буюу конус дээшээ харсан үедэх хоосон агаарын өндөр, радиусыг <span class="math inline">\(h', r'\)</span> гэж тэмдэглэвэл (тэгвэл усны өндөр нь <span class="math inline">\(12 - h'\)</span> болно), усны эзлэхүүнийг дараах байдлаар илэрхийлж болно: <span class="math inline">\(\frac{\pi}{3}r^2h - \frac{\pi}{3}(r')^2h'\)</span>.</p>
-<p>Төсөөтэй гурвалжны аргаар, эхний тохиолдлын конус дахь ус ба том конусын талуудын харьцаа нь <span class="math inline">\(\frac{3}{4}\)</span> байна. Мөн <span class="math inline">\(r' = \frac{rh'}{h}\)</span> байна. Эдгээрийг тэнцүүлбэл,</p>
-<p><span class="math display">\[\begin{align}
-\frac{\pi}{3}\left(\frac{3}{4}r\right)^2 \left(\frac{3}{4}h\right) &amp;= \frac{\pi}{3}\left(r^2h - \left(\frac{rh'}{h}\right)^2h'\right)
-
-\\
-
-\frac{37}{64}r^2h &amp;= \frac{r^2}{h^2}(h')^3
-
-\\
-
-h' &amp;= \sqrt[3]{\frac{37}{64} \cdot 12^3} = 3\sqrt[3]{37}
-\end{align}\]</span></p>
-<p>Иймд хариу нь <span class="math inline">\(12 - h' = 12 - 3\sqrt[3]{37}\)</span> бөгөөд <span class="math inline">\(m+n+p=\boxed{52}\)</span> болно.</p>
-</div>
-</div>
-</div>
-<hr>
 </section>
-<section id="бодлого-9" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-9">Бодлого 9</h3>
-<p>Доорх систем тэгшитгэл <span class="math display">\[\begin{eqnarray*}
-\log_{10}(2000xy) - (\log_{10}x)(\log_{10}y) &amp; = &amp; 4 \\
-\log_{10}(2yz) - (\log_{10}y)(\log_{10}z) &amp; = &amp; 1 \\
-\log_{10}(zx) - (\log_{10}z)(\log_{10}x) &amp; = &amp; 0
-\end{eqnarray*}\]</span> <span class="math inline">\((x_{1},y_{1},z_{1})\)</span> ба <span class="math inline">\((x_{2},y_{2},z_{2})\)</span> гэсэн хоёр шийдтэй. <span class="math inline">\(y_{1} + y_{2}\)</span>-г ол.</p>
-<hr>
-</section>
-<section id="бодлого-10" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-10">Бодлого 10</h3>
-<p><span class="math inline">\(x_{1},x_{2},x_{3},\ldots,x_{100}\)</span> гэсэн тоон дараалал нь дараах шинж чанартай: <span class="math inline">\(1\)</span>-ээс <span class="math inline">\(100\)</span> хүртэлх бүхэл тоо <span class="math inline">\(k\)</span> бүрийн хувьд, <span class="math inline">\(x_{k}\)</span> нь бусад <span class="math inline">\(99\)</span> тооны нийлбэрээс <span class="math inline">\(k\)</span>-аар бага. Хэрвээ <span class="math inline">\(x_{50} = \frac{m}{n}\)</span> бол <span class="math inline">\(m + n\)</span>-г ол. Энд <span class="math inline">\(m\)</span> ба <span class="math inline">\(n\)</span> нь харилцан анхны эерэг бүхэл тоонууд.</p>
-<hr>
-</section>
-<section id="бодлого-11" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-11">Бодлого 11</h3>
-<p><span class="math inline">\(S\)</span>-г <span class="math inline">\(\frac{a}{b}\)</span> хэлбэртэй бүх тоонуудын нийлбэр гэж тодорхойлъё. Энд <span class="math inline">\(a\)</span> ба <span class="math inline">\(b\)</span> нь <span class="math inline">\(1000\)</span>-ын харилцан анхны эерэг хуваагчид. Тэгвэл <span class="math inline">\(\frac{S}{10}\)</span>-аас хэтрэхгүй хамгийн их бүхэл тоо хэд вэ?</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Бодолт харах">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Бодолт харах
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(1000 = 2^3 \cdot 5^3\)</span> тул түүний бүх хуваагчдыг <span class="math inline">\(2^m5^n\)</span> хэлбэрт бичиж болно. Иймд <span class="math inline">\(\frac{a}{b}\)</span> харьцааг мөн <span class="math inline">\(2^x5^y\)</span> хэлбэртэйгээр илэрхийлж болно, энд <span class="math inline">\(-3 \le x,y \le 3\)</span> байна. Иймд <span class="math inline">\(a/b\)</span> хэлбэртэй бүх тоонууд дараах үржвэр дотор нэг удаа орж ирнэ:</p>
-<p><span class="math display">\[(2^{-3} + 2^{-2} + 2^{-1} + 2^{0} + 2^{1} + 2^2 + 2^3)(5^{-3} + 5^{-2} +5^{-1} + 5^{0} + 5^{1} + 5^2 + 5^3)\]</span></p>
-<p>Геометр прогрессын томьёог ашиглавал энэ нь дараах хэлбэрт шилжинэ:</p>
-<p><span class="math display">\[S = \frac{2^{-3}(2^7 - 1)}{2-1} \cdot \frac{5^{-3}(5^{7} - 1)}{5-1} = \frac{127 \cdot 78124}{4000} = 2480 + \frac{437}{1000}\]</span>.</p>
-<p>Иймд <span class="math inline">\(\left\lfloor \frac{S}{10} \right\rfloor = \boxed{248}\)</span> болно.</p>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="бодлого-12" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-12">Бодлого 12</h3>
-<p><span class="math inline">\(f\)</span> функц нь дараах нөхцөлүүдийг бүх бодит <span class="math inline">\(x\)</span> утгын хувьд хангана: <span class="math display">\[f(x) = f(398 - x) = f(2158 - x) = f(3214 - x)\]</span> Тэгвэл <span class="math inline">\(f(0), f(1), f(2), \ldots, f(999)\)</span> тоонууд хамгийн ихдээ хэдэн ялгаатай утгуудыг авч чадах вэ?</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Бодолт харах">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Бодолт харах
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[\begin{align*}
-f(2158 - x) = f(x) &amp;= f(3214 - (2158 - x)) &amp;= f(1056 + x)
-\\
-f(398 - x) = f(x) &amp;= f(2158 - (398 - x)) &amp;= f(1760 + x)
-\end{align*}\]</span></p>
-<p>Энд <span class="math inline">\(\mathrm{gcd}(1056, 1760) = 352\)</span> тул Евклидийн алгоритмын дагуу:</p>
-<p><span class="math display">\[f(x) = f(352 + x)\]</span></p>
-<p>гэж дүгнэж болно. Тэгэхээр <span class="math inline">\(f(x)\)</span> нь <span class="math inline">\(352\)</span> үетэй функц бөгөөд зөвхөн нэг үе дахь утгууд болох <span class="math inline">\(f(0), f(1), \ldots, f(351)\)</span>-г мэдэхэд бусад бүх <span class="math inline">\(x\)</span> дээрх утгыг тодорхойлж болно. Иймд <span class="math inline">\(f(x)\)</span> нь ихдээ <span class="math inline">\(352\)</span> ялгаатай утгатай байж чадна.</p>
-<p>Гэхдээ бас <span class="math inline">\(f(x) = f(46 - x) = f(398 - x)\)</span> гэдгийг мэдэж байгаа. Энэ нь <span class="math inline">\(x = 24, 25, \ldots, 46\)</span> болон <span class="math inline">\(x = 200, 201, \ldots, 351\)</span> утгууд давхардаж буй гэсэн үг. Иймээс давхардсан утгуудыг хасвал:</p>
-<p><span class="math display">\[352 - (46 - 24 + 1) - (351 - 200 + 1) = \boxed{ 177 }\]</span></p>
-<p>ялгаатай утга байна.</p>
-<p><span class="math inline">\(f(23), f(24), \ldots, f(199)\)</span> утгууд бүгд ялгаатай байж болохыг харуулахын тулд нөхцөлийг хангах жишээ функц олоход болно. Дараах функц нь нөхцөлийг хангана: <span class="math inline">\(f(x) = \cos \left(\frac{360}{352}(x-23)\right)\)</span> (градусаар авна).</p>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="бодлого-13" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-13">Бодлого 13</h3>
-<p>Өргөн уудам тал нутагт, галын машин хоёр перпендикуляр хурдны замын огтлолцол дээр байрлаж байв. Машин хурдны замаар цагт <span class="math inline">\(50\)</span> км, харин шороон замаар явахдаа цагт <span class="math inline">\(14\)</span> км хурдтай явдаг. Галын машин зургаан минутын дотор хүрч чадах цэгүүдийн олонлогийг авч үзье. Уг цэгүүдээр үүсэх дүрсийн талбай нь <span class="math inline">\(\frac{m}{n}\)</span> кв.км бол <span class="math inline">\(m + n\)</span>-г ол. Энд <span class="math inline">\(m\)</span> ба <span class="math inline">\(n\)</span> нь харилцан анхны эерэг бүхэл тоонууд.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Бодолт харах">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Бодолт харах
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Хоёр хурдны замын огтлолцлыг <span class="math inline">\(O\)</span> гэж үзье. Хурдны замуудыг <span class="math inline">\(x\)</span> болон <span class="math inline">\(y\)</span> тэнхлэгүүд гэж авъя. Машин <span class="math inline">\(x\)</span> тэнхлэгийн эерэг чиглэлд явж байгаа тохиолдлыг авч үзье.</p>
-<p>Машин <span class="math inline">\(x\)</span> км явсны дараа өнгөрсөн хугацаа нь <span class="math inline">\(t = \frac{d}{r} = \frac{x}{50}\)</span> цаг байна. Хэрэв энэ үед машин хурдны замаас гарвал, хамгийн ихдээ <span class="math inline">\(t = \frac{1}{10} - \frac{x}{50}\)</span> цаг явж чадна. Энэ хугацаанд туулж чадах зам нь <span class="math inline">\(d = rt = 14t = 1.4 - \frac{7x}{25}\)</span> км байна. Иймд машин <span class="math inline">\((x,0)\)</span> цэгийг төв болгосон, радиус нь <span class="math inline">\(1.4 - \frac{7x}{25}\)</span> байх тойргийн хаана ч очих боломжтой.</p>
-<p>Эдгээр бүх тойргууд нь <span class="math inline">\((5,0)\)</span> цэгт төвтэй гомотет (томсгосон) байна.</p>
-<p align="center">
-<img src="fig3.png" width="300">
-</p>
-<p align="center">
-<img src="fig4.png" width="300">
-</p>
-<p>Дүрс нь дээр харуулсанчлан 8 тэнцүү гурвалжнаас тогтдог болохыг олж мэдмэгц, бид нийт талбайг олж чадна.</p>
-<p>Нэг гурвалжны талбай нь <span class="math inline">\(\frac{175}{62}\)</span> гэж гарах тул нийт талбай <span class="math inline">\(\frac{700}{31}\)</span>. Иймд хариу нь <span class="math inline">\(\boxed{731}\)</span>.</p>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="бодлого-14" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-14">Бодлого 14</h3>
-<p><span class="math inline">\(\triangle ABC\)</span> гурвалжны <span class="math inline">\(B\)</span> ба <span class="math inline">\(C\)</span> оройны өнцгүүд тэнцүү. <span class="math inline">\(P\)</span> болон <span class="math inline">\(Q\)</span> цэгүүд нь харгалзан <span class="math inline">\(\overline{AC}\)</span> болон <span class="math inline">\(\overline{AB}\)</span> хэрчим дээр орших ба <span class="math inline">\(AP = PQ = QB = BC\)</span> байв. Хэрэв <span class="math inline">\(\angle ACB\)</span> нь <span class="math inline">\(\angle APQ\)</span>-с <span class="math inline">\(r\)</span> дахин их ба <span class="math inline">\(r\)</span> нь эерэг бодит тоо бол <span class="math inline">\(\lfloor 1000r \rfloor\)</span>-г ол.</p>
-<hr>
-</section>
-<section id="бодлого-15" class="level3">
-<h3 class="anchored" data-anchor-id="бодлого-15">Бодлого 15</h3>
-<p>2000 ширхэг багц карт <span class="math inline">\(1\)</span>-ээс <span class="math inline">\(2000\)</span> хүртэлх бүхэл тоогоор тэмдэглэгдсэн бөгөөд картууд ямар нэгэн эрэмбэгүйгээр давхарлан байрлажээ. Дээд талын картыг авч ширээн дээр тавиад, дараагийн картыг багцын доод талд нь шилжүүлэв. Дараа нь шинээр гарч ирсэн дээд талын картыг ширээн дээрх картын баруун талд тавьж, дараагийн картыг доод талд нь шилжүүлэв. Энэ үйлдлийг бүх карт ширээн дээр тавигдах хүртэл давтсаны дараа ширээн дээрх картуудын тоо зүүнээс баруун руу <span class="math inline">\(1,2,3,\ldots,1999,2000\)</span> гэсэн өсөх эрэмбээр байрласан байв. Тэгвэл анх <span class="math inline">\(1999\)</span> гэсэн картын дээр хэдэн карт байсан бэ?</p>
+<section id="final-practice-problems" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Final Practice Problems</h1>
+<p>Дараах бодлогуудыг <code>string</code>, <code>array</code>, <code>function</code> ашиглан бодоорой:</p>
+<ol type="1">
+<li><p><strong>Count Vowels</strong><br>
+String оруулаад хэдэн эгшиг (a, e, i, o, u) байгааг ол.</p></li>
+<li><p><strong>Sum of Array Elements</strong><br>
+Array оруулаад элементүүдийн нийлбэрийг ол.</p></li>
+<li><p><strong>Find the Minimum Value</strong><br>
+Array дахь хамгийн бага утгыг ол.</p></li>
+<li><p><strong>Palindrome Check</strong><br>
+String урвуугаар уншихад ижил байвал “Palindrome” гэж хэвлэ.</p></li>
+<li><p><strong>Function: Factorial</strong><br>
+<code>int factorial(int n)</code> функц бичиж <code>n!</code>-г тооцоол.</p></li>
+</ol>
 <hr>
 
 

@@ -20,14 +20,16 @@ website:
       - section: "Програмчлал"
         contents:
           - cp/6.17.qmd
-          # - cp/cp2.qmd
+          - cp/6.18.qmd
+      - section: "Англи хэл"
+        contents:
+          - english/6.17.qmd
+          - english/6.18.qmd
       - section: "Сорил"
         contents: 
           - challenges/1.1.qmd
           - challenges/1.2.qmd
-      - section: "Англи хэл"
-        contents:
-          - english/6.17.qmd
+      
   page-footer: "© 2025 Batsambuu Batbold"
 
 format:

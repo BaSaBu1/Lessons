@@ -1,0 +1,175 @@
+---
+title: "C++ хэлний суурь №2 (6/18)"
+author: "Batsambuu Batbold"
+format: html
+lang: mn
+number-sections: true
+toc: true
+---
+
+# Introduction
+
+Энэ хичээлээр бид дараах гурван чухал сэдвийг судална:
+
+- String (тэмдэгт мөр)
+- Array (массив)
+- Function (функц)
+
+Эдгээр ойлголтууд нь илүү том, олон үйлдэл бүхий программ бичихэд зайлшгүй шаардлагатай. Хичээлийн төгсгөлд та массив ашиглан мэдээлэл хадгалах, функц зохион бүтээж кодын бүтцийг сайжруулах чадвартай болно.
+
+---
+
+# String
+
+C++ хэлэнд string гэдэг нь тэмдэгтүүдийн дараалал юм. Энэ нь `string` төрлөөр хадгалагддаг ба олон төрлийн үйлдэл хийж болдог.
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string name = "Alice";
+    cout << "Hello, " << name << "!" << endl;
+    return 0;
+}
+```
+
+## Түгээмэл string үйлдлүүд
+
+```cpp
+string s = "Hello";
+cout << s.length() << endl;       // Урт
+cout << s[0] << endl;             // Эхний тэмдэгт
+s += " World";                    // Нэмж залгах
+cout << s << endl;
+```
+
+- `s.length()`: string-ийн уртыг олно
+- `s[i]`: i-р тэмдэгтийг авна
+- `+=`: тэмдэгт мөрийг нэмж залгах
+
+---
+
+# Array
+
+Array буюу массив гэдэг нь ижил төрлийн олон утгыг хадгалах дараалсан сав юм.
+
+```cpp
+int numbers[5] = {1, 2, 3, 4, 5};
+```
+
+Массивын элементүүдэд индексээр нь ханддаг ба эхний индекс нь 0.
+
+## Жишээ:
+
+```cpp
+int arr[5];
+for (int i = 0; i < 5; i++) {
+    cin >> arr[i];
+}
+
+for (int i = 0; i < 5; i++) {
+    cout << arr[i] << " ";
+}
+```
+
+- `int arr[5]`: 5 ширхэг int хадгалах массив
+- `arr[i]`: i-р элемент
+
+# Function
+
+Function буюу функц нь зарим кодын хэсгийг дахин ашиглах боломж олгодог. Гол санаа нь: нэг тодорхой үйлдлийг тусгаарлан бичих.
+
+```cpp
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int sum = add(3, 4);
+    cout << "Sum = " << sum << endl;
+    return 0;
+}
+```
+
+- `int add(int a, int b)`: 2 `int` утга авч, `int` буцаадаг функц
+- `return`: үр дүнг буцаана
+- `add(3, 4)`: функц дуудах
+
+## Void function (юу ч буцаахгүй)
+
+```cpp
+void greet(string name) {
+    cout << "Hello, " << name << "!" << endl;
+}
+```
+---
+
+# Example Programs
+
+## Example 1: Нэрийг урвуугаар хэвлэх
+
+```cpp
+string name;
+cin >> name;
+for (int i = name.length() - 1; i >= 0; i--) {
+    cout << name[i];
+}
+cout << endl;
+```
+---
+
+## Example 2: Array дахь хамгийн их утгыг олох
+
+```cpp
+int arr[5];
+for (int i = 0; i < 5; i++) cin >> arr[i];
+
+int maxVal = arr[0];
+for (int i = 1; i < 5; i++) {
+    if (arr[i] > maxVal) maxVal = arr[i];
+}
+cout << "Max = " << maxVal << endl;
+```
+
+---
+
+## Example 3: Function ашиглан тоо тэгш эсэхийг шалгах
+
+```cpp
+bool isEven(int n) {
+    return n % 2 == 0;
+}
+
+int main() {
+    int x;
+    cin >> x;
+    if (isEven(x)) cout << "Even" << endl;
+    else cout << "Odd" << endl;
+    return 0;
+}
+```
+
+---
+
+# Final Practice Problems
+
+Дараах бодлогуудыг `string`, `array`, `function` ашиглан бодоорой:
+
+1. **Count Vowels**  
+   String оруулаад хэдэн эгшиг (a, e, i, o, u) байгааг ол.
+
+2. **Sum of Array Elements**  
+   Array оруулаад элементүүдийн нийлбэрийг ол.
+
+3. **Find the Minimum Value**  
+   Array дахь хамгийн бага утгыг ол.
+
+4. **Palindrome Check**  
+   String урвуугаар уншихад ижил байвал "Palindrome" гэж хэвлэ.
+
+5. **Function: Factorial**  
+   `int factorial(int n)` функц бичиж `n!`-г тооцоол.
+
+---
