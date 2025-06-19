@@ -1,0 +1,257 @@
+---
+title: "Recursion, Sorting, Time Complexity (6/19)"
+author: "Batsambuu Batbold"
+format: html
+lang: mn
+number-sections: true
+toc: true
+---
+
+# Introduction
+
+Энэ хичээлээр бид дараах сэдвүүдийг гүнзгий судална:
+
+- Recursion (Өөрийгөө дууддаг функц)
+- Sorting (Өгөгдлийг эрэмбэлэх олон аргачлал)
+- Time Complexity (Алгоритмын гүйцэтгэлийн шинжилгээ)
+
+Эдгээр ойлголт нь C++ хэл дээр алгоритм бичихэд чухал ач холбогдолтой бөгөөд олимпиад, competitive programming-д шууд хамаатай.
+
+# Recursion
+
+## Recursion гэж юу вэ?
+
+**Recursion** гэдэг нь функц өөрийгөө дуудаж асуудлыг багасгаж шийдэх аргыг хэлнэ. Жишээлбэл, $n! = n \times (n-1)!$ гэж бичигддэг тул энэ нь recursion ашиглах боломжийг харуулж байна.
+
+### Суурь нөхцөл (Base case)
+
+Бүх recursion функц **зогсоох нөхцөлтэй** байх ёстой. Үгүй бол function stack дуусаж, "stack overflow" алдаа өгнө.
+
+### Recursive case
+
+Функц өөрийгөө дуудаж, асуудлыг бага болгож шийддэг хэсэг.
+
+## Example 1: Factorial
+
+```cpp
+int factorial(int n) {
+    if (n <= 1) return 1; // base case
+    return n * factorial(n - 1); // recursive case
+}
+```
+
+**Жишээ**: `factorial(5)` → `5 * 4 * 3 * 2 * 1 = 120`
+
+## Example 2: Fibonacci Number
+
+```cpp
+int fib(int n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+```
+
+**⚠️Анхааруулга**: Энэ функц дахин дахин ижил тооцооллоо хийдэг тул **удаан ажилладаг**. Илүү хурдан аргыг дараа судална.
+
+## Example 3: Reverse a string using recursion
+
+```cpp
+void reverseString(string& s, int i) {
+    if (i >= s.size() / 2) return;
+    swap(s[i], s[s.size() - 1 - i]);
+    reverseString(s, i + 1);
+}
+```
+
+# Sorting
+
+Өгөгдлийг тодорхой дарааллаар эрэмбэлэх үйлдлийг **sorting** гэнэ. Өсөх (`ascending`) буюу буурах (`descending`) дараалал байж болно.
+
+## Hand-coded Sorting Algorithms
+
+### Bubble Sort
+
+```cpp
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (arr[j] > arr[j + 1])
+                swap(arr[j], arr[j + 1]);
+        }
+    }
+}
+```
+
+Bubble Sort нь хөрш элементүүдийг харьцуулж, том утгыг "хөөж" ард нь тавьдаг.
+
+### Selection Sort
+
+```cpp
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIdx])
+                minIdx = j;
+        }
+        swap(arr[i], arr[minIdx]);
+    }
+}
+```
+
+## STL ашиглан эрэмбэлэх
+
+### Array sort (C-style массив)
+
+```cpp
+#include <algorithm>
+sort(arr, arr + n); // ascending sort
+sort(arr, arr + n, greater<int>()); // descending
+```
+
+### Vector sort
+
+```cpp
+vector<int> v = {5, 2, 9, 1};
+sort(v.begin(), v.end()); // ascending
+sort(v.rbegin(), v.rend()); // descending
+```
+
+### Custom sort with comparator
+
+```cpp
+bool cmp(pair<int, int> a, pair<int, int> b) {
+    return a.second < b.second;
+}
+
+sort(v.begin(), v.end(), cmp);
+```
+
+## Харьцуулалт
+
+| Algorithm       | Best Case | Average Case | Worst Case |
+|----------------|-----------|---------------|------------|
+| Bubble Sort     | O(n)      | O(n²)         | O(n²)      | 
+| Selection Sort  | O(n²)     | O(n²)         | O(n²)      |
+| STL `sort()`    | O(n log n)| O(n log n)    | O(n log n) |
+
+# Time Complexity
+
+Алгоритмын ажиллах хугацааг **Time Complexity** буюу **Big-O Notation**-оор хэмжинэ.
+
+## Үндсэн Big-O төрлүүд:
+
+- **O(1)** – Constant Time: үргэлж ижил хугацаа
+- **O(log n)** – Logarithmic: binary search
+- **O(n)** – Linear: нэг удаа давтдаг
+- **O(n log n)** – Efficient sort algorithms
+- **O(n²)** – Давхар давталт
+- **O(2^n)** – Exponential: recursion with branching
+
+## Жишээ 1: O(1)
+
+```cpp
+int getFirst(int arr[]) {
+    return arr[0];
+}
+```
+
+## Жишээ 2: O(n)
+
+```cpp
+int linearSum(int arr[], int n) {
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+        sum += arr[i];
+    return sum;
+}
+```
+
+## Жишээ 3: O(n²)
+
+```cpp
+void printPairs(int arr[], int n) {
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            cout << arr[i] << ", " << arr[j] << endl;
+}
+```
+
+## Жишээ 4: Binary Search – O(log n)
+
+```cpp
+int binarySearch(int arr[], int n, int target) {
+    int l = 0, r = n - 1;
+    while (l <= r) {
+        int mid = (l + r) / 2;
+        if (arr[mid] == target) return mid;
+        else if (arr[mid] < target) l = mid + 1;
+        else r = mid - 1;
+    }
+    return -1;
+}
+```
+
+## Зөвлөгөө
+
+- Давхар давталт ашиглах хэрэгтэй эсэхийг бодолц.
+- STL `sort()` ашигласнаар O(n log n) runtime-тэй болно.
+- Recursion ашиглах үед **stack overflow**-оос сэргийлж base case заавал бич.
+
+# Example Programs
+
+## Recursively find the maximum element in array
+
+```cpp
+int findMax(int arr[], int n) {
+    if (n == 1) return arr[0];
+    return max(arr[n - 1], findMax(arr, n - 1));
+}
+```
+
+## Sort names alphabetically
+
+```cpp
+vector<string> names = {"Bold", "Amar", "Tuvshin"};
+sort(names.begin(), names.end());
+```
+
+## Count how many pairs (i, j) such that i < j and a[i] + a[j] == k
+
+```cpp
+int countPairs(vector<int>& a, int k) {
+    int count = 0;
+    int n = a.size();
+    for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+            if (a[i] + a[j] == k) count++;
+    return count;
+}
+```
+
+## Identify time complexity of code samples
+
+```cpp
+// O(n log n)
+sort(arr, arr + n);
+
+// O(n²)
+for (int i = 0; i < n; i++)
+    for (int j = 0; j < n; j++)
+        sum += i * j;
+
+// O(log n)
+while (n > 1) {
+    n /= 2;
+}
+```
+
+## Reverse digits using recursion
+
+```cpp
+void reverseDigits(int n) {
+    if (n == 0) return;
+    cout << n % 10;
+    reverseDigits(n / 10);
+}
+```

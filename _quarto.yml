@@ -21,10 +21,12 @@ website:
         contents:
           - cp/6.17.qmd
           - cp/6.18.qmd
+          - cp/6.19.qmd
       - section: "Англи хэл"
         contents:
           - english/6.17.qmd
           - english/6.18.qmd
+          - english/6.19.qmd
       - section: "Сорил"
         contents: 
           - challenges/1.1.qmd

@@ -1,0 +1,122 @@
+---
+title: "Class 3 – The History and Impact of Vaccination (6/19)"
+format: html
+---
+
+## Grammar Focus
+
+- Present Perfect (experience, recent past)  
+- Present Perfect vs. Past Simple  
+
+---
+
+## Reading Text
+
+**Title**: *The History and Impact of Vaccination*
+
+Vaccination **has become** one of the most important medical achievements in human history. It **has saved** millions of lives by preventing deadly diseases. But how did it start?
+
+The first vaccine **was developed** in 1796 by Edward Jenner, an English doctor. He **noticed** that milkmaids who **had caught** cowpox never **got** smallpox. Jenner **took** material from a cowpox sore and **injected** it into a young boy. The boy **did not develop** smallpox. This experiment **marked** the beginning of vaccination.
+
+Since then, scientists **have created** vaccines for many dangerous diseases, such as polio, measles, and influenza. The World Health Organization (WHO) **has reported** that smallpox **has been eliminated** completely due to worldwide vaccination campaigns. This disease **killed** millions of people in the past, but no cases **have been found** since 1980.
+
+In recent years, vaccination **has played** a key role in stopping the spread of COVID-19. Governments **began** mass vaccination programs in 2020. Many people **have received** the vaccine, and studies **have shown** that it reduces serious illness and death.
+
+Vaccination not only protects individuals but also communities. When enough people **have been vaccinated**, diseases **cannot spread** easily. This is called "herd immunity."
+
+However, some people **have refused** vaccines for different reasons. They **believe** vaccines are unsafe, but science **has shown** that most vaccines **are** very safe and effective.
+
+Vaccines **have changed** the way we live. Many diseases that once **caused** large outbreaks **have become** rare. Thanks to vaccination, we **have lived** longer and healthier lives.
+
+---
+
+## Grammar Explanation
+
+### 1. **Present Perfect**
+
+The **present perfect** describes actions or experiences that happened at an unspecified time **before now**, or actions that **started in the past and continue** to the present.
+
+#### Sentence structure
+- Positive:  
+  - I/You/We/They **have eaten**  
+  - He/She/It **has eaten**
+
+- Negative:  
+  - I/You/We/They **have not (haven’t) eaten**  
+  - He/She/It **has not (hasn’t) eaten**
+
+- Questions:  
+  - **Have** you eaten?  
+  - **Has** she eaten?
+
+#### Uses
+1. **Life experience (time not important)**
+   - I **have visited** Japan.  
+   - He **has never tried** sushi.
+
+2. **Recent past with present result**
+   - She **has broken** her arm. (Her arm is still broken)  
+   - They **have just arrived**.
+
+3. **Ongoing actions (with for/since)**
+   - We **have lived** here for ten years.  
+   - He **has worked** at NASA since 2021.
+
+---
+
+### 2. **Present Perfect vs. Past Simple**
+
+| Present Perfect | Past Simple |
+|-----------------|--------------|
+| Unspecified time | Specific time |
+| Focus on result | Focus on when |
+| Still true now | Finished action |
+
+#### Examples
+- Present Perfect:  
+  - Scientists **have discovered** new treatments.  
+  - I **have been** to Italy.
+
+- Past Simple:  
+  - Scientists **discovered** penicillin in 1928.  
+  - I **went** to Italy in 2019.
+
+#### Signal words
+- Present Perfect: ever, never, already, yet, just, for, since  
+- Past Simple: yesterday, last year, in 2005, two days ago
+
+---
+
+### Summary Chart
+
+| Tense              | Use Case                               | Example                          |
+|-------------------|----------------------------------------|----------------------------------|
+| Present Perfect   | Life experience, recent result         | He **has visited** Africa.       |
+| Past Simple       | Completed action at specific time      | He **visited** Africa in 2018.   |
+
+---
+
+## Vocabulary
+
+1. Achievement  
+2. Develop  
+3. Disease  
+4. Prevent  
+5. Inject  
+6. Experiment  
+7. Campaign  
+8. Eliminate  
+9. Spread  
+10. Immunity  
+11. Refuse  
+12. Effective  
+13. Outbreak  
+14. Rare  
+15. Science  
+16. Serious  
+17. Role  
+18. Create  
+19. Cause  
+20. Impact  
+
+---
