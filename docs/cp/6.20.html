@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="mn" xml:lang="mn"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Batsambuu Batbold">
+
+<title>Vector, Set, Map (6/20) – Math &amp; CP Class</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cc63fce9873912f1bbbccf05079cc9ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../cp/6.17.html">Програмчлал</a></li><li class="breadcrumb-item"><a href="../cp/6.20.html">Vector, Set, Map (6/20)</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Math &amp; CP Class</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Математик</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/5.26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Янз бүр (5/26)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/5.27.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Өнцөг хөөлт (5/27)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/5.29.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Тойрог (5/29)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/6.02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Урт ба Харьцаа (6/02)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/6.09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Комбинаторикын хялбар бодлогууд №1 (6/09)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/6.10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Комбинаторикын хялбар бодлогууд №2 (6/10)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math/6.11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Геометрийн бусад леммүүд (6/11)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Програмчлал</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cp/6.17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">C++ хэлний суурь №1 (6/17)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cp/6.18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">C++ хэлний суурь №2 (6/18)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cp/6.19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recursion, Sorting, Time Complexity (6/19)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cp/6.20.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Vector, Set, Map (6/20)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Англи хэл</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../english/6.17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class 1 – Daily Life in the International Space Station (6/17)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../english/6.18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class 2 – Invention of the Telegraph (6/18)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../english/6.19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class 3 – The History and Impact of Vaccination (6/19)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Сорил</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/1.1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Зуны бага сорилго №1.1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/1.2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Зуны бага сорилго №1.2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#удиртгал" id="toc-удиртгал" class="nav-link active" data-scroll-target="#удиртгал"><span class="header-section-number">1</span> Удиртгал</a></li>
+  <li><a href="#vector-динамик-массив" id="toc-vector-динамик-массив" class="nav-link" data-scroll-target="#vector-динамик-массив"><span class="header-section-number">2</span> <code>vector</code> — Динамик массив</a>
+  <ul class="collapse">
+  <li><a href="#vector-гэж-юу-вэ" id="toc-vector-гэж-юу-вэ" class="nav-link" data-scroll-target="#vector-гэж-юу-вэ"><span class="header-section-number">2.1</span> Vector гэж юу вэ?</a></li>
+  <li><a href="#үндсэн-үйлдлүүд" id="toc-үндсэн-үйлдлүүд" class="nav-link" data-scroll-target="#үндсэн-үйлдлүүд"><span class="header-section-number">2.2</span> Үндсэн үйлдлүүд</a></li>
+  <li><a href="#зарлах-аргууд" id="toc-зарлах-аргууд" class="nav-link" data-scroll-target="#зарлах-аргууд"><span class="header-section-number">2.3</span> Зарлах аргууд</a></li>
+  <li><a href="#давталт-ашиглах" id="toc-давталт-ашиглах" class="nav-link" data-scroll-target="#давталт-ашиглах"><span class="header-section-number">2.4</span> Давталт ашиглах</a></li>
+  <li><a href="#векторын-сорт-хийх" id="toc-векторын-сорт-хийх" class="nav-link" data-scroll-target="#векторын-сорт-хийх"><span class="header-section-number">2.5</span> Векторын сорт хийх</a></li>
+  <li><a href="#d-vector-матриц" id="toc-d-vector-матриц" class="nav-link" data-scroll-target="#d-vector-матриц"><span class="header-section-number">2.6</span> 2D vector (матриц)</a></li>
+  </ul></li>
+  <li><a href="#set-давтагдахгүй-элемент-хадгалах" id="toc-set-давтагдахгүй-элемент-хадгалах" class="nav-link" data-scroll-target="#set-давтагдахгүй-элемент-хадгалах"><span class="header-section-number">3</span> <code>set</code> — Давтагдахгүй элемент хадгалах</a>
+  <ul class="collapse">
+  <li><a href="#set-гэж-юу-вэ" id="toc-set-гэж-юу-вэ" class="nav-link" data-scroll-target="#set-гэж-юу-вэ"><span class="header-section-number">3.1</span> Set гэж юу вэ?</a></li>
+  <li><a href="#үндсэн-үйлдлүүд-1" id="toc-үндсэн-үйлдлүүд-1" class="nav-link" data-scroll-target="#үндсэн-үйлдлүүд-1"><span class="header-section-number">3.2</span> Үндсэн үйлдлүүд</a></li>
+  <li><a href="#давталт-ашиглах-1" id="toc-давталт-ашиглах-1" class="nav-link" data-scroll-target="#давталт-ашиглах-1"><span class="header-section-number">3.3</span> Давталт ашиглах</a></li>
+  <li><a href="#set-ийн-шинж-чанарууд" id="toc-set-ийн-шинж-чанарууд" class="nav-link" data-scroll-target="#set-ийн-шинж-чанарууд"><span class="header-section-number">3.4</span> Set-ийн шинж чанарууд</a></li>
+  <li><a href="#multiset" id="toc-multiset" class="nav-link" data-scroll-target="#multiset"><span class="header-section-number">3.5</span> <code>multiset</code></a></li>
+  </ul></li>
+  <li><a href="#map-түлхүүр-ба-утга-key-value-pair" id="toc-map-түлхүүр-ба-утга-key-value-pair" class="nav-link" data-scroll-target="#map-түлхүүр-ба-утга-key-value-pair"><span class="header-section-number">4</span> <code>map</code> — Түлхүүр ба утга (key-value pair)</a>
+  <ul class="collapse">
+  <li><a href="#map-гэж-юу-вэ" id="toc-map-гэж-юу-вэ" class="nav-link" data-scroll-target="#map-гэж-юу-вэ"><span class="header-section-number">4.1</span> Map гэж юу вэ?</a></li>
+  <li><a href="#үндсэн-үйлдлүүд-2" id="toc-үндсэн-үйлдлүүд-2" class="nav-link" data-scroll-target="#үндсэн-үйлдлүүд-2"><span class="header-section-number">4.2</span> Үндсэн үйлдлүүд</a></li>
+  <li><a href="#давталт-ашиглах-2" id="toc-давталт-ашиглах-2" class="nav-link" data-scroll-target="#давталт-ашиглах-2"><span class="header-section-number">4.3</span> Давталт ашиглах</a></li>
+  <li><a href="#автоматаар-эрэмбэлэгддэг" id="toc-автоматаар-эрэмбэлэгддэг" class="nav-link" data-scroll-target="#автоматаар-эрэмбэлэгддэг"><span class="header-section-number">4.4</span> Автоматаар эрэмбэлэгддэг</a></li>
+  <li><a href="#unordered_map" id="toc-unordered_map" class="nav-link" data-scroll-target="#unordered_map"><span class="header-section-number">4.5</span> <code>unordered_map</code></a></li>
+  </ul></li>
+  <li><a href="#харьцуулсан-хүснэгт" id="toc-харьцуулсан-хүснэгт" class="nav-link" data-scroll-target="#харьцуулсан-хүснэгт"><span class="header-section-number">5</span> Харьцуулсан хүснэгт</a></li>
+  <li><a href="#жишээ-код" id="toc-жишээ-код" class="nav-link" data-scroll-target="#жишээ-код"><span class="header-section-number">6</span> Жишээ код</a>
+  <ul class="collapse">
+  <li><a href="#давтагдсан-тоог-арилгах" id="toc-давтагдсан-тоог-арилгах" class="nav-link" data-scroll-target="#давтагдсан-тоог-арилгах"><span class="header-section-number">6.1</span> Давтагдсан тоог арилгах</a></li>
+  <li><a href="#хэдэн-удаа-орсныг-тоолох" id="toc-хэдэн-удаа-орсныг-тоолох" class="nav-link" data-scroll-target="#хэдэн-удаа-орсныг-тоолох"><span class="header-section-number">6.2</span> Хэдэн удаа орсныг тоолох</a></li>
+  <li><a href="#vector-сорт-ба-давталт" id="toc-vector-сорт-ба-давталт" class="nav-link" data-scroll-target="#vector-сорт-ба-давталт"><span class="header-section-number">6.3</span> Vector сорт ба давталт</a></li>
+  </ul></li>
+  <li><a href="#дүгнэлт" id="toc-дүгнэлт" class="nav-link" data-scroll-target="#дүгнэлт"><span class="header-section-number">7</span> Дүгнэлт</a></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems"><span class="header-section-number">8</span> Practice Problems</a>
+  <ul class="collapse">
+  <li><a href="#vector-динамик-массив-1" id="toc-vector-динамик-массив-1" class="nav-link" data-scroll-target="#vector-динамик-массив-1"><span class="header-section-number">8.1</span> Vector – Динамик массив</a>
+  <ul class="collapse">
+  <li><a href="#тоонуудыг-буурахаар-эрэмбэлэх" id="toc-тоонуудыг-буурахаар-эрэмбэлэх" class="nav-link" data-scroll-target="#тоонуудыг-буурахаар-эрэмбэлэх"><span class="header-section-number">8.1.1</span> Тоонуудыг буурахаар эрэмбэлэх</a></li>
+  <li><a href="#дундаж-тооцох" id="toc-дундаж-тооцох" class="nav-link" data-scroll-target="#дундаж-тооцох"><span class="header-section-number">8.1.2</span> Дундаж тооцох</a></li>
+  <li><a href="#сүүлээс-нь-хэвлэх" id="toc-сүүлээс-нь-хэвлэх" class="nav-link" data-scroll-target="#сүүлээс-нь-хэвлэх"><span class="header-section-number">8.1.3</span> Сүүлээс нь хэвлэх</a></li>
+  </ul></li>
+  <li><a href="#давтагдахгүй-эрэмбэлэгдсэн-өгөгдөл" id="toc-давтагдахгүй-эрэмбэлэгдсэн-өгөгдөл" class="nav-link" data-scroll-target="#давтагдахгүй-эрэмбэлэгдсэн-өгөгдөл"><span class="header-section-number">8.2</span> Давтагдахгүй, эрэмбэлэгдсэн өгөгдөл</a>
+  <ul class="collapse">
+  <li><a href="#давхардсан-үгсийг-арилгах" id="toc-давхардсан-үгсийг-арилгах" class="nav-link" data-scroll-target="#давхардсан-үгсийг-арилгах"><span class="header-section-number">8.2.1</span> Давхардсан үгсийг арилгах</a></li>
+  <li><a href="#тоо-агуулагдаж-байгаа-эсэхийг-шалгах" id="toc-тоо-агуулагдаж-байгаа-эсэхийг-шалгах" class="nav-link" data-scroll-target="#тоо-агуулагдаж-байгаа-эсэхийг-шалгах"><span class="header-section-number">8.2.2</span> Тоо агуулагдаж байгаа эсэхийг шалгах</a></li>
+  <li><a href="#огтлол-олох" id="toc-огтлол-олох" class="nav-link" data-scroll-target="#огтлол-олох"><span class="header-section-number">8.2.3</span> Огтлол олох</a></li>
+  </ul></li>
+  <li><a href="#map-түлхүүр-утга-хос" id="toc-map-түлхүүр-утга-хос" class="nav-link" data-scroll-target="#map-түлхүүр-утга-хос"><span class="header-section-number">8.3</span> Map – Түлхүүр-утга хос</a>
+  <ul class="collapse">
+  <li><a href="#давтамж-тоолох" id="toc-давтамж-тоолох" class="nav-link" data-scroll-target="#давтамж-тоолох"><span class="header-section-number">8.3.1</span> Давтамж тоолох</a></li>
+  <li><a href="#нэрээр-оноо-хадгалах-ба-хэвлэх" id="toc-нэрээр-оноо-хадгалах-ба-хэвлэх" class="nav-link" data-scroll-target="#нэрээр-оноо-хадгалах-ба-хэвлэх"><span class="header-section-number">8.3.2</span> Нэрээр оноо хадгалах ба хэвлэх</a></li>
+  <li><a href="#хамгийн-өндөр-оноотой-хүнийг-олох" id="toc-хамгийн-өндөр-оноотой-хүнийг-олох" class="nav-link" data-scroll-target="#хамгийн-өндөр-оноотой-хүнийг-олох"><span class="header-section-number">8.3.3</span> Хамгийн өндөр оноотой хүнийг олох</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../cp/6.17.html">Програмчлал</a></li><li class="breadcrumb-item"><a href="../cp/6.20.html">Vector, Set, Map (6/20)</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Vector, Set, Map (6/20)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Batsambuu Batbold </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="удиртгал" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Удиртгал</h1>
+<p>Энэ хичээлээр C++ хэл дээрх гурван чухал <strong>өгөгдлийн бүтэц (data structure)</strong> болох <code>vector</code>, <code>set</code>, <code>map</code>-ийг судална.</p>
+<p>Эдгээр нь C++-ийн <strong>Standard Template Library (STL)</strong>-ийн үндсэн хэсэг бөгөөд олимпиад, competitive programming-д заавал сурах хэрэгтэй бүтэц юм.</p>
+<hr>
+</section>
+<section id="vector-динамик-массив" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <code>vector</code> — Динамик массив</h1>
+<section id="vector-гэж-юу-вэ" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="vector-гэж-юу-вэ"><span class="header-section-number">2.1</span> Vector гэж юу вэ?</h2>
+<p><code>vector</code> бол C++-ийн <strong>динамик массив</strong> юм. Хэмжээ нь программ ажиллах явцад өөрчлөгдөж болдог.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;vector&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> v<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="үндсэн-үйлдлүүд" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="үндсэн-үйлдлүүд"><span class="header-section-number">2.2</span> Үндсэн үйлдлүүд</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>v<span class="op">.</span>push_back<span class="op">(</span><span class="dv">10</span><span class="op">);</span>    <span class="co">// Сүүлд 10 нэмэх</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>v<span class="op">.</span>pop_back<span class="op">();</span>       <span class="co">// Сүүлийн элементийг устгах</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>v<span class="op">.</span>size<span class="op">();</span>           <span class="co">// Хэмжээ авах</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>v<span class="op">.</span>empty<span class="op">();</span>          <span class="co">// Хоосон эсэхийг шалгах (true/false)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>v<span class="op">.</span>clear<span class="op">();</span>          <span class="co">// Бүх элементийг арилгах</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>v<span class="op">[</span>i<span class="op">];</span>               <span class="co">// i-р элементийг авах (0-based)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="зарлах-аргууд" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="зарлах-аргууд"><span class="header-section-number">2.3</span> Зарлах аргууд</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> v <span class="op">=</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">};</span>         <span class="co">// Шууд утгаар</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> a<span class="op">(</span><span class="dv">5</span><span class="op">);</span>                  <span class="co">// 5 ширхэг 0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> b<span class="op">(</span><span class="dv">4</span><span class="op">,</span> <span class="dv">7</span><span class="op">);</span>               <span class="co">// 4 ширхэг 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="давталт-ашиглах" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="давталт-ашиглах"><span class="header-section-number">2.4</span> Давталт ашиглах</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> v<span class="op">.</span>size<span class="op">();</span> i<span class="op">++)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> v<span class="op">[</span>i<span class="op">]</span> <span class="op">&lt;&lt;</span> <span class="st">" "</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">:</span> v<span class="op">)</span> <span class="co">// range-based for</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> <span class="st">" "</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="векторын-сорт-хийх" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="векторын-сорт-хийх"><span class="header-section-number">2.5</span> Векторын сорт хийх</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sort<span class="op">(</span>v<span class="op">.</span>begin<span class="op">(),</span> v<span class="op">.</span>end<span class="op">());</span>           <span class="co">// өсөхөөр</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sort<span class="op">(</span>v<span class="op">.</span>rbegin<span class="op">(),</span> v<span class="op">.</span>rend<span class="op">());</span>         <span class="co">// буурахаар</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="d-vector-матриц" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="d-vector-матриц"><span class="header-section-number">2.6</span> 2D vector (матриц)</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&gt;</span> grid<span class="op">(</span><span class="dv">3</span><span class="op">,</span> vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;(</span><span class="dv">4</span><span class="op">,</span> <span class="dv">0</span><span class="op">));</span> <span class="co">// 3x4 matrix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="set-давтагдахгүй-элемент-хадгалах" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> <code>set</code> — Давтагдахгүй элемент хадгалах</h1>
+<section id="set-гэж-юу-вэ" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="set-гэж-юу-вэ"><span class="header-section-number">3.1</span> Set гэж юу вэ?</h2>
+<p><code>set</code> бол <strong>unique (давтагдахгүй)</strong> утгуудыг хадгалах бүтэц. Мөн <strong>автоматаар эрэмбэлэгддэг</strong>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;set&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>set<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> s<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="үндсэн-үйлдлүүд-1" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="үндсэн-үйлдлүүд-1"><span class="header-section-number">3.2</span> Үндсэн үйлдлүүд</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>insert<span class="op">(</span><span class="dv">5</span><span class="op">);</span>       <span class="co">// 5-г нэмэх</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>insert<span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>erase<span class="op">(</span><span class="dv">2</span><span class="op">);</span>        <span class="co">// 2-г устгах</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>count<span class="op">(</span><span class="dv">5</span><span class="op">);</span>        <span class="co">// 5 байвал 1, байхгүй бол 0</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>size<span class="op">();</span>          <span class="co">// хэмжээг авах</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>empty<span class="op">();</span>         <span class="co">// хоосон эсэх</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>clear<span class="op">();</span>         <span class="co">// бүгдийг устгах</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="давталт-ашиглах-1" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="давталт-ашиглах-1"><span class="header-section-number">3.3</span> Давталт ашиглах</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">:</span> s<span class="op">)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> <span class="st">" "</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="set-ийн-шинж-чанарууд" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="set-ийн-шинж-чанарууд"><span class="header-section-number">3.4</span> Set-ийн шинж чанарууд</h2>
+<ul>
+<li>Давхардсан утга <strong>хадгалахгүй</strong></li>
+<li><strong>Автоматаар эрэмбэлнэ</strong></li>
+<li>Оролт, гаралт <strong>O(log n)</strong> хугацаанд ажиллана</li>
+</ul>
+</section>
+<section id="multiset" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="multiset"><span class="header-section-number">3.5</span> <code>multiset</code></h2>
+<p>Хэрэв та <strong>давхардсан утгууд</strong> хадгалахыг хүсвэл <code>multiset</code> ашиглана.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>multiset<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> ms<span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ms<span class="op">.</span>insert<span class="op">(</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>ms<span class="op">.</span>insert<span class="op">(</span><span class="dv">5</span><span class="op">);</span> <span class="co">// OK</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="map-түлхүүр-ба-утга-key-value-pair" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> <code>map</code> — Түлхүүр ба утга (key-value pair)</h1>
+<section id="map-гэж-юу-вэ" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="map-гэж-юу-вэ"><span class="header-section-number">4.1</span> Map гэж юу вэ?</h2>
+<p><code>map</code> бол <strong>түлхүүр-утга хос</strong> хадгалах бүтэц. Жишээлбэл, нэр болон оноо.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;map&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>map<span class="op">&lt;</span>string<span class="op">,</span> <span class="dt">int</span><span class="op">&gt;</span> scores<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="үндсэн-үйлдлүүд-2" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="үндсэн-үйлдлүүд-2"><span class="header-section-number">4.2</span> Үндсэн үйлдлүүд</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>scores<span class="op">[</span><span class="st">"Bold"</span><span class="op">]</span> <span class="op">=</span> <span class="dv">90</span><span class="op">;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>scores<span class="op">[</span><span class="st">"Amar"</span><span class="op">]</span> <span class="op">=</span> <span class="dv">85</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> scores<span class="op">[</span><span class="st">"Bold"</span><span class="op">];</span>  <span class="co">// 90</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>scores<span class="op">.</span>erase<span class="op">(</span><span class="st">"Amar"</span><span class="op">);</span>    <span class="co">// "Amar" устгах</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>scores<span class="op">.</span>count<span class="op">(</span><span class="st">"Tuya"</span><span class="op">);</span>    <span class="co">// байгаа эсэх (0 эсвэл 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="давталт-ашиглах-2" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="давталт-ашиглах-2"><span class="header-section-number">4.3</span> Давталт ашиглах</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="kw">auto</span> it <span class="op">:</span> scores<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> it<span class="op">.</span>first <span class="op">&lt;&lt;</span> <span class="st">": "</span> <span class="op">&lt;&lt;</span> it<span class="op">.</span>second <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="автоматаар-эрэмбэлэгддэг" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="автоматаар-эрэмбэлэгддэг"><span class="header-section-number">4.4</span> Автоматаар эрэмбэлэгддэг</h2>
+<p>Map дахь key-үүд <strong>өсөх дарааллаар</strong> эрэмбэлэгдэнэ.</p>
+<hr>
+</section>
+<section id="unordered_map" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="unordered_map"><span class="header-section-number">4.5</span> <code>unordered_map</code></h2>
+<p>Хэрэв эрэмбэлэх шаардлагагүй бол <code>unordered_map</code> ашигласнаар илүү хурдан ажиллана:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;unordered_map&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>unordered_map<span class="op">&lt;</span>string<span class="op">,</span> <span class="dt">int</span><span class="op">&gt;</span> freq<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>⚠️ <code>unordered_map</code> нь key-үүдийг <strong>hash</strong> ашиглан хадгалдаг тул <strong>O(1)</strong> дундаж хугацаатай.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="харьцуулсан-хүснэгт" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Харьцуулсан хүснэгт</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 23%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Бүтэц</th>
+<th>Давхар утга</th>
+<th>Эрэмбэлэлт</th>
+<th>Оруулах хурд</th>
+<th>Олох хурд</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>vector</td>
+<td>✅</td>
+<td>❌</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr class="even">
+<td>set</td>
+<td>❌</td>
+<td>✅</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr>
+<tr class="odd">
+<td>multiset</td>
+<td>✅</td>
+<td>✅</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr>
+<tr class="even">
+<td>map</td>
+<td>key-үүд давхардахгүй</td>
+<td>✅</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr>
+<tr class="odd">
+<td>unordered_map</td>
+<td>key-үүд давхардахгүй</td>
+<td>❌</td>
+<td>O(1) (avg)</td>
+<td>O(1) (avg)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="жишээ-код" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Жишээ код</h1>
+<section id="давтагдсан-тоог-арилгах" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="давтагдсан-тоог-арилгах"><span class="header-section-number">6.1</span> Давтагдсан тоог арилгах</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> a <span class="op">=</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">1</span><span class="op">};</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>set<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> s<span class="op">(</span>a<span class="op">.</span>begin<span class="op">(),</span> a<span class="op">.</span>end<span class="op">());</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">:</span> s<span class="op">)</span> cout <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> <span class="st">" "</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="хэдэн-удаа-орсныг-тоолох" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="хэдэн-удаа-орсныг-тоолох"><span class="header-section-number">6.2</span> Хэдэн удаа орсныг тоолох</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> a <span class="op">=</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">};</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>map<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="dt">int</span><span class="op">&gt;</span> freq<span class="op">;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x <span class="op">:</span> a<span class="op">)</span> freq<span class="op">[</span>x<span class="op">]++;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="kw">auto</span> p <span class="op">:</span> freq<span class="op">)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> p<span class="op">.</span>first <span class="op">&lt;&lt;</span> <span class="st">": "</span> <span class="op">&lt;&lt;</span> p<span class="op">.</span>second <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="vector-сорт-ба-давталт" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="vector-сорт-ба-давталт"><span class="header-section-number">6.3</span> Vector сорт ба давталт</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> a <span class="op">=</span> <span class="op">{</span><span class="dv">5</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">2</span><span class="op">};</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sort<span class="op">(</span>a<span class="op">.</span>begin<span class="op">(),</span> a<span class="op">.</span>end<span class="op">());</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> a<span class="op">.</span>size<span class="op">();</span> i<span class="op">++)</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> a<span class="op">[</span>i<span class="op">]</span> <span class="op">&lt;&lt;</span> <span class="st">" "</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="дүгнэлт" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Дүгнэлт</h1>
+<ul>
+<li><code>vector</code> бол динамик, уян хатан массив бөгөөд сорт хийх, push хийх зэрэг үйлдэлд тохиромжтой.</li>
+<li><code>set</code> нь <strong>давхардсан утгагүй</strong>, автоматаар эрэмбэлдэг бүтэц.</li>
+<li><code>map</code> бол <strong>түлхүүр-утга хос</strong> хадгалах, нэрс ба оноо гэх мэт өгөгдлийг хадгалахад маш тохиромжтой.</li>
+<li>Эдгээр STL бүтцүүд нь C++ программчлалын чухал суурь тул заавал сайн эзэмшээрэй.</li>
+</ul>
+<hr>
+</section>
+<section id="practice-problems" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Practice Problems</h1>
+<section id="vector-динамик-массив-1" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="vector-динамик-массив-1"><span class="header-section-number">8.1</span> Vector – Динамик массив</h2>
+<section id="тоонуудыг-буурахаар-эрэмбэлэх" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="тоонуудыг-буурахаар-эрэмбэлэх"><span class="header-section-number">8.1.1</span> Тоонуудыг буурахаар эрэмбэлэх</h3>
+<p>Хэрэглэгчээс <span class="math inline">\(n\)</span> ширхэг бүхэл тоо авч, <code>vector&lt;int&gt;</code>-т хадгал. Дараа нь эдгээр тоог <strong>буурах дарааллаар</strong> эрэмбэлээд хэвлэ.</p>
+</section>
+<section id="дундаж-тооцох" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="дундаж-тооцох"><span class="header-section-number">8.1.2</span> Дундаж тооцох</h3>
+<p>Хэрэглэгчээс <code>vector</code> доторх бүх тоог авч хадгал. Бүх тооны <strong>дундажийг</strong> бодож, нэг орны нарийвчлалтайгаар хэвлэ.</p>
+</section>
+<section id="сүүлээс-нь-хэвлэх" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="сүүлээс-нь-хэвлэх"><span class="header-section-number">8.1.3</span> Сүүлээс нь хэвлэх</h3>
+<p>Хэрэглэгчээс авсан <code>vector</code>-ийг <strong>урвуугаар</strong> (сүүлээс эхлэн) хэвлэ. <code>reverse()</code> функц ашиглаж болохгүй.</p>
+<hr>
+</section>
+</section>
+<section id="давтагдахгүй-эрэмбэлэгдсэн-өгөгдөл" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="давтагдахгүй-эрэмбэлэгдсэн-өгөгдөл"><span class="header-section-number">8.2</span> Давтагдахгүй, эрэмбэлэгдсэн өгөгдөл</h2>
+<section id="давхардсан-үгсийг-арилгах" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="давхардсан-үгсийг-арилгах"><span class="header-section-number">8.2.1</span> Давхардсан үгсийг арилгах</h3>
+<p><span class="math inline">\(N\)</span> ширхэг string (үг) авч <code>set&lt;string&gt;</code>-д хадгал. Давхардлыг арилгаж, <strong>үсгийн дарааллаар</strong> хэвлэ.</p>
+</section>
+<section id="тоо-агуулагдаж-байгаа-эсэхийг-шалгах" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="тоо-агуулагдаж-байгаа-эсэхийг-шалгах"><span class="header-section-number">8.2.2</span> Тоо агуулагдаж байгаа эсэхийг шалгах</h3>
+<p><code>set&lt;int&gt;</code>-д тоонууд нэмээд, хэрэглэгчийн оруулсан <span class="math inline">\(x\)</span> тоо <strong>байгаа эсэхийг</strong> шалгаж “YES” эсвэл “NO” гэж хэвлэ.</p>
+</section>
+<section id="огтлол-олох" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="огтлол-олох"><span class="header-section-number">8.2.3</span> Огтлол олох</h3>
+<p>Хоёр <code>set&lt;int&gt;</code> өгөгдсөн бол, хоёуланд нь байдаг тоонуудыг <strong>олонлогийн огтлол</strong> хэлбэрээр хэвлэ.</p>
+<hr>
+</section>
+</section>
+<section id="map-түлхүүр-утга-хос" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="map-түлхүүр-утга-хос"><span class="header-section-number">8.3</span> Map – Түлхүүр-утга хос</h2>
+<section id="давтамж-тоолох" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="давтамж-тоолох"><span class="header-section-number">8.3.1</span> Давтамж тоолох</h3>
+<p>Хэрэглэгчээс <span class="math inline">\(n\)</span> ширхэг бүхэл тоо авч <code>map&lt;int, int&gt;</code>-д хадгал. <strong>Тоо бүр хэдэн удаа гарсан</strong> болохыг дарааллаар хэвлэ.</p>
+</section>
+<section id="нэрээр-оноо-хадгалах-ба-хэвлэх" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="нэрээр-оноо-хадгалах-ба-хэвлэх"><span class="header-section-number">8.3.2</span> Нэрээр оноо хадгалах ба хэвлэх</h3>
+<p><code>map&lt;string, int&gt;</code> ашиглан <span class="math inline">\(n\)</span> ширхэг оюутны нэр болон оноог хадгал. Нэрийн <strong>үсгийн дарааллаар</strong> нэр болон оноог хэвлэ.</p>
+</section>
+<section id="хамгийн-өндөр-оноотой-хүнийг-олох" class="level3" data-number="8.3.3">
+<h3 data-number="8.3.3" class="anchored" data-anchor-id="хамгийн-өндөр-оноотой-хүнийг-олох"><span class="header-section-number">8.3.3</span> Хамгийн өндөр оноотой хүнийг олох</h3>
+<p><code>map&lt;string, int&gt;</code>-д хадгалагдсан мэдээллээс <strong>хамгийн өндөр оноо</strong> авсан хүний нэр болон оноог хэвлэ.</p>
+<hr>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 Batsambuu Batbold</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

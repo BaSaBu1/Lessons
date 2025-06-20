@@ -3905,5 +3905,313 @@
       "Програмчлал",
       "Recursion, Sorting, Time Complexity (6/19)"
     ]
+  },
+  {
+    "objectID": "cp/6.20.html",
+    "href": "cp/6.20.html",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "",
+    "text": "Энэ хичээлээр C++ хэл дээрх гурван чухал өгөгдлийн бүтэц (data structure) болох vector, set, map-ийг судална.\nЭдгээр нь C++-ийн Standard Template Library (STL)-ийн үндсэн хэсэг бөгөөд олимпиад, competitive programming-д заавал сурах хэрэгтэй бүтэц юм.",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#vector-гэж-юу-вэ",
+    "href": "cp/6.20.html#vector-гэж-юу-вэ",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "2.1 Vector гэж юу вэ?",
+    "text": "2.1 Vector гэж юу вэ?\nvector бол C++-ийн динамик массив юм. Хэмжээ нь программ ажиллах явцад өөрчлөгдөж болдог.\n#include &lt;vector&gt;\nusing namespace std;\n\nvector&lt;int&gt; v;",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#үндсэн-үйлдлүүд",
+    "href": "cp/6.20.html#үндсэн-үйлдлүүд",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "2.2 Үндсэн үйлдлүүд",
+    "text": "2.2 Үндсэн үйлдлүүд\nv.push_back(10);    // Сүүлд 10 нэмэх\nv.pop_back();       // Сүүлийн элементийг устгах\nv.size();           // Хэмжээ авах\nv.empty();          // Хоосон эсэхийг шалгах (true/false)\nv.clear();          // Бүх элементийг арилгах\nv[i];               // i-р элементийг авах (0-based)",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#зарлах-аргууд",
+    "href": "cp/6.20.html#зарлах-аргууд",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "2.3 Зарлах аргууд",
+    "text": "2.3 Зарлах аргууд\nvector&lt;int&gt; v = {1, 2, 3};         // Шууд утгаар\nvector&lt;int&gt; a(5);                  // 5 ширхэг 0\nvector&lt;int&gt; b(4, 7);               // 4 ширхэг 7",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#давталт-ашиглах",
+    "href": "cp/6.20.html#давталт-ашиглах",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "2.4 Давталт ашиглах",
+    "text": "2.4 Давталт ашиглах\nfor (int i = 0; i &lt; v.size(); i++)\n    cout &lt;&lt; v[i] &lt;&lt; \" \";\n\nfor (int x : v) // range-based for\n    cout &lt;&lt; x &lt;&lt; \" \";",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#векторын-сорт-хийх",
+    "href": "cp/6.20.html#векторын-сорт-хийх",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "2.5 Векторын сорт хийх",
+    "text": "2.5 Векторын сорт хийх\nsort(v.begin(), v.end());           // өсөхөөр\nsort(v.rbegin(), v.rend());         // буурахаар",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#d-vector-матриц",
+    "href": "cp/6.20.html#d-vector-матриц",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "2.6 2D vector (матриц)",
+    "text": "2.6 2D vector (матриц)\nvector&lt;vector&lt;int&gt;&gt; grid(3, vector&lt;int&gt;(4, 0)); // 3x4 matrix",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#set-гэж-юу-вэ",
+    "href": "cp/6.20.html#set-гэж-юу-вэ",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "3.1 Set гэж юу вэ?",
+    "text": "3.1 Set гэж юу вэ?\nset бол unique (давтагдахгүй) утгуудыг хадгалах бүтэц. Мөн автоматаар эрэмбэлэгддэг.\n#include &lt;set&gt;\nusing namespace std;\n\nset&lt;int&gt; s;",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#үндсэн-үйлдлүүд-1",
+    "href": "cp/6.20.html#үндсэн-үйлдлүүд-1",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "3.2 Үндсэн үйлдлүүд",
+    "text": "3.2 Үндсэн үйлдлүүд\ns.insert(5);       // 5-г нэмэх\ns.insert(2);\ns.erase(2);        // 2-г устгах\ns.count(5);        // 5 байвал 1, байхгүй бол 0\ns.size();          // хэмжээг авах\ns.empty();         // хоосон эсэх\n\ns.clear();         // бүгдийг устгах",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#давталт-ашиглах-1",
+    "href": "cp/6.20.html#давталт-ашиглах-1",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "3.3 Давталт ашиглах",
+    "text": "3.3 Давталт ашиглах\nfor (int x : s)\n    cout &lt;&lt; x &lt;&lt; \" \";",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#set-ийн-шинж-чанарууд",
+    "href": "cp/6.20.html#set-ийн-шинж-чанарууд",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "3.4 Set-ийн шинж чанарууд",
+    "text": "3.4 Set-ийн шинж чанарууд\n\nДавхардсан утга хадгалахгүй\nАвтоматаар эрэмбэлнэ\nОролт, гаралт O(log n) хугацаанд ажиллана",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#multiset",
+    "href": "cp/6.20.html#multiset",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "3.5 multiset",
+    "text": "3.5 multiset\nХэрэв та давхардсан утгууд хадгалахыг хүсвэл multiset ашиглана.\nmultiset&lt;int&gt; ms;\nms.insert(5);\nms.insert(5); // OK",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#map-гэж-юу-вэ",
+    "href": "cp/6.20.html#map-гэж-юу-вэ",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "4.1 Map гэж юу вэ?",
+    "text": "4.1 Map гэж юу вэ?\nmap бол түлхүүр-утга хос хадгалах бүтэц. Жишээлбэл, нэр болон оноо.\n#include &lt;map&gt;\nusing namespace std;\n\nmap&lt;string, int&gt; scores;",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#үндсэн-үйлдлүүд-2",
+    "href": "cp/6.20.html#үндсэн-үйлдлүүд-2",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "4.2 Үндсэн үйлдлүүд",
+    "text": "4.2 Үндсэн үйлдлүүд\nscores[\"Bold\"] = 90;\nscores[\"Amar\"] = 85;\n\ncout &lt;&lt; scores[\"Bold\"];  // 90\nscores.erase(\"Amar\");    // \"Amar\" устгах\nscores.count(\"Tuya\");    // байгаа эсэх (0 эсвэл 1)",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#давталт-ашиглах-2",
+    "href": "cp/6.20.html#давталт-ашиглах-2",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "4.3 Давталт ашиглах",
+    "text": "4.3 Давталт ашиглах\nfor (auto it : scores) {\n    cout &lt;&lt; it.first &lt;&lt; \": \" &lt;&lt; it.second &lt;&lt; endl;\n}",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#автоматаар-эрэмбэлэгддэг",
+    "href": "cp/6.20.html#автоматаар-эрэмбэлэгддэг",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "4.4 Автоматаар эрэмбэлэгддэг",
+    "text": "4.4 Автоматаар эрэмбэлэгддэг\nMap дахь key-үүд өсөх дарааллаар эрэмбэлэгдэнэ.",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#unordered_map",
+    "href": "cp/6.20.html#unordered_map",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "4.5 unordered_map",
+    "text": "4.5 unordered_map\nХэрэв эрэмбэлэх шаардлагагүй бол unordered_map ашигласнаар илүү хурдан ажиллана:\n#include &lt;unordered_map&gt;\nunordered_map&lt;string, int&gt; freq;\n\n⚠️ unordered_map нь key-үүдийг hash ашиглан хадгалдаг тул O(1) дундаж хугацаатай.",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#давтагдсан-тоог-арилгах",
+    "href": "cp/6.20.html#давтагдсан-тоог-арилгах",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "6.1 Давтагдсан тоог арилгах",
+    "text": "6.1 Давтагдсан тоог арилгах\nvector&lt;int&gt; a = {1, 2, 2, 3, 4, 1};\nset&lt;int&gt; s(a.begin(), a.end());\nfor (int x : s) cout &lt;&lt; x &lt;&lt; \" \";",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#хэдэн-удаа-орсныг-тоолох",
+    "href": "cp/6.20.html#хэдэн-удаа-орсныг-тоолох",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "6.2 Хэдэн удаа орсныг тоолох",
+    "text": "6.2 Хэдэн удаа орсныг тоолох\nvector&lt;int&gt; a = {1, 2, 2, 3, 1, 1};\nmap&lt;int, int&gt; freq;\nfor (int x : a) freq[x]++;\nfor (auto p : freq)\n    cout &lt;&lt; p.first &lt;&lt; \": \" &lt;&lt; p.second &lt;&lt; endl;",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#vector-сорт-ба-давталт",
+    "href": "cp/6.20.html#vector-сорт-ба-давталт",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "6.3 Vector сорт ба давталт",
+    "text": "6.3 Vector сорт ба давталт\nvector&lt;int&gt; a = {5, 3, 8, 2};\nsort(a.begin(), a.end());\nfor (int i = 0; i &lt; a.size(); i++)\n    cout &lt;&lt; a[i] &lt;&lt; \" \";",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#vector-динамик-массив-1",
+    "href": "cp/6.20.html#vector-динамик-массив-1",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "8.1 Vector – Динамик массив",
+    "text": "8.1 Vector – Динамик массив\n\n8.1.1 Тоонуудыг буурахаар эрэмбэлэх\nХэрэглэгчээс \\(n\\) ширхэг бүхэл тоо авч, vector&lt;int&gt;-т хадгал. Дараа нь эдгээр тоог буурах дарааллаар эрэмбэлээд хэвлэ.\n\n\n8.1.2 Дундаж тооцох\nХэрэглэгчээс vector доторх бүх тоог авч хадгал. Бүх тооны дундажийг бодож, нэг орны нарийвчлалтайгаар хэвлэ.\n\n\n8.1.3 Сүүлээс нь хэвлэх\nХэрэглэгчээс авсан vector-ийг урвуугаар (сүүлээс эхлэн) хэвлэ. reverse() функц ашиглаж болохгүй.",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#давтагдахгүй-эрэмбэлэгдсэн-өгөгдөл",
+    "href": "cp/6.20.html#давтагдахгүй-эрэмбэлэгдсэн-өгөгдөл",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "8.2 Давтагдахгүй, эрэмбэлэгдсэн өгөгдөл",
+    "text": "8.2 Давтагдахгүй, эрэмбэлэгдсэн өгөгдөл\n\n8.2.1 Давхардсан үгсийг арилгах\n\\(N\\) ширхэг string (үг) авч set&lt;string&gt;-д хадгал. Давхардлыг арилгаж, үсгийн дарааллаар хэвлэ.\n\n\n8.2.2 Тоо агуулагдаж байгаа эсэхийг шалгах\nset&lt;int&gt;-д тоонууд нэмээд, хэрэглэгчийн оруулсан \\(x\\) тоо байгаа эсэхийг шалгаж “YES” эсвэл “NO” гэж хэвлэ.\n\n\n8.2.3 Огтлол олох\nХоёр set&lt;int&gt; өгөгдсөн бол, хоёуланд нь байдаг тоонуудыг олонлогийн огтлол хэлбэрээр хэвлэ.",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "cp/6.20.html#map-түлхүүр-утга-хос",
+    "href": "cp/6.20.html#map-түлхүүр-утга-хос",
+    "title": "Vector, Set, Map (6/20)",
+    "section": "8.3 Map – Түлхүүр-утга хос",
+    "text": "8.3 Map – Түлхүүр-утга хос\n\n8.3.1 Давтамж тоолох\nХэрэглэгчээс \\(n\\) ширхэг бүхэл тоо авч map&lt;int, int&gt;-д хадгал. Тоо бүр хэдэн удаа гарсан болохыг дарааллаар хэвлэ.\n\n\n8.3.2 Нэрээр оноо хадгалах ба хэвлэх\nmap&lt;string, int&gt; ашиглан \\(n\\) ширхэг оюутны нэр болон оноог хадгал. Нэрийн үсгийн дарааллаар нэр болон оноог хэвлэ.\n\n\n8.3.3 Хамгийн өндөр оноотой хүнийг олох\nmap&lt;string, int&gt;-д хадгалагдсан мэдээллээс хамгийн өндөр оноо авсан хүний нэр болон оноог хэвлэ.",
+    "crumbs": [
+      "Програмчлал",
+      "Vector, Set, Map (6/20)"
+    ]
+  },
+  {
+    "objectID": "english/6.20.html",
+    "href": "english/6.20.html",
+    "title": "Class 4 – The Future of Artificial Intelligence (6/20)",
+    "section": "",
+    "text": "Future Forms: will / going to / present continuous\n\nQuestions and Auxiliary Verbs: do, does, did, yes-no questions, WH-questions",
+    "crumbs": [
+      "Англи хэл",
+      "Class 4 – The Future of Artificial Intelligence (6/20)"
+    ]
+  },
+  {
+    "objectID": "english/6.20.html#grammar-focus",
+    "href": "english/6.20.html#grammar-focus",
+    "title": "Class 4 – The Future of Artificial Intelligence (6/20)",
+    "section": "",
+    "text": "Future Forms: will / going to / present continuous\n\nQuestions and Auxiliary Verbs: do, does, did, yes-no questions, WH-questions",
+    "crumbs": [
+      "Англи хэл",
+      "Class 4 – The Future of Artificial Intelligence (6/20)"
+    ]
+  },
+  {
+    "objectID": "english/6.20.html#reading-text",
+    "href": "english/6.20.html#reading-text",
+    "title": "Class 4 – The Future of Artificial Intelligence (6/20)",
+    "section": "Reading Text",
+    "text": "Reading Text\nTitle: The Future of Artificial Intelligence\nArtificial Intelligence (AI) is developing quickly, and experts believe it will change many parts of our daily lives. AI refers to machines or software that can “think” or “learn” like a human. In the future, AI systems are going to become more common in areas such as healthcare, education, and transportation.\nRight now, companies are working on AI that can diagnose diseases, help students learn faster, and drive cars more safely. These technologies already exist, but in the next 10 years, they will improve a lot. For example, doctors will use AI to read medical scans more accurately, and teachers are going to use smart tools to give students personalized lessons.\nSome people worry that AI will replace many jobs. This is a serious question: What jobs will remain for humans, and which ones are going to disappear? Economists are studying this question carefully. At the same time, many believe that AI will create new jobs that don’t exist yet.\nGovernments and schools are preparing for these changes. In many countries, schools are adding computer science and AI topics to the curriculum. What kind of skills do students need for the future? How does AI affect the way we learn or work?\nAI is not perfect, and it still makes mistakes. So, how can we trust machines to make big decisions? Who is going to be responsible when something goes wrong? These are important questions that researchers, engineers, and politicians will have to answer.\nNo one knows exactly what the future will look like, but one thing is clear: artificial intelligence is going to play a big role in it.",
+    "crumbs": [
+      "Англи хэл",
+      "Class 4 – The Future of Artificial Intelligence (6/20)"
+    ]
+  },
+  {
+    "objectID": "english/6.20.html#grammar-explanation",
+    "href": "english/6.20.html#grammar-explanation",
+    "title": "Class 4 – The Future of Artificial Intelligence (6/20)",
+    "section": "Grammar Explanation",
+    "text": "Grammar Explanation\n\n1. Future Forms\n\na) Will\nUsed for predictions, decisions at the moment of speaking, offers, and promises. - We will see big changes.\n- I will help you with that.\n\n\nb) Be going to\nUsed for plans or intentions, and things we already see are likely to happen. - She is going to visit a tech conference.\n- Look at those clouds! It is going to rain.\n\n\nc) Present Continuous (future use)\nUsed for planned and arranged future actions (especially with time expressions). - We are meeting the AI team tomorrow.\n- They are launching a new app next week.\n\n\n\n\n2. Questions and Auxiliary Verbs\n\na) Auxiliary verbs\n\nDo/Does/Did are used to form questions and negatives in the present/past simple.\n\n\n\nPresent Simple\n\nDo you like AI?\n\nDoes it work well?\n\nHe doesn’t use it often.\n\n\n\nPast Simple\n\nDid you hear the news?\n\nI didn’t understand the article.\n\n\n\nb) Yes/No Questions\n\nWill AI replace teachers?\n\nIs she coming to the meeting?\n\nDid he finish the report?\n\n\n\nc) WH- Questions\n\nWhat does AI mean?\n\nWhere do you work?\n\nWhy did they leave early?\n\nWhen are they arriving?\n\n\n\n\n\nSummary Chart\n\n\n\n\n\n\n\n\nStructure\nUse Case\nExample\n\n\n\n\nWill\nPredictions, spontaneous decisions\nWe will see big changes.\n\n\nGoing to\nIntentions, obvious future\nShe is going to study robotics.\n\n\nPresent Continuous\nScheduled/planned future events\nThey are meeting tomorrow.\n\n\nDo/Does/Did\nAuxiliary verbs for questions\nDoes it work? / Did it help?",
+    "crumbs": [
+      "Англи хэл",
+      "Class 4 – The Future of Artificial Intelligence (6/20)"
+    ]
+  },
+  {
+    "objectID": "english/6.20.html#vocabulary",
+    "href": "english/6.20.html#vocabulary",
+    "title": "Class 4 – The Future of Artificial Intelligence (6/20)",
+    "section": "Vocabulary",
+    "text": "Vocabulary\n\nArtificial Intelligence (AI)\n\nDiagnose\n\nPersonalized\n\nCurriculum\n\nResponsible\n\nResearcher\n\nAffect\n\nDisappear\n\nTrust\n\nDecision\n\nSoftware\n\nAccurate\n\nFuture\n\nPrediction\n\nTechnology\n\nSkills\n\nCommon\n\nChange\n\nReplace\n\nLaunch",
+    "crumbs": [
+      "Англи хэл",
+      "Class 4 – The Future of Artificial Intelligence (6/20)"
+    ]
   }
 ]

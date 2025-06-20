@@ -1,0 +1,113 @@
+---
+title: "Class 4 – The Future of Artificial Intelligence (6/20)"
+format: html
+---
+
+## Grammar Focus
+
+- Future Forms: *will* / *going to* / present continuous  
+- Questions and Auxiliary Verbs: *do*, *does*, *did*, yes-no questions, WH-questions  
+
+---
+
+## Reading Text
+
+**Title**: *The Future of Artificial Intelligence*
+
+Artificial Intelligence (AI) is developing quickly, and experts believe it **will change** many parts of our daily lives. AI refers to machines or software that can “think” or “learn” like a human. In the future, AI systems **are going to become** more common in areas such as healthcare, education, and transportation.
+
+Right now, companies **are working** on AI that can diagnose diseases, help students learn faster, and drive cars more safely. These technologies already **exist**, but in the next 10 years, they **will improve** a lot. For example, doctors **will use** AI to read medical scans more accurately, and teachers **are going to use** smart tools to give students personalized lessons.
+
+Some people worry that AI **will replace** many jobs. This is a serious question: What jobs **will remain** for humans, and which ones **are going to disappear**? Economists **are studying** this question carefully. At the same time, many believe that AI **will create** new jobs that don’t exist yet.
+
+Governments and schools **are preparing** for these changes. In many countries, schools **are adding** computer science and AI topics to the curriculum. What kind of skills **do students need** for the future? How **does AI affect** the way we learn or work?
+
+AI is not perfect, and it still makes mistakes. So, how **can we trust** machines to make big decisions? Who **is going to be** responsible when something goes wrong? These are important questions that researchers, engineers, and politicians **will have to answer**.
+
+No one knows exactly what the future **will look like**, but one thing is clear: artificial intelligence **is going to play** a big role in it.
+
+---
+
+## Grammar Explanation
+
+### 1. **Future Forms**
+
+#### a) **Will**
+Used for predictions, decisions at the moment of speaking, offers, and promises.
+- We **will see** big changes.  
+- I **will help** you with that.
+
+#### b) **Be going to**
+Used for plans or intentions, and things we already see are likely to happen.
+- She **is going to visit** a tech conference.  
+- Look at those clouds! It **is going to rain**.
+
+#### c) **Present Continuous (future use)**
+Used for planned and arranged future actions (especially with time expressions).
+- We **are meeting** the AI team tomorrow.  
+- They **are launching** a new app next week.
+
+---
+
+### 2. **Questions and Auxiliary Verbs**
+
+#### a) **Auxiliary verbs**
+- **Do/Does/Did** are used to form questions and negatives in the present/past simple.
+
+#### Present Simple
+- **Do** you like AI?  
+- **Does** it work well?  
+- He **doesn’t** use it often.
+
+#### Past Simple
+- **Did** you hear the news?  
+- I **didn’t** understand the article.
+
+#### b) **Yes/No Questions**
+- **Will** AI replace teachers?  
+- **Is** she coming to the meeting?  
+- **Did** he finish the report?
+
+#### c) **WH- Questions**
+- **What** does AI mean?  
+- **Where** do you work?  
+- **Why** did they leave early?  
+- **When** are they arriving?
+
+---
+
+### Summary Chart
+
+| Structure             | Use Case                         | Example                               |
+|----------------------|----------------------------------|----------------------------------------|
+| **Will**             | Predictions, spontaneous decisions | We **will see** big changes.          |
+| **Going to**         | Intentions, obvious future        | She **is going to study** robotics.   |
+| **Present Continuous** | Scheduled/planned future events | They **are meeting** tomorrow.        |
+| **Do/Does/Did**      | Auxiliary verbs for questions     | **Does** it work? / **Did** it help?  |
+
+---
+
+## Vocabulary
+
+1. Artificial Intelligence (AI)  
+2. Diagnose  
+3. Personalized  
+4. Curriculum  
+5. Responsible  
+6. Researcher  
+7. Affect  
+8. Disappear  
+9. Trust  
+10. Decision  
+11. Software  
+12. Accurate  
+13. Future  
+14. Prediction  
+15. Technology  
+16. Skills  
+17. Common  
+18. Change  
+19. Replace  
+20. Launch  
+
+---
