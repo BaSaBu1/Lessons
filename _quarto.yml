@@ -17,6 +17,7 @@ website:
           - math/6.09.qmd
           - math/6.10.qmd
           - math/6.11.qmd
+          - math/7.14.qmd
       - section: "Програмчлал"
         contents:
           - cp/6.17.qmd
