@@ -34,6 +34,7 @@ website:
         contents: 
           - challenges/1.1.qmd
           - challenges/1.2.qmd
+          - challenges/2.1.qmd
       
   page-footer: "© 2025 Batsambuu Batbold"
 
