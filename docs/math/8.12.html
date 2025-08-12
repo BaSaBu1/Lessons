@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math &amp; CP Class</title>
+<title>Анхан шатны алгебрын бодлогууд №2 (8/12) – Math &amp; CP Class</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cc63fce9873912f1bbbccf05079cc9ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cc63fce9873912f1bbbccf05079cc9ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -80,9 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Math &amp; CP Class
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../math/5.26.html">Математик</a></li><li class="breadcrumb-item"><a href="../math/8.12.html">Анхан шатны алгебрын бодлогууд №2 (8/12)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Math &amp; CP Class</a> 
+      <a href="../">Math &amp; CP Class</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -109,70 +136,70 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Математик</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/5.26.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/5.26.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Янз бүр (5/26)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/5.27.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/5.27.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Өнцөг хөөлт (5/27)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/5.29.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/5.29.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Тойрог (5/29)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/6.02.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/6.02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Урт ба Харьцаа (6/02)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/6.09.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/6.09.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Комбинаторикын хялбар бодлогууд №1 (6/09)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/6.10.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/6.10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Комбинаторикын хялбар бодлогууд №2 (6/10)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/6.11.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/6.11.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Геометрийн бусад леммүүд (6/11)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/7.14.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/7.14.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Олон гишүүнт №1 - Адилтгал (7/14)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/8.06.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/8.06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Анхан шатны алгебрын бодлогууд №1 (8/06)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math/8.12.html" class="sidebar-item-text sidebar-link">
+  <a href="../math/8.12.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Анхан шатны алгебрын бодлогууд №2 (8/12)</span></a>
   </div>
 </li>
@@ -189,25 +216,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cp/6.17.html" class="sidebar-item-text sidebar-link">
+  <a href="../cp/6.17.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">C++ хэлний суурь №1 (6/17)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cp/6.18.html" class="sidebar-item-text sidebar-link">
+  <a href="../cp/6.18.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">C++ хэлний суурь №2 (6/18)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cp/6.19.html" class="sidebar-item-text sidebar-link">
+  <a href="../cp/6.19.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Recursion, Sorting, Time Complexity (6/19)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cp/6.20.html" class="sidebar-item-text sidebar-link">
+  <a href="../cp/6.20.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector, Set, Map (6/20)</span></a>
   </div>
 </li>
@@ -224,25 +251,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./english/6.17.html" class="sidebar-item-text sidebar-link">
+  <a href="../english/6.17.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Class 1 – Daily Life in the International Space Station (6/17)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./english/6.18.html" class="sidebar-item-text sidebar-link">
+  <a href="../english/6.18.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Class 2 – Invention of the Telegraph (6/18)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./english/6.19.html" class="sidebar-item-text sidebar-link">
+  <a href="../english/6.19.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Class 3 – The History and Impact of Vaccination (6/19)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./english/6.20.html" class="sidebar-item-text sidebar-link">
+  <a href="../english/6.20.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Class 4 – The Future of Artificial Intelligence (6/20)</span></a>
   </div>
 </li>
@@ -259,25 +286,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./challenges/1.1.html" class="sidebar-item-text sidebar-link">
+  <a href="../challenges/1.1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Зуны бага сорилго №1.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./challenges/1.2.html" class="sidebar-item-text sidebar-link">
+  <a href="../challenges/1.2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Зуны бага сорилго №1.2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./challenges/2.1.html" class="sidebar-item-text sidebar-link">
+  <a href="../challenges/2.1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Зуны бага сорилго №2.1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./challenges/2.2.html" class="sidebar-item-text sidebar-link">
+  <a href="../challenges/2.2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Зуны бага сорилго №2.2</span></a>
   </div>
 </li>
@@ -293,10 +320,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <li><a href="#бодлогууд" id="toc-бодлогууд" class="nav-link active" data-scroll-target="#бодлогууд">Бодлогууд</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  <li><a href="#бодлого-1" id="toc-бодлого-1" class="nav-link" data-scroll-target="#бодлого-1">Бодлого 1</a></li>
+  <li><a href="#бодлого-2" id="toc-бодлого-2" class="nav-link" data-scroll-target="#бодлого-2">Бодлого 2</a></li>
+  <li><a href="#бодлого-3" id="toc-бодлого-3" class="nav-link" data-scroll-target="#бодлого-3">Бодлого 3</a></li>
+  <li><a href="#бодлого-4" id="toc-бодлого-4" class="nav-link" data-scroll-target="#бодлого-4">Бодлого 4</a></li>
+  <li><a href="#бодлого-5-korean-mathematics-competition-2001" id="toc-бодлого-5-korean-mathematics-competition-2001" class="nav-link" data-scroll-target="#бодлого-5-korean-mathematics-competition-2001">Бодлого 5 (Korean Mathematics Competition 2001)</a></li>
+  <li><a href="#бодлого-6-china-1983" id="toc-бодлого-6-china-1983" class="nav-link" data-scroll-target="#бодлого-6-china-1983">Бодлого 6 (China 1983)</a></li>
+  <li><a href="#бодлого-7" id="toc-бодлого-7" class="nav-link" data-scroll-target="#бодлого-7">Бодлого 7</a></li>
+  <li><a href="#бодлого-8-korean-mathematics-competition-2001" id="toc-бодлого-8-korean-mathematics-competition-2001" class="nav-link" data-scroll-target="#бодлого-8-korean-mathematics-competition-2001">Бодлого 8 (Korean Mathematics Competition 2001)</a></li>
+  <li><a href="#бодлого-9" id="toc-бодлого-9" class="nav-link" data-scroll-target="#бодлого-9">Бодлого 9</a></li>
+  <li><a href="#бодлого-10-aime-1988" id="toc-бодлого-10-aime-1988" class="nav-link" data-scroll-target="#бодлого-10-aime-1988">Бодлого 10 (AIME 1988)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -304,9 +339,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../math/5.26.html">Математик</a></li><li class="breadcrumb-item"><a href="../math/8.12.html">Анхан шатны алгебрын бодлогууд №2 (8/12)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Math &amp; CP Class</h1>
+<h1 class="title">Анхан шатны алгебрын бодлогууд №2 (8/12)</h1>
 </div>
 
 
@@ -323,29 +358,84 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1">
-<h1>Welcome</h1>
-<p>This site contains materials for Olympiad Mathematics and Competitive Programming lessons for secondary school students. It was created during my internship at <strong>Delgermurun School</strong> in Khuvsgul Province, Mongolia, funded by the <strong>Macalester College</strong> Summer Internship Grant.</p>
-<p align="right">
-<strong>Batsambuu Batbold</strong>
-</p>
-<hr>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Энэхүү вэбсайт нь олимпиадын <strong>математик</strong> болон <strong>програмчлалын</strong> хичээлүүдийг агуулсан болно. Шинэ хичээлүүд үе шаттайгаар нэмэгдэх бөгөөд сурагчид хүссэн үедээ тавигдсан хичээлүүдээс сонгон суралцах боломжтой.</p>
-<hr>
+<section id="бодлогууд" class="level1">
+<h1>Бодлогууд</h1>
+<section id="бодлого-1" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-1">Бодлого 1</h2>
+<p><span class="math inline">\(a, b, c, d, e\)</span> нь дараах нөхцөлийг хангах эерэг бүхэл тоонууд байг:</p>
+<p><span class="math display">\[
+abcde = a + b + c + d + e
+\]</span></p>
+<p>Тэгвэл <span class="math inline">\(\max\{a,b,c,d,e\}\)</span>-ийн хамгийн их боломжит утгыг ол.</p>
 </section>
-<section id="structure" class="level2">
-<h2 class="anchored" data-anchor-id="structure">Structure</h2>
-<p>Хичээл бүр дараах хэсгүүдээс бүрдэнэ:</p>
-<ul>
-<li><strong>Сэдэв болон онолын тодорхойлолтууд</strong></li>
-<li><strong>Жишээ болон тайлбарууд</strong></li>
-<li><strong>Хөнгөн дасгалууд болон бодлогонууд</strong></li>
-<li><strong>Зөвлөмжүүд болон бодолтууд</strong></li>
-</ul>
-<hr>
-<p><em>Зүүн талын цэсийг ашиглан хичээлээ сонгоно уу.</em></p>
+<section id="бодлого-2" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-2">Бодлого 2</h2>
+<p>Дараах илэрхийллийг тооцоол:</p>
+<p><span class="math display">\[
+\frac{3}{1! + 2! + 3!} + \frac{4}{2! + 3! + 4!} + \dots + \frac{2001}{1999! + 2000! + 2001!}
+\]</span></p>
+</section>
+<section id="бодлого-3" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-3">Бодлого 3</h2>
+<p><span class="math inline">\(x = \sqrt{a^2+a+1} - \sqrt{a^2-a+1}, a \in \mathbb{R}\)</span> байг. Тэгвэл <span class="math inline">\(x\)</span>-ийн боломжит бүх утгыг ол.</p>
+</section>
+<section id="бодлого-4" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-4">Бодлого 4</h2>
+<p>Дараах нөхцөлийг хангах бүх бодит тоо <span class="math inline">\(x\)</span>-ийг ол:</p>
+<p><span class="math display">\[
+10^x + 11^x + 12^x = 13^x + 14^x
+\]</span></p>
+</section>
+<section id="бодлого-5-korean-mathematics-competition-2001" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-5-korean-mathematics-competition-2001">Бодлого 5 (Korean Mathematics Competition 2001)</h2>
+<p><span class="math inline">\(f: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}\)</span> функцийн хувьд <span class="math inline">\(f(1, 1) = 2\)</span> ба бүх <span class="math inline">\(m, n \in \mathbb{N}\)</span>-ийн хувьд дараах нөхцөлүүдийг хангадаг байв:</p>
+<p><span class="math display">\[
+f(m+1, n) = f(m, n) + m \ \text{ба} \ f(m, n + 1) = f(m, n) - n
+\]</span></p>
+<p>Тэгвэл <span class="math inline">\(f(p, q) = 2001\)</span> байдаг бүх <span class="math inline">\((p, q)\)</span> хосуудыг ол.</p>
+</section>
+<section id="бодлого-6-china-1983" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-6-china-1983">Бодлого 6 (China 1983)</h2>
+<p><span class="math inline">\(f\)</span> функц нь <span class="math inline">\([0, 1]\)</span> завсарт бүх <span class="math inline">\(a \neq b\)</span>-ийн хувьд дараах байдлаар тодорхойлогдоно:</p>
+<p><span class="math display">\[
+f(0) = f(1) = 1 \ \text{ба} \ |f(a) - f(b)| &lt; |a - b|
+\]</span></p>
+<p>Тэгвэл дараах тэнцэтгэл бишийг батал:</p>
+<p><span class="math display">\[
+|f(a) - f(b)| &lt; \frac{1}{2}
+\]</span></p>
+</section>
+<section id="бодлого-7" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-7">Бодлого 7</h2>
+<p>Дараах нөхцөлийг хангах бүх <span class="math inline">\((x, y)\)</span> бүхэл тоон хосуудыг ол:</p>
+<p><span class="math display">\[
+x^3 + y^3 = (x + y)^2
+\]</span></p>
+</section>
+<section id="бодлого-8-korean-mathematics-competition-2001" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-8-korean-mathematics-competition-2001">Бодлого 8 (Korean Mathematics Competition 2001)</h2>
+<p>Бүх бодит тоо <span class="math inline">\(x\)</span>-ийн хувьд</p>
+<p><span class="math display">\[
+f(x) = \frac{2}{4^x + 2}
+\]</span></p>
+<p>байг. Тэгвэл дараах илэрхийллийг тооцоол:</p>
+<p><span class="math display">\[
+f(\frac{1}{2001}) + f(\frac{2}{2001}) + \dots + f(\frac{2000}{2001})
+\]</span></p>
+</section>
+<section id="бодлого-9" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-9">Бодлого 9</h2>
+<p>Хэрвээ <span class="math inline">\(n \geq 6\)</span> бол дараах тэгшитгэлийг бүхэл тоон шийдтэй гэж батал:</p>
+<p><span class="math display">\[
+\frac{1}{x_1^2} + \frac{1}{x_2^2} + \dots + \frac{1}{x_n^2} = 1
+\]</span></p>
+</section>
+<section id="бодлого-10-aime-1988" class="level2">
+<h2 class="anchored" data-anchor-id="бодлого-10-aime-1988">Бодлого 10 (AIME 1988)</h2>
+<p>Дараах нөхцөлийг хангах бүх <span class="math inline">\((a, b)\)</span> бүхэл тоон хосуудыг ол:</p>
+<p><span class="math display">\[
+ax^{17} + bx^{16} + 1
+\]</span> олон гишүүнт нь <span class="math inline">\(x^2 - x - 1\)</span>-д хуваагддаг.</p>
 
 
 </section>
